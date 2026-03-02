@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Structurer Ton Business</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== Reset & Base ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Poppins', sans-serif; background: #0d0d0d; color: #fff; line-height: 1.6; scroll-behavior: smooth; }
+a { text-decoration: none; color: inherit; }
+h1,h2,h3 { margin-bottom: 20px; }
+p { margin-bottom: 20px; }
+
+/* ===== Header ===== */
+header { position: sticky; top:0; background:#111; display:flex; justify-content:space-between; align-items:center; padding:20px 40px; z-index:1000; }
+header h1 { color:#d4af37; font-size:1.8em; }
+nav a { margin-left:20px; color:#fff; font-weight:500; transition:0.3s; }
+nav a:hover { color:#d4af37; }
+
+/* ===== Hero ===== */
+.hero { text-align:center; padding:120px 20px; }
+.hero h1 { font-size:2.5em; margin-bottom:20px; }
+.hero p { font-size:1.2em; max-width:700px; margin:0 auto 40px; }
+.btn { display:inline-block; padding:15px 35px; background:#d4af37; color:#000; font-weight:600; border-radius:5px; transition:0.3s; }
+.btn:hover { background:#fff; }
+
+/* ===== Sections ===== */
+section { padding:100px 20px; max-width:1100px; margin:auto; }
+section h2 { font-size:2em; margin-bottom:30px; color:#d4af37; }
+.cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:30px; }
+.card { background:#1a1a1a; padding:30px; border-radius:10px; transition:0.3s; }
+.card:hover { transform:translateY(-5px); }
+
+/* ===== Testimonials ===== */
+.testimonials { background:#111; }
+.testimonial { background:#1a1a1a; padding:30px; border-radius:10px; margin-bottom:20px; font-style:italic; }
+
+/* ===== CTA Section ===== */
+.cta { text-align:center; background:#111; padding:100px 20px; }
+
+/* ===== Footer ===== */
+footer { text-align:center; padding:50px 20px; background:#000; font-size:14px; color:#777; }
+
+/* ===== Animations simples ===== */
+.card, .testimonial { opacity:0; transform:translateY(20px); animation: fadeInUp 0.8s forwards; }
+.card:nth-child(1) { animation-delay:0.1s; }
+.card:nth-child(2) { animation-delay:0.3s; }
+.card:nth-child(3) { animation-delay:0.5s; }
+.testimonial:nth-child(1) { animation-delay:0.1s; }
+.testimonial:nth-child(2) { animation-delay:0.3s; }
+
+@keyframes fadeInUp {
+  to { opacity:1; transform:translateY(0); }
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+<h1>AJN FlowGold</h1>
+<nav>
+<a href="#hero">Accueil</a>
+<a href="#services">Services</a>
+<a href="#formation">Formation</a>
+<a href="#testimonials">Témoignages</a>
+<a href="#cta">Contact</a>
+</nav>
+</header>
+
+<!-- Hero Section -->
+<section id="hero" class="hero">
+<h1>Transforme ton activité en <span style="color:#d4af37;">système rentable</span></h1>
+<p>J’aide les freelances et solopreneurs à structurer leur business avec l’IA, l’automatisation et des stratégies concrètes pour générer des revenus stables.</p>
+<a href="#cta" class="btn">Structurer mon business</a>
+</section>
+
+<!-- Section Le Problème -->
+<section id="problem">
+<h2>Le problème</h2>
+<p>Tu travailles beaucoup, mais ton business repose encore sur l’improvisation :</p>
+<ul>
+<li>Clients irréguliers</li>
+<li>Revenus instables</li>
+<li>Process inexistants</li>
+<li>Outils sans stratégie</li>
+</ul>
+<p>Le problème n’est pas ton talent, c’est l’absence de structure.</p>
+</section>
+
+<!-- Section Méthode S.O.S -->
+<section id="framework">
+<h2>La méthode <span style="color:#fff;">S.O.S</span></h2>
+<div class="cards">
+<div class="card">
+<h3>S — Structure</h3>
+<p>Clarifier ton positionnement, ton offre et ton message.</p>
+</div>
+<div class="card">
+<h3>O — Optimisation</h3>
+<p>Automatiser avec l’IA, simplifier tes process et maximiser ton temps.</p>
+</div>
+<div class="card">
+<h3>S — Scale</h3>
+<p>Créer des revenus récurrents et faire croître ton activité sans t’épuiser.</p>
+</div>
+</div>
+</section>
+
+<!-- Section Services -->
+<section id="services">
+<h2>Mes Services</h2>
+<div class="cards">
+<div class="card">
+<h3>Audit stratégique</h3>
+<p>Analyse complète de ton business, de ton offre et de ton positionnement.</p>
+</div>
+<div class="card">
+<h3>Accompagnement personnalisé</h3>
+<p>Mise en place concrète de la méthode S.O.S dans ton business.</p>
+</div>
+<div class="card">
+<h3>Optimisation IA</h3>
+<p>Automatisation intelligente pour gagner du temps et augmenter tes revenus.</p>
+</div>
+</div>
+</section>
+
+<!-- Section Formation -->
+<section id="formation">
+<h2>La Formation</h2>
+<p>Une formation complète pour passer du chaos à la clarté stratégique.</p>
+<ul>
+<li>Définir une offre rentable</li>
+<li>Mettre en place un système d’acquisition</li>
+<li>Automatiser avec l’IA</li>
+<li>Créer une stabilité financière</li>
+</ul>
+<div class="cards">
+<div class="card">
+<h3>Module 1: Positionnement stratégique</h3>
+</div>
+<div class="card">
+<h3>Module 2: Création d’offre irrésistible</h3>
+</div>
+<div class="card">
+<h3>Module 3: Systèmes et automatisation</h3>
+</div>
+<div class="card">
+<h3>Module 4: Scaling intelligent</h3>
+</div>
+</div>
+<br>
+<a href="#cta" class="btn">Accéder à la formation</a>
+</section>
+
+<!-- Section Témoignages -->
+<section id="testimonials" class="testimonials">
+<h2>Témoignages</h2>
+<div class="testimonial">
+<p>"Grâce à AJN FlowGold, j’ai enfin structuré mon business et mes revenus sont stables !" — Marie D.</p>
+</div>
+<div class="testimonial">
+<p>"La méthode S.O.S est simple, claire et efficace. Je recommande fortement !" — Paul R.</p>
+</div>
+</section>
+
+<!-- Section CTA -->
+<section id="cta" class="cta">
+<h2>Prêt à structurer ton business ?</h2>
+<p>Si tu veux arrêter d’improviser et commencer à construire un système solide, c’est le moment.</p>
+<a href="#formation" class="btn">Structurer mon business maintenant</a>
+</section>
+
+<!-- Footer -->
+<footer>
+<p>© 2026 AJN FlowGold — Tous droits réservés</p>
+</footer>
+
+</body>
+  </html>
