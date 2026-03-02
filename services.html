@@ -5,44 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Trailblazer AJN - Services</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 <style>
-/* ===== Reset & Base ===== */
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:'Poppins', sans-serif; background:#0d0d0d; color:#fff; line-height:1.6; scroll-behavior:smooth; }
-a { text-decoration:none; color:inherit; }
-h1,h2,h3 { margin-bottom:20px; }
-p { margin-bottom:20px; }
-
-/* ===== Header ===== */
-header { position:sticky; top:0; background:#111; display:flex; justify-content:space-between; align-items:center; padding:20px 40px; z-index:1000; }
-header h1 { color:#d4af37; font-size:1.8em; }
-nav a { margin-left:20px; color:#fff; font-weight:500; transition:0.3s; }
-nav a:hover { color:#d4af37; }
-
-/* ===== Hero ===== */
-.hero { text-align:center; padding:120px 20px; }
-.hero h1 { font-size:2.5em; margin-bottom:20px; }
-.hero p { font-size:1.2em; max-width:700px; margin:0 auto 40px; }
-.btn { display:inline-block; padding:15px 35px; background:#d4af37; color:#000; font-weight:600; border-radius:5px; transition:0.3s; }
-.btn:hover { background:#fff; }
-
-/* ===== Sections ===== */
-section { padding:80px 20px; max-width:1100px; margin:auto; }
-section h2 { font-size:2em; margin-bottom:30px; color:#d4af37; }
-.cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:30px; }
-.card { background:#1a1a1a; padding:30px; border-radius:10px; transition:0.3s; }
-.card:hover { transform:translateY(-5px); }
-
-/* ===== Footer ===== */
-footer { text-align:center; padding:50px 20px; background:#000; font-size:14px; color:#777; }
-
-/* ===== Animations ===== */
-.card { opacity:0; transform:translateY(20px); animation: fadeInUp 0.8s forwards; }
-.card:nth-child(1) { animation-delay:0.1s; }
-.card:nth-child(2) { animation-delay:0.3s; }
-.card:nth-child(3) { animation-delay:0.5s; }
-
-@keyframes fadeInUp { to { opacity:1; transform:translateY(0); } }
+/* Spécifique Services Page */
+.service { background:#1a1a1a; padding:30px; margin-bottom:30px; border-radius:10px; transition:0.3s; }
+.service:hover { transform:translateY(-5px); }
+.service h2 { color:#d4af37; margin-bottom:15px; }
+.service p { margin-bottom:15px; }
+.read-more { color:#d4af37; font-weight:600; cursor:pointer; }
+.hidden { display:none; }
 </style>
 </head>
 <body>
@@ -51,36 +22,58 @@ footer { text-align:center; padding:50px 20px; background:#000; font-size:14px; 
 <header>
 <h1>Trailblazer AJN</h1>
 <nav>
-<a href="index.html">Accueil</a>
-<a href="services.html">Services</a>
-<a href="formation.html">Formation</a>
-<a href="contact.html">Contact</a>
+  <a href="index.html">Accueil</a>
+  <a href="services.html">Services</a>
+  <a href="formation.html">Formation</a>
+  <a href="contact.html">Contact</a>
 </nav>
 </header>
 
 <!-- Hero Section -->
-<section id="hero" class="hero">
-<h1>Mes Services</h1>
-<p>Des solutions concrètes pour structurer, automatiser et faire croître ton business.</p>
-<a href="https://wa.me/33612345678?text=Bonjour%2C%20je%20veux%20discuter%20de%20vos%20services" target="_blank" class="btn">Contacter sur WhatsApp</a>
+<section class="hero">
+<h1>Nos Services pour Entrepreneurs Ambitieux</h1>
+<p>Chaque service a été conçu pour t’aider à structurer ton business, briser tes barrières, gagner du temps et booster tes revenus.</p>
 </section>
 
-<!-- Services Detail -->
-<section id="services-detail">
-<div class="cards">
-<div class="card">
-<h3>Audit stratégique</h3>
-<p>Analyse complète de ton business, de ton offre et de ton positionnement pour identifier les opportunités et points de blocage.</p>
+<!-- Services -->
+<section class="services">
+
+<!-- Service 1 -->
+<div class="service">
+<h2>Audit et Organisation de ton Business</h2>
+<p>Analyse complète de ton business pour identifier les points de blocage et optimiser tes process.  
+<span class="read-more" onclick="toggleDetails('detail1')">Lire plus...</span></p>
+<p id="detail1" class="hidden">Grâce à cet audit, tu recevras un plan détaillé avec des étapes concrètes pour automatiser tes tâches répétitives, prioriser tes actions et maximiser ton efficacité. Ce service inclut un suivi personnalisé de 7 jours pour t’assurer de bien implémenter chaque changement.</p>
+<a href="https://wa.me/22953004443?text=Bonjour%2C%20je%20veux%20l%27audit%20de%20mon%20business" target="_blank" class="btn">Je veux ce service</a>
 </div>
-<div class="card">
-<h3>Accompagnement personnalisé</h3>
-<p>Je mets en place avec toi la méthode S.O.S pour structurer ton business étape par étape et atteindre tes objectifs.</p>
+
+<!-- Service 2 -->
+<div class="service">
+<h2>Framework S.O.S – Structurer, Optimiser, Stabiliser</h2>
+<p>Découvre notre framework S.O.S pour mettre ton business sur pilote automatique.  
+<span class="read-more" onclick="toggleDetails('detail2')">Lire plus...</span></p>
+<p id="detail2" class="hidden">Cette formation te guide pas à pas sur comment structurer ton workflow, automatiser les tâches répétitives, et stabiliser tes revenus. Tu bénéficieras d’exemples concrets, de modèles prêts à l’emploi et de coaching pour implémenter directement chaque module.</p>
+<a href="https://wa.me/22953004443?text=Bonjour%2C%20je%20veux%20la%20formation%20S.O.S" target="_blank" class="btn">Je veux cette formation</a>
 </div>
-<div class="card">
-<h3>Optimisation IA</h3>
-<p>Automatisation intelligente de tes tâches répétitives pour gagner du temps et booster tes revenus.</p>
+
+<!-- Service 3 -->
+<div class="service">
+<h2>Coaching Personnalisé</h2>
+<p>Accompagnement individuel pour résoudre tes problèmes spécifiques (en création du contenu, montage vidéo, la réalisation de tes aspirations les plus folles, le marketing digital...etc) et accélérer tes résultats.  
+<span class="read-more" onclick="toggleDetails('detail3')">Lire plus...</span></p>
+<p id="detail3" class="hidden">Le coaching inclut des sessions en visioconférence, un plan d’action sur-mesure et un suivi constant pour t’assurer que tu implémentes correctement les stratégies. Idéal pour ceux qui veulent éviter les erreurs courantes et gagner du temps précieux.</p>
+<a href="https://wa.me/22953004443?text=Bonjour%2C%20je%20veux%20un%20coaching%20personnalis%C3%A9" target="_blank" class="btn">Réserver mon coaching</a>
 </div>
+
+  <!-- Service 4 -->
+<div class="service">
+<h2>Apprendre l’Anglais Commercial en 90 jours Chrono</h2>
+<p>Accompagnement individuel journalier pour apprendre les bases de la négociation en affaires tout en brisant les barrières de la langue de Shakespeare sur vos chemins et en améliorant votre niveau et culture.  
+<span class="read-more" onclick="toggleDetails('detail3')">Lire plus...</span></p>
+<p id="detail3" class="hidden">Cette formation est certifiée et inclut des sessions en visioconférence, des discussions et appels journaliers, une playlist d'audio et de vidéos tutoriels sur-mesure et un groupe WhatsApp composé des apprenants comme toi venant de partout dans le monde pour t’assurer que tu implémentes correctement les cours apprises. Idéal pour ceux qui veulent éviter les erreurs courantes en négociation avec un commerçant anglais et gagner du temps précieux.</p>
+<a href="https://wa.me/22953004443?text=Bonjour%2C%20je%20veux%20un%20coaching%20personnalis%C3%A9" target="_blank" class="btn">Réserver mon coaching</a>
 </div>
+
 </section>
 
 <!-- Footer -->
@@ -88,5 +81,13 @@ footer { text-align:center; padding:50px 20px; background:#000; font-size:14px; 
 <p>© 2026 Trailblazer AJN — Tous droits réservés</p>
 </footer>
 
+<script>
+// Toggle lire plus
+function toggleDetails(id) {
+  const elem = document.getElementById(id);
+  elem.classList.toggle('hidden');
+}
+</script>
+
 </body>
-</html>
+  </html>
