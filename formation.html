@@ -6,44 +6,21 @@
 <title>Trailblazer AJN - Formation</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
-/* ===== Reset & Base ===== */
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:'Poppins', sans-serif; background:#0d0d0d; color:#fff; line-height:1.6; scroll-behavior:smooth; }
-a { text-decoration:none; color:inherit; }
-h1,h2,h3 { margin-bottom:20px; }
-p { margin-bottom:20px; }
-
-/* ===== Header ===== */
-header { position:sticky; top:0; background:#111; display:flex; justify-content:space-between; align-items:center; padding:20px 40px; z-index:1000; }
-header h1 { color:#d4af37; font-size:1.8em; }
-nav a { margin-left:20px; color:#fff; font-weight:500; transition:0.3s; }
+/* Styles généraux */
+body { font-family:'Poppins', sans-serif; background:#0d0d0d; color:#fff; margin:0; padding:0; text-align:center; }
+header { background:#111; padding:20px; }
+header h1 { color:#d4af37; margin:0; }
+nav a { color:#fff; margin:0 15px; text-decoration:none; font-weight:600; }
 nav a:hover { color:#d4af37; }
-
-/* ===== Hero ===== */
-.hero { text-align:center; padding:120px 20px; }
-.hero h1 { font-size:2.5em; margin-bottom:20px; }
-.hero p { font-size:1.2em; max-width:700px; margin:0 auto 40px; }
-.btn { display:inline-block; padding:15px 35px; background:#d4af37; color:#000; font-weight:600; border-radius:5px; transition:0.3s; }
+section { padding:60px 20px; }
+.video-container { max-width:800px; margin:40px auto; }
+.price { font-size:2.2em; color:#d4af37; margin:20px 0; font-weight:700; }
+.btn { display:inline-block; padding:15px 35px; margin:20px; background:#d4af37; color:#000; font-weight:600; border-radius:5px; text-decoration:none; }
 .btn:hover { background:#fff; }
-
-/* ===== Sections ===== */
-section { padding:80px 20px; max-width:1100px; margin:auto; }
-section h2 { font-size:2em; margin-bottom:30px; color:#d4af37; }
-.cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:30px; }
-.card { background:#1a1a1a; padding:30px; border-radius:10px; transition:0.3s; }
-.card:hover { transform:translateY(-5px); }
-
-/* ===== Footer ===== */
-footer { text-align:center; padding:50px 20px; background:#000; font-size:14px; color:#777; }
-
-/* ===== Animations ===== */
-.card { opacity:0; transform:translateY(20px); animation: fadeInUp 0.8s forwards; }
-.card:nth-child(1) { animation-delay:0.1s; }
-.card:nth-child(2) { animation-delay:0.3s; }
-.card:nth-child(3) { animation-delay:0.5s; }
-.card:nth-child(4) { animation-delay:0.7s; }
-
-@keyframes fadeInUp { to { opacity:1; transform:translateY(0); } }
+.modules { max-width:800px; margin:40px auto; text-align:left; }
+.modules h3 { color:#d4af37; margin-bottom:10px; }
+.modules ul { line-height:1.8; padding-left:20px; }
+footer { background:#111; color:#fff; padding:20px; text-align:center; margin-top:40px; }
 </style>
 </head>
 <body>
@@ -52,41 +29,42 @@ footer { text-align:center; padding:50px 20px; background:#000; font-size:14px; 
 <header>
 <h1>Trailblazer AJN</h1>
 <nav>
-<a href="index.html">Accueil</a>
-<a href="services.html">Services</a>
-<a href="formation.html">Formation</a>
-<a href="contact.html">Contact</a>
+  <a href="index.html">Accueil</a>
+  <a href="services.html">Services</a>
+  <a href="formation.html">Formation</a>
+  <a href="contact.html">Contact</a>
 </nav>
 </header>
 
-<!-- Hero Section -->
-<section id="hero" class="hero">
-<h1>Formation : Structurer et optimiser ton business</h1>
-<p>Une méthode complète pour passer de l’improvisation à un système rentable et automatisé. Apprends à générer des revenus stables grâce à la méthode S.O.S.</p>
-<a href="https://wa.me/22953004443?text=Bonjour%2C%20je%20veux%20en%20savoir%20plus%20sur%20la%20formation" target="_blank" class="btn">Me contacter sur WhatsApp</a>
-</section>
+<!-- Présentation Formation -->
+<section>
+<h2>Formation Framework S.O.S</h2>
 
-<!-- Formation Details -->
-<section id="formation-details">
-<h2>Ce que tu vas apprendre</h2>
-<div class="cards">
-<div class="card">
-<h3>Module 1 : Structure</h3>
-<p>Clarifier ton positionnement, ton offre et ton message pour attirer les bons clients.</p>
+<!-- Vidéo de présentation -->
+<div class="video-container">
+<iframe width="100%" height="450" 
+src="https://www.youtube.com/embed/Zoz9lYrgRcY" 
+frameborder="0" allowfullscreen>
+</iframe>
 </div>
-<div class="card">
-<h3>Module 2 : Optimisation</h3>
-<p>Mettre en place des outils et automatisations intelligentes pour gagner du temps.</p>
+
+<!-- Prix et inscription -->
+<div class="price">4 990 F CFA</div>
+<a href="LIEN_SYSTEME_IO" class="btn">S'INSCRIRE</a>
+
+<!-- Modules détaillés -->
+<div class="modules">
+<h3>Ce que tu vas apprendre :</h3>
+<ul>
+<li>Structurer ton business intelligemment</li>
+<li>Automatiser tes tâches répétitives</li>
+<li>Stabiliser tes revenus</li>
+<li>Mettre en place ton système productif</li>
+<li>Exemples concrets et templates prêts à l’emploi</li>
+<li>Suivi personnalisé pour implémenter chaque module</li>
+</ul>
 </div>
-<div class="card">
-<h3>Module 3 : Scale</h3>
-<p>Créer des revenus récurrents et faire croître ton activité sans t’épuiser.</p>
-</div>
-<div class="card">
-<h3>Bonus : Stratégies IA</h3>
-<p>Exploiter l’IA pour automatiser tes tâches et booster tes profits.</p>
-</div>
-</div>
+
 </section>
 
 <!-- Footer -->
