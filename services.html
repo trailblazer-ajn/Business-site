@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AJN FlowGold - Services</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== Reset & Base ===== */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Poppins', sans-serif; background:#0d0d0d; color:#fff; line-height:1.6; scroll-behavior:smooth; }
+a { text-decoration:none; color:inherit; }
+h1,h2,h3 { margin-bottom:20px; }
+p { margin-bottom:20px; }
+
+/* ===== Header ===== */
+header { position:sticky; top:0; background:#111; display:flex; justify-content:space-between; align-items:center; padding:20px 40px; z-index:1000; }
+header h1 { color:#d4af37; font-size:1.8em; }
+nav a { margin-left:20px; color:#fff; font-weight:500; transition:0.3s; }
+nav a:hover { color:#d4af37; }
+
+/* ===== Hero ===== */
+.hero { text-align:center; padding:120px 20px; }
+.hero h1 { font-size:2.5em; margin-bottom:20px; }
+.hero p { font-size:1.2em; max-width:700px; margin:0 auto 40px; }
+.btn { display:inline-block; padding:15px 35px; background:#d4af37; color:#000; font-weight:600; border-radius:5px; transition:0.3s; }
+.btn:hover { background:#fff; }
+
+/* ===== Sections ===== */
+section { padding:80px 20px; max-width:1100px; margin:auto; }
+section h2 { font-size:2em; margin-bottom:30px; color:#d4af37; }
+.cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:30px; }
+.card { background:#1a1a1a; padding:30px; border-radius:10px; transition:0.3s; }
+.card:hover { transform:translateY(-5px); }
+
+/* ===== Footer ===== */
+footer { text-align:center; padding:50px 20px; background:#000; font-size:14px; color:#777; }
+
+/* ===== Animations ===== */
+.card { opacity:0; transform:translateY(20px); animation: fadeInUp 0.8s forwards; }
+.card:nth-child(1) { animation-delay:0.1s; }
+.card:nth-child(2) { animation-delay:0.3s; }
+.card:nth-child(3) { animation-delay:0.5s; }
+
+@keyframes fadeInUp { to { opacity:1; transform:translateY(0); } }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+<h1>AJN FlowGold</h1>
+<nav>
+<a href="index.html">Accueil</a>
+<a href="services.html">Services</a>
+<a href="formation.html">Formation</a>
+<a href="contact.html">Contact</a>
+</nav>
+</header>
+
+<!-- Hero Section -->
+<section id="hero" class="hero">
+<h1>Mes Services</h1>
+<p>Des solutions concrètes pour structurer, automatiser et faire croître ton business.</p>
+<a href="https://wa.me/33612345678?text=Bonjour%2C%20je%20veux%20discuter%20de%20vos%20services" target="_blank" class="btn">Contacter sur WhatsApp</a>
+</section>
+
+<!-- Services Detail -->
+<section id="services-detail">
+<div class="cards">
+<div class="card">
+<h3>Audit stratégique</h3>
+<p>Analyse complète de ton business, de ton offre et de ton positionnement pour identifier les opportunités et points de blocage.</p>
+</div>
+<div class="card">
+<h3>Accompagnement personnalisé</h3>
+<p>Je mets en place avec toi la méthode S.O.S pour structurer ton business étape par étape et atteindre tes objectifs.</p>
+</div>
+<div class="card">
+<h3>Optimisation IA</h3>
+<p>Automatisation intelligente de tes tâches répétitives pour gagner du temps et booster tes revenus.</p>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer>
+<p>© 2026 AJN FlowGold — Tous droits réservés</p>
+</footer>
+
+</body>
+</html>
