@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Structurer Ton Business</title>
+<title>AJN FlowGold - Accueil</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
 /* ===== Reset & Base ===== */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Poppins', sans-serif; background: #0d0d0d; color: #fff; line-height: 1.6; scroll-behavior: smooth; }
-a { text-decoration: none; color: inherit; }
-h1,h2,h3 { margin-bottom: 20px; }
-p { margin-bottom: 20px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Poppins', sans-serif; background:#0d0d0d; color:#fff; line-height:1.6; scroll-behavior:smooth; }
+a { text-decoration:none; color:inherit; }
+h1,h2,h3 { margin-bottom:20px; }
+p { margin-bottom:20px; }
 
 /* ===== Header ===== */
-header { position: sticky; top:0; background:#111; display:flex; justify-content:space-between; align-items:center; padding:20px 40px; z-index:1000; }
+header { position:sticky; top:0; background:#111; display:flex; justify-content:space-between; align-items:center; padding:20px 40px; z-index:1000; }
 header h1 { color:#d4af37; font-size:1.8em; }
 nav a { margin-left:20px; color:#fff; font-weight:500; transition:0.3s; }
 nav a:hover { color:#d4af37; }
@@ -33,27 +33,16 @@ section h2 { font-size:2em; margin-bottom:30px; color:#d4af37; }
 .card { background:#1a1a1a; padding:30px; border-radius:10px; transition:0.3s; }
 .card:hover { transform:translateY(-5px); }
 
-/* ===== Testimonials ===== */
-.testimonials { background:#111; }
-.testimonial { background:#1a1a1a; padding:30px; border-radius:10px; margin-bottom:20px; font-style:italic; }
-
-/* ===== CTA Section ===== */
-.cta { text-align:center; background:#111; padding:100px 20px; }
-
 /* ===== Footer ===== */
 footer { text-align:center; padding:50px 20px; background:#000; font-size:14px; color:#777; }
 
-/* ===== Animations simples ===== */
-.card, .testimonial { opacity:0; transform:translateY(20px); animation: fadeInUp 0.8s forwards; }
+/* ===== Animations ===== */
+.card { opacity:0; transform:translateY(20px); animation: fadeInUp 0.8s forwards; }
 .card:nth-child(1) { animation-delay:0.1s; }
 .card:nth-child(2) { animation-delay:0.3s; }
 .card:nth-child(3) { animation-delay:0.5s; }
-.testimonial:nth-child(1) { animation-delay:0.1s; }
-.testimonial:nth-child(2) { animation-delay:0.3s; }
 
-@keyframes fadeInUp {
-  to { opacity:1; transform:translateY(0); }
-}
+@keyframes fadeInUp { to { opacity:1; transform:translateY(0); } }
 </style>
 </head>
 <body>
@@ -62,11 +51,10 @@ footer { text-align:center; padding:50px 20px; background:#000; font-size:14px; 
 <header>
 <h1>AJN FlowGold</h1>
 <nav>
-<a href="#hero">Accueil</a>
-<a href="#services">Services</a>
-<a href="#formation">Formation</a>
-<a href="#testimonials">Témoignages</a>
-<a href="#cta">Contact</a>
+<a href="index.html">Accueil</a>
+<a href="services.html">Services</a>
+<a href="formation.html">Formation</a>
+<a href="contact.html">Contact</a>
 </nav>
 </header>
 
@@ -74,9 +62,10 @@ footer { text-align:center; padding:50px 20px; background:#000; font-size:14px; 
 <section id="hero" class="hero">
 <h1>Transforme ton activité en <span style="color:#d4af37;">système rentable</span></h1>
 <p>J’aide les freelances et solopreneurs à structurer leur business avec l’IA, l’automatisation et des stratégies concrètes pour générer des revenus stables.</p>
-  <a href="https://wa.me/+22953004443?text=Bonjour%2C%20je%20veux%20structurer%20mon%20business" target="_blank" class="btn">Structurer mon business</a></section>
+<a href="https://wa.me/33612345678?text=Bonjour%2C%20je%20veux%20structurer%20mon%20business" target="_blank" class="btn">Structurer mon business</a>
+</section>
 
-<!-- Section Le Problème -->
+<!-- Section Problème -->
 <section id="problem">
 <h2>Le problème</h2>
 <p>Tu travailles beaucoup, mais ton business repose encore sur l’improvisation :</p>
@@ -127,54 +116,9 @@ footer { text-align:center; padding:50px 20px; background:#000; font-size:14px; 
 </div>
 </section>
 
-<!-- Section Formation -->
-<section id="formation">
-<h2>La Formation</h2>
-<p>Une formation complète pour passer du chaos à la clarté stratégique.</p>
-<ul>
-<li>Définir une offre rentable</li>
-<li>Mettre en place un système d’acquisition</li>
-<li>Automatiser avec l’IA</li>
-<li>Créer une stabilité financière</li>
-</ul>
-<div class="cards">
-<div class="card">
-<h3>Module 1: Positionnement stratégique</h3>
-</div>
-<div class="card">
-<h3>Module 2: Création d’offre irrésistible</h3>
-</div>
-<div class="card">
-<h3>Module 3: Systèmes et automatisation</h3>
-</div>
-<div class="card">
-<h3>Module 4: Scaling intelligent</h3>
-</div>
-</div>
-<br>
-<a href="#cta" class="btn">Accéder à la formation</a>
-</section>
-
-<!-- Section Témoignages -->
-<section id="testimonials" class="testimonials">
-<h2>Témoignages</h2>
-<div class="testimonial">
-<p>"Grâce à Joachim, j’ai enfin structuré mon business et mes revenus sont stables !" — Sira D..</p>
-</div>
-<div class="testimonial">
-<p>"La méthode S.O.S est simple, claire et efficace. Je recommande fortement !" — Paul R.</p>
-</div>
-</section>
-
-<!-- Section CTA -->
-<section id="cta" class="cta">
-<h2>Prêt à structurer ton business ?</h2>
-<p>Si tu veux arrêter d’improviser et commencer à construire un système solide, c’est le moment.</p>
-<a href="https://wa.me/+22953004443?text=Bonjour%2C%20je%20veux%20structurer%20mon%20business" target="_blank" class="btn">Structurer mon business</a></section>
-
 <!-- Footer -->
 <footer>
-<p>© 2026 Joachim Gbetchoevi— Tous droits réservés</p>
+<p>© 2026 AJN FlowGold — Tous droits réservés</p>
 </footer>
 
 </body>
