@@ -3,84 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Inscription - Trailblazer AJN</title>
+<title>Trailblazer AJN - Inscription</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
-body { font-family:'Poppins', sans-serif; background:#0d0d0d; color:#fff; margin:0; padding:0; text-align:center; }
-header { background:#111; padding:15px 20px; display:flex; justify-content:space-between; align-items:center; }
-header h1 { color:#d4af37; margin:0; font-size:1.8em; }
-nav a { color:#fff; margin-left:15px; font-weight:600; text-decoration:none; transition:0.3s; }
-nav a:hover { color:#d4af37; }
-section { padding:60px 20px; max-width:800px; margin:auto; text-align:left; }
-h2 { text-align:center; color:#d4af37; margin-bottom:30px; }
-input, select { width:100%; padding:12px 15px; margin:10px 0; border-radius:5px; border:none; font-size:1em; }
-input:focus, select:focus { outline:none; }
-button, .btn { padding:15px 35px; margin-top:15px; background:#d4af37; color:#000; font-weight:600; border-radius:5px; border:none; cursor:pointer; transition:0.3s; }
-button:hover, .btn:hover { background:#fff; color:#000; transform:scale(1.05); }
-#successMsg { margin-top:20px; color:#0f0; font-weight:600; }
-#paymentInstructions { background:#111; color:#fff; padding:20px; border-radius:10px; margin-top:30px; text-align:left; animation: pulse 1.5s infinite; }
-#paymentInstructions h3 { color:#d4af37; margin-bottom:10px; }
-#paymentInstructions p, #paymentInstructions ol, #paymentInstructions li { margin-bottom:10px; }
-.wa-btn { display:inline-block; background:#25D366; color:#fff; padding:12px 25px; border-radius:8px; font-weight:600; text-decoration:none; margin-top:10px; transition:0.3s; }
-.wa-btn:hover { transform:scale(1.05); background:#1ebe5d; }
-
-@keyframes pulse {
-  0% { box-shadow: 0 0 0px #d4af37; }
-  50% { box-shadow: 0 0 20px #d4af37; }
-  100% { box-shadow: 0 0 0px #d4af37; }
-}
+  body { font-family:'Poppins', sans-serif; background:#0d0d0d; color:#fff; margin:0; padding:0; text-align:center; }
+  header { background:#111; padding:15px 30px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:1000; }
+  header h1 { color:#d4af37; margin:0; font-size:1.8em; }
+  nav a { color:#fff; margin-left:20px; font-weight:500; text-decoration:none; transition:0.3s; }
+  nav a:hover { color:#d4af37; }
+  .citation { font-style:italic; color:#d4af37; margin:15px 0 40px; font-size:1.1em; }
+  section { padding:40px 20px; max-width:600px; margin:auto; background:#111; border-radius:10px; box-shadow: 0 0 20px rgba(212,175,55,0.4); }
+  input { width:90%; padding:15px; margin:10px 0; border:none; border-radius:5px; font-size:1em; }
+  input:focus { outline:none; }
+  .btn { display:inline-block; padding:15px 35px; margin:15px 10px; font-weight:600; color:#000; background:#d4af37; border:none; border-radius:5px; cursor:pointer; transition:0.3s; }
+  .btn:hover { background:#fff; transform:scale(1.05); }
+  .instructions { text-align:left; margin-top:20px; font-size:0.95em; color:#ccc; line-height:1.6; background:#222; padding:15px; border-radius:8px; }
+  footer { text-align:center; padding:30px 20px; background:#111; font-size:14px; color:#777; margin-top:30px; }
 </style>
-</head>
-<body>
-
-<header>
-<h1>Trailblazer AJN</h1>
-<nav>
-  <a href="index.html">Accueil</a>
-  <a href="services.html">Services</a>
-  <a href="formation.html">Formation</a>
-  <a href="contact.html">Contact</a>
-</nav>
-</header>
-
-<section>
-<h2>Inscription à la formation Framework S.O.S</h2>
-
-<form id="signupForm">
-  <input type="text" id="fullName" placeholder="Nom et prénom" required>
-  <input type="email" id="email" placeholder="Email" required>
-  <input type="tel" id="phone" placeholder="Numéro de téléphone" required>
-  <input type="text" id="country" placeholder="Pays" required>
-  <input type="text" id="source" placeholder="Comment avez-vous entendu parler de nous ?" required>
-  <button type="submit">S'inscrire</button>
-</form>
-
-<p id="successMsg"></p>
-
-<div id="paymentInstructions" class="hidden">
-  <h3>Instructions pour débloquer votre code d'accès 🔑</h3>
-  <p>Pour accéder à la formation Framework S.O.S, veuillez :</p>
-  <ol>
-    <li>Effectuer le paiement manuel :</li>
-    <ul>
-      <li>MTN Mobile Money : <strong>+229 0153004443</strong></li>
-      <li>Moov Money : <strong>+229 45836117</strong></li>
-      <li>Montant : <strong>4 990 F CFA</strong></li>
-    </ul>
-    <li>Envoyer la capture de votre paiement :</li>
-    <ul>
-      <li>Par email : <strong>uk.joachimmentorship@gmail.com</strong></li>
-      <li>Ou via WhatsApp : <a class="wa-btn" href="https://wa.me/22953004443" target="_blank">Contacter sur WhatsApp</a></li>
-    </ul>
-    <li>Après confirmation par notre équipe, vous recevez votre code unique.</li>
-  </ol>
-</div>
-</section>
-
-<footer style="background:#111; padding:30px; text-align:center; color:#777;">
-<p>© 2026 Trailblazer AJN — Tous droits réservés</p>
-</footer>
-
 <!-- Firebase CDN -->
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js";
@@ -101,33 +40,77 @@ button:hover, .btn:hover { background:#fff; color:#000; transform:scale(1.05); }
   const analytics = getAnalytics(app);
   const auth = getAuth(app);
 
-  const form = document.getElementById("signupForm");
-  const successMsg = document.getElementById("successMsg");
-  const paymentDiv = document.getElementById("paymentInstructions");
-
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const name = document.getElementById("fullName").value;
+  window.registerUser = function(){
     const email = document.getElementById("email").value;
-    const phone = document.getElementById("phone").value;
-    const country = document.getElementById("country").value;
-    const source = document.getElementById("source").value;
+    const password = document.getElementById("password").value;
+    const nom = document.getElementById("nom").value;
+    const tel = document.getElementById("tel").value;
+    const pays = document.getElementById("pays").value;
 
-    createUserWithEmailAndPassword(auth, email, "TemporaryPassword123!") // on peut demander plus tard de changer
+    createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
         sendEmailVerification(user)
           .then(() => {
-            successMsg.innerHTML = "✅ Inscription réussie ! Vérifiez votre email pour confirmer votre compte.";
-            paymentDiv.classList.remove("hidden"); // affiche instructions paiement
-            form.reset();
+            document.getElementById("formSection").style.display = "none";
+            document.getElementById("successMessage").style.display = "block";
           });
       })
       .catch((error) => {
-        successMsg.innerHTML = "❌ Erreur : " + error.message;
+        alert(error.message);
       });
-  });
+  }
 </script>
+</head>
+
+<body>
+
+<header>
+  <h1><img src="logo.png" alt="Trailblazer AJN" style="height:40px; vertical-align:middle;"> Trailblazer AJN</h1>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="services.html">Services</a>
+    <a href="formation.html">Formation</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section>
+  <div class="citation">"Live as if you were to die tomorrow. Learn as if you were to live forever." – Einstein</div>
+
+  <div id="formSection">
+    <h2>Inscris-toi pour accéder à la formation</h2>
+    <input type="text" id="nom" placeholder="Nom et prénom" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="tel" id="tel" placeholder="Téléphone" required>
+    <input type="text" id="pays" placeholder="Pays" required>
+    <input type="password" id="password" placeholder="Mot de passe" required>
+    <button class="btn" onclick="registerUser()">S'inscrire</button>
+    <a href="https://wa.me/22953004443?text=Bonjour,%20je%20veux%20prendre%20contact%20avec%20AJN%20FlowGold" target="_blank" class="btn">WhatsApp</a>
+  </div>
+
+  <div id="successMessage" style="display:none;">
+    <h2>✅ Inscription réussie !</h2>
+    <p>Vérifie ton email pour confirmer ton inscription.</p>
+    <div class="instructions">
+      <h4>Avant d'obtenir votre code d'accès unique :</h4>
+      <p>
+        1. Effectuez le paiement manuel vers l'un de nos numéros :<br>
+        • MTN MoMo : +229 0153004443<br>
+        • Moov Money : +229 45836117<br><br>
+        2. Envoyez la capture de votre paiement à notre équipe via email : 
+        <a href="mailto:uk.joachimmentorship@gmail.com">uk.joachimmentorship@gmail.com</a> 
+        ou WhatsApp : 
+        <a href="https://wa.me/22953004443" target="_blank">Clique ici</a>.<br><br>
+        Après confirmation par notre équipe, vous recevrez votre <strong>code d'accès unique</strong>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Trailblazer AJN — Tous droits réservés</p>
+</footer>
 
 </body>
 </html>
