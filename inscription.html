@@ -3,131 +3,131 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trailblazer AJN - Inscription</title>
+<title>Inscription - Trailblazer AJN</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
 <style>
 body { font-family:'Poppins', sans-serif; background:#0d0d0d; color:#fff; margin:0; padding:0; text-align:center; }
-header { background:#111; padding:20px; display:flex; flex-direction:column; align-items:center; }
-header h1 { color:#d4af37; margin:0; }
-header nav { margin-top:10px; }
-header nav a { color:#fff; margin:0 15px; text-decoration:none; font-weight:600; }
-header nav a:hover { color:#d4af37; }
-header .quote { font-size:0.9em; color:#ccc; margin-top:5px; font-style:italic; }
-.logo { width:80px; height:auto; margin-top:10px; }
-section { padding:40px 20px; max-width:600px; margin:auto; }
-input, select { width:90%; padding:12px; margin:10px 0; border-radius:5px; border:none; font-size:1em; }
+header { background:#111; padding:15px 20px; display:flex; justify-content:space-between; align-items:center; }
+header h1 { color:#d4af37; margin:0; font-size:1.8em; }
+nav a { color:#fff; margin-left:15px; font-weight:600; text-decoration:none; transition:0.3s; }
+nav a:hover { color:#d4af37; }
+section { padding:60px 20px; max-width:800px; margin:auto; text-align:left; }
+h2 { text-align:center; color:#d4af37; margin-bottom:30px; }
+input, select { width:100%; padding:12px 15px; margin:10px 0; border-radius:5px; border:none; font-size:1em; }
 input:focus, select:focus { outline:none; }
-button { padding:12px 20px; background:#d4af37; border:none; border-radius:5px; font-weight:600; cursor:pointer; }
-button:hover { background:#fff; color:#000; }
-.success { color:#0f0; margin-top:10px; }
-.error { color:#f00; margin-top:10px; }
-footer { text-align:center; padding:40px; background:#111; font-size:14px; color:#777; margin-top:60px; }
+button, .btn { padding:15px 35px; margin-top:15px; background:#d4af37; color:#000; font-weight:600; border-radius:5px; border:none; cursor:pointer; transition:0.3s; }
+button:hover, .btn:hover { background:#fff; color:#000; transform:scale(1.05); }
+#successMsg { margin-top:20px; color:#0f0; font-weight:600; }
+#paymentInstructions { background:#111; color:#fff; padding:20px; border-radius:10px; margin-top:30px; text-align:left; animation: pulse 1.5s infinite; }
+#paymentInstructions h3 { color:#d4af37; margin-bottom:10px; }
+#paymentInstructions p, #paymentInstructions ol, #paymentInstructions li { margin-bottom:10px; }
+.wa-btn { display:inline-block; background:#25D366; color:#fff; padding:12px 25px; border-radius:8px; font-weight:600; text-decoration:none; margin-top:10px; transition:0.3s; }
+.wa-btn:hover { transform:scale(1.05); background:#1ebe5d; }
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0px #d4af37; }
+  50% { box-shadow: 0 0 20px #d4af37; }
+  100% { box-shadow: 0 0 0px #d4af37; }
+}
 </style>
+</head>
+<body>
 
-<!-- Firebase SDKs -->
+<header>
+<h1>Trailblazer AJN</h1>
+<nav>
+  <a href="index.html">Accueil</a>
+  <a href="services.html">Services</a>
+  <a href="formation.html">Formation</a>
+  <a href="contact.html">Contact</a>
+</nav>
+</header>
+
+<section>
+<h2>Inscription à la formation Framework S.O.S</h2>
+
+<form id="signupForm">
+  <input type="text" id="fullName" placeholder="Nom et prénom" required>
+  <input type="email" id="email" placeholder="Email" required>
+  <input type="tel" id="phone" placeholder="Numéro de téléphone" required>
+  <input type="text" id="country" placeholder="Pays" required>
+  <input type="text" id="source" placeholder="Comment avez-vous entendu parler de nous ?" required>
+  <button type="submit">S'inscrire</button>
+</form>
+
+<p id="successMsg"></p>
+
+<div id="paymentInstructions" class="hidden">
+  <h3>Instructions pour débloquer votre code d'accès 🔑</h3>
+  <p>Pour accéder à la formation Framework S.O.S, veuillez :</p>
+  <ol>
+    <li>Effectuer le paiement manuel :</li>
+    <ul>
+      <li>MTN Mobile Money : <strong>+229 0153004443</strong></li>
+      <li>Moov Money : <strong>+229 45836117</strong></li>
+      <li>Montant : <strong>4 990 F CFA</strong></li>
+    </ul>
+    <li>Envoyer la capture de votre paiement :</li>
+    <ul>
+      <li>Par email : <strong>uk.joachimmentorship@gmail.com</strong></li>
+      <li>Ou via WhatsApp : <a class="wa-btn" href="https://wa.me/22953004443" target="_blank">Contacter sur WhatsApp</a></li>
+    </ul>
+    <li>Après confirmation par notre équipe, vous recevez votre code unique.</li>
+  </ol>
+</div>
+</section>
+
+<footer style="background:#111; padding:30px; text-align:center; color:#777;">
+<p>© 2026 Trailblazer AJN — Tous droits réservés</p>
+</footer>
+
+<!-- Firebase CDN -->
 <script type="module">
-  // Import the functions you need from the SDKs
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js";
-  import { getAuth, createUserWithEmailAndPassword, sendEmailVerification, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-auth.js";
-  import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-firestore.js";
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-analytics.js";
+  import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-auth.js";
 
-  // Firebase configuration
   const firebaseConfig = {
     apiKey: "AIzaSyCtveyVtFUxs6ahNM66hVu3A8vAusYug_4",
     authDomain: "siteformation-5fe51.firebaseapp.com",
     projectId: "siteformation-5fe51",
-    storageBucket: "siteformation-5fe51.appspot.com",
+    storageBucket: "siteformation-5fe51.firebasestorage.app",
     messagingSenderId: "812137122401",
     appId: "1:812137122401:web:c76f3d36f27207d72cb820",
     measurementId: "G-DDTYR055VZ"
   };
 
-  // Initialize Firebase
   const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
   const auth = getAuth(app);
-  const db = getFirestore(app);
 
-  // Handle form submission
-  window.registerUser = async function() {
-    const name = document.getElementById("name").value;
+  const form = document.getElementById("signupForm");
+  const successMsg = document.getElementById("successMsg");
+  const paymentDiv = document.getElementById("paymentInstructions");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const name = document.getElementById("fullName").value;
     const email = document.getElementById("email").value;
     const phone = document.getElementById("phone").value;
     const country = document.getElementById("country").value;
     const source = document.getElementById("source").value;
-    const password = document.getElementById("password").value;
 
-    if(!name || !email || !phone || !country || !source || !password){
-      document.getElementById("message").innerHTML = "<span class='error'>Veuillez remplir tous les champs.</span>";
-      return;
-    }
-
-    try {
-      // Create user
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      const user = userCredential.user;
-
-      // Save additional info in Firestore
-      await setDoc(doc(db, "users", user.uid), {
-        name: name,
-        email: email,
-        phone: phone,
-        country: country,
-        source: source,
-        createdAt: new Date()
+    createUserWithEmailAndPassword(auth, email, "TemporaryPassword123!") // on peut demander plus tard de changer
+      .then((userCredential) => {
+        const user = userCredential.user;
+        sendEmailVerification(user)
+          .then(() => {
+            successMsg.innerHTML = "✅ Inscription réussie ! Vérifiez votre email pour confirmer votre compte.";
+            paymentDiv.classList.remove("hidden"); // affiche instructions paiement
+            form.reset();
+          });
+      })
+      .catch((error) => {
+        successMsg.innerHTML = "❌ Erreur : " + error.message;
       });
-
-      // Send email verification
-      await sendEmailVerification(user);
-
-      document.getElementById("message").innerHTML = "<span class='success'>Compte créé ! Vérifie ton email pour confirmer. Puis tu pourras accéder à la formation.</span>";
-      document.getElementById("registrationForm").reset();
-    } catch(error) {
-      document.getElementById("message").innerHTML = "<span class='error'>" + error.message + "</span>";
-    }
-  };
-
-  // Check if user is already logged in
-  onAuthStateChanged(auth, (user) => {
-    if(user && user.emailVerified){
-      // Redirect to course page if already verified
-      window.location.href = "cours.html";
-    }
   });
 </script>
-
-</head>
-<body>
-
-<header>
-  <img src="logo.png" alt="Trailblazer AJN" class="logo">
-  <h1>Trailblazer AJN</h1>
-  <nav>
-    <a href="index.html">Accueil</a>
-    <a href="services.html">Services</a>
-    <a href="formation.html">Formation</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-  <div class="quote">« L'apprentissage est le véritable moteur de la réussite. »</div>
-</header>
-
-<section>
-  <h2>Inscription à la formation Framework S.O.S</h2>
-  <form id="registrationForm" onsubmit="event.preventDefault(); registerUser();">
-    <input type="text" id="name" placeholder="Nom et Prénom" required>
-    <input type="email" id="email" placeholder="Email" required>
-    <input type="tel" id="phone" placeholder="Téléphone" required>
-    <input type="text" id="country" placeholder="Pays d'origine" required>
-    <input type="text" id="source" placeholder="Comment as-tu entendu parler de nous ?" required>
-    <input type="password" id="password" placeholder="Mot de passe" required>
-    <button type="submit">S'inscrire</button>
-  </form>
-  <div id="message"></div>
-</section>
-
-<footer>
-  <p>© 2026 Trailblazer AJN — Tous droits réservés</p>
-</footer>
 
 </body>
 </html>
