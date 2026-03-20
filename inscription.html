@@ -3,54 +3,164 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Inscription - Trailblazer AJN</title>
+<title>Trailblazer AJN - Inscription Formation</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-body { font-family:Poppins; background:#0d0d0d; color:#fff; text-align:center; }
-form { max-width:400px; margin:50px auto; display:flex; flex-direction:column; gap:15px; }
-input, select {
-  padding:12px;
-  border:none;
-  border-radius:5px;
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0d0d0d;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    line-height: 1.6;
 }
-button {
-  padding:15px;
-  background:#d4af37;
-  border:none;
-  font-weight:600;
-  cursor:pointer;
+
+header {
+    background: linear-gradient(90deg, #0ddfdf, #111);
+    padding: 25px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    width: 50px;
+    margin-right: 15px;
+}
+
+header .quote {
+    font-style: italic;
+    font-size: 0.9em;
+    color: #d4af37;
+}
+
+h1 {
+    color: #d4af37;
+    margin-bottom: 15px;
+}
+
+form {
+    background: #111;
+    padding: 40px 30px;
+    max-width: 500px;
+    margin: 40px auto;
+    border-radius: 12px;
+    box-shadow: 0 0 25px #0ddfdf;
+    text-align: left;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: none;
+    font-size: 1em;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    box-shadow: 0 0 10px #0ddfdf;
+}
+
+.btn {
+    display: inline-block;
+    width: 100%;
+    padding: 15px;
+    background: #d4af37;
+    color: #000;
+    font-weight: 600;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.btn:hover {
+    background: #fff;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    background: #111;
+    font-size: 0.95em;
+    color: #777;
+    margin-top: 40px;
+}
+
+section#signup h2 {
+    margin-bottom: 20px;
+    color: #0ddfdf;
+}
+
 </style>
 </head>
-
 <body>
 
-<h2>Créer ton compte</h2>
+<header>
+    <div class="logo">
+        <img src="logo.png" alt="Trailblazer AJN Logo">
+        <h1>Trailblazer AJN</h1>
+    </div>
+    <div class="quote">
+        "L'apprentissage est la clé qui ouvre toutes les portes." – Anonyme
+    </div>
+</header>
 
-<form onsubmit="redirectToPayment(event)">
-<input type="text" placeholder="Nom et prénom" required>
-<input type="email" placeholder="Email" required>
-<input type="tel" placeholder="Numéro de téléphone" required>
-<input type="text" placeholder="Pays" required>
+<section id="signup">
+    <h2>Inscris-toi pour accéder à la formation</h2>
 
-<select required>
-<option value="">Comment avez-vous entendu parler de nous ?</option>
-<option>Facebook</option>
-<option>WhatsApp</option>
-<option>YouTube</option>
-<option>Recommandation</option>
-</select>
+    <form id="signupForm">
+        <input type="text" name="Nom" placeholder="Ton nom et prénom" required>
+        <input type="email" name="Email" placeholder="Ton email" required>
+        <input type="tel" name="Téléphone" placeholder="Ton numéro" required>
+        <input type="text" name="Pays" placeholder="Ton pays" required>
+        <input type="text" name="Source" placeholder="Comment as-tu entendu parler de nous ?" required>
+        <button type="submit" class="btn">Suivre la formation</button>
+    </form>
+</section>
 
-<button type="submit">S'inscrire</button>
-</form>
+<footer>
+    <p>© 2026 Trailblazer AJN — Tous droits réservés</p>
+</footer>
 
 <script>
-function redirectToPayment(e){
-  e.preventDefault();
-  window.location.href = "paiement.html";
-}
+const form = document.getElementById("signupForm");
+
+form.addEventListener("submit", function(e){
+    e.preventDefault();
+
+    // Vérification simple que tous les champs sont remplis
+    const nom = form.Nom.value.trim();
+    const email = form.Email.value.trim();
+    const tel = form.Téléphone.value.trim();
+    const pays = form.Pays.value.trim();
+    const source = form.Source.value.trim();
+
+    if(!nom || !email || !tel || !pays || !source){
+        alert("Merci de remplir tous les champs !");
+        return;
+    }
+
+    // Redirection directe vers la formation (test)
+    window.location.href = "cours.html"; // <-- Remplace par le vrai lien vers ton cours
+});
 </script>
 
 </body>
