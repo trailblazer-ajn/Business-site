@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paiement - Trailblazer AJN</title>
+
+<style>
+body { font-family:Poppins; background:#0d0d0d; color:#fff; text-align:center; padding:40px; }
+.box { max-width:500px; margin:auto; background:#1a1a1a; padding:30px; border-radius:10px; }
+.btn {
+  padding:15px 30px;
+  background:#d4af37;
+  border:none;
+  margin-top:20px;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+<h2>Paiement de la formation</h2>
+
+<p><strong>Montant :</strong> 4 990 F CFA</p>
+
+<p>
+Effectuez votre paiement via <strong>MTN MoMo</strong> :<br><br>
+📱 Numéro : <strong>+229 XX XX XX XX</strong><br>
+Nom : <strong>Trailblazer AJN</strong>
+</p>
+
+<p>Après paiement, envoyez la capture ci-dessous :</p>
+
+<input type="file" required>
+
+<br>
+<button class="btn" onclick="submitPayment()">Envoyer pour validation</button>
+
+<p id="msg"></p>
+</div>
+
+<script>
+function submitPayment(){
+  document.getElementById("msg").innerHTML =
+  "✅ Paiement envoyé ! Vous recevrez votre code d'accès après validation.";
+}
+</script>
+
+</body>
+</html>
