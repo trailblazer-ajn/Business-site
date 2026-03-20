@@ -11,79 +11,54 @@
 <meta name="author" content="Joachim GBETCHOEVI">
 
 <!-- Favicon -->
-<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/trailblazer-ajn/Business-site/main/logo.png">
+<link rel="icon" href="https://raw.githubusercontent.com/trailblazer-ajn/Business-site/main/logo.png" type="image/png">
 
 <!-- Fonts / CSS -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
-/* ===== Reset & Base ===== */
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:'Poppins', sans-serif; background:#0d0d0d; color:#fff; line-height:1.6; scroll-behavior:smooth; text-align:center; }
-a { text-decoration:none; color:inherit; }
-h1,h2,h3 { margin-bottom:20px; text-align:center; }
-p { margin-bottom:20px; text-align:center; }
-
-/* ===== Header ===== */
-header { background:#111; padding:20px 40px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; position:sticky; top:0; z-index:1000; }
+/* Styles globaux */
+body { font-family:'Poppins', sans-serif; background:#0d0d0d; color:#fff; margin:0; padding:0; line-height:1.6; }
+a { text-decoration:none; }
+header { background:#111; padding:20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; }
 header h1 { color:#d4af37; margin:0; font-size:1.8em; }
-nav a { color:#fff; margin:0 15px; font-weight:600; transition:0.3s; }
+nav a { color:#fff; margin:0 15px; font-weight:600; }
 nav a:hover { color:#d4af37; }
-
-/* ===== Hero ===== */
-.hero { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; padding:60px 20px; }
-.hero-text { flex:1; min-width:300px; max-width:600px; margin:auto; }
-.hero-text h1 { font-size:2.8em; color:#d4af37; margin-bottom:20px; line-height:1.2; }
-.hero-text p { font-size:1.2em; line-height:1.8; margin-bottom:30px; }
+section { padding:60px 20px; max-width:1200px; margin:auto; text-align:center; }
+.hero { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; background:#0d0d0d; padding:60px 20px; }
+.hero-text { flex:1; min-width:280px; color:#fff; text-align:center; }
+.hero-text h1 { font-size:2.5em; color:#d4af37; margin-bottom:20px; }
+.hero-text p { font-size:1.2em; line-height:1.6; margin-bottom:20px; }
 .btn { display:inline-block; padding:15px 35px; margin:10px 5px; background:#d4af37; color:#000; font-weight:600; border-radius:5px; transition:0.3s; }
-.btn:hover { background:#fff; transform:scale(1.05); }
-.hero-photo { flex:1; min-width:280px; text-align:center; margin-top:20px; }
-.hero-photo img { width:100%; max-width:320px; border-radius:15px; box-shadow:0 0 25px 5px #d4af37; transition:0.3s; }
-
-/* ===== Sommaire ===== */
+.btn:hover { background:#fff; }
+.hero-photo { flex:1; min-width:250px; text-align:center; margin-top:20px; }
+.hero-photo img { width:100%; max-width:300px; border-radius:15px; box-shadow:0 0 25px 5px #d4af37; transition:0.3s; }
 .sommaire { display:flex; justify-content:center; flex-wrap:wrap; margin-top:40px; }
 .sommaire a { margin:15px; padding:15px 25px; background:#222; border-radius:8px; color:#d4af37; font-weight:600; transition:0.3s; }
-.sommaire a:hover { background:#d4af37; color:#000; transform:scale(1.05); }
-
-/* ===== Countdown ===== */
-.countdown-section { margin-top:60px; }
+.sommaire a:hover { background:#d4af37; color:#000; }
+.countdown-section { text-align:center; margin-top:60px; }
 .countdown-text { font-size:1.3em; margin-bottom:20px; color:#d4af37; }
-.countdown { font-size:2em; font-weight:700; margin-bottom:40px; color:#d4af37; }
+.countdown { font-size:2em; font-weight:700; margin-bottom:40px; }
+footer { background:#111; color:#fff; padding:20px; text-align:center; margin-top:40px; }
 
-/* ===== Sections ===== */
-section { padding:80px 20px; max-width:1100px; margin:auto; }
-section h2 { font-size:2em; color:#d4af37; margin-bottom:30px; }
-
-/* ===== Services Grid ===== */
-.services { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:40px; }
-.service { background:#1a1a1a; padding:30px; border-radius:10px; transition:0.3s; text-align:center; opacity:0; transform:translateY(20px); animation:fadeInUp 0.8s forwards; }
-.service:hover { transform:translateY(-5px) scale(1.02); box-shadow:0 10px 25px rgba(212,175,55,0.3); }
-.service h2 { color:#d4af37; margin-bottom:15px; }
-.service p { margin-bottom:15px; }
-.hero-photo img { max-width:260px; margin:auto; display:block; }
-
-/* ===== Footer ===== */
-footer { text-align:center; padding:50px 20px; background:#000; font-size:14px; color:#777; }
-
-/* ===== Animations ===== */
-.service:nth-child(1){animation-delay:0.1s;}
-.service:nth-child(2){animation-delay:0.3s;}
-.service:nth-child(3){animation-delay:0.5s;}
-.service:nth-child(4){animation-delay:0.7s;}
-@keyframes fadeInUp{ to { opacity:1; transform:translateY(0); } }
-
+/* Countdown & Animation */
 </style>
 </head>
 <body>
 
 <!-- Header -->
 <header>
-<h1>Trailblazer AJN</h1>
-<nav>
-  <a href="index.html">Accueil</a>
-  <a href="services.html">Services</a>
-  <a href="formation.html">Formation</a>
-  <a href="contact.html">Contact</a>
-</nav>
+  <div style="display:flex; align-items:center; gap:15px;">
+    <img src="https://raw.githubusercontent.com/trailblazer-ajn/Business-site/main/logo.png" 
+         alt="Logo Trailblazer AJN" 
+         style="width:60px; height:auto;">
+    <h1>Trailblazer AJN</h1>
+  </div>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="services.html">Services</a>
+    <a href="formation.html">Formation</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 </header>
 
 <!-- Hero Section -->
@@ -91,28 +66,31 @@ footer { text-align:center; padding:50px 20px; background:#000; font-size:14px; 
   <div class="hero-text">
     <h1>Deviens un Trailblazer AJN</h1>
     <p>
-      À 24 ans, père de deux enfants, j’ai compris que la vie ne t’attend pas.  
-      Je me suis levé un matin avec une seule conviction : <strong>prendre ma vie en main, devenir responsable et créer un futur que je pourrais transmettre fièrement à mes enfants</strong>.  
-      Chaque formation et chaque coaching ici est conçu pour te donner <strong>le plan, les outils et la discipline</strong> pour passer à l’action et générer rapidement des résultats.
+      À seulement 24 ans, je suis déjà père de deux enfants, et j’ai compris que la vie ne t’attend pas.  
+      Je me suis levé un matin avec une seule conviction : <strong>prendre ma vie en main, devenir responsable et créer un futur que je pourrais fièrement transmettre à mes enfants</strong>.  
+      Ce parcours m’a poussé à me former, expérimenter et bâtir un business solide, loin des dépendances et des incertitudes.  
+      Aujourd’hui, je partage mon expérience avec les freelances et entrepreneurs ambitieux, pour leur montrer qu’avec la bonne stratégie et un mindset de Trailblazer, ils peuvent transformer leurs rêves en résultats concrets.  
+      Chaque formation, chaque coaching que je propose ici est conçu pour te donner <strong>le plan, les outils et la discipline</strong> pour passer à l’action immédiatement et encaisser très vite.
     </p>
     <a href="formation.html" class="btn">Découvrir la formation</a>
     <a href="services.html" class="btn">Explorer les services</a>
   </div>
   <div class="hero-photo">
-    <img src="https://raw.githubusercontent.com/trailblazer-ajn/Business-site/main/Y.png" alt="Portrait de Joachim GBETCHOEVI, fondateur Trailblazer AJN">
+    <img src="https://raw.githubusercontent.com/trailblazer-ajn/Business-site/main/Y.png" alt="Trailblazer AJN">
   </div>
 </section>
 
-<!-- Sommaire -->
+<!-- Sommaire / Menu rapide -->
 <section class="sommaire">
   <a href="services.html">Nos Services</a>
   <a href="formation.html">Formation S.O.S</a>
   <a href="contact.html">Contactez-moi</a>
 </section>
 
-<!-- Countdown -->
+<!-- Texte accrocheur avant countdown -->
 <section class="countdown-section">
-  <p class="countdown-text">Le succès n’attend pas. ⏳ Chaque seconde sans action est une opportunité perdue. Clique maintenant pour transformer ton business !</p>
+  <p class="countdown-text">Le succès n’attend pas. ⏳  
+     Chaque seconde passée sans action est une opportunité perdue. Clique maintenant pour transformer ton business !</p>
   <div class="countdown" id="countdown">07j 00h 00m 00s</div>
 </section>
 
