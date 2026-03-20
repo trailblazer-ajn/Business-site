@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accès Formation</title>
+
+<style>
+body { font-family:Poppins; background:#0d0d0d; color:#fff; text-align:center; }
+.hidden { display:none; }
+input {
+  padding:12px;
+  margin:10px;
+}
+button {
+  padding:12px 20px;
+  background:#d4af37;
+  border:none;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Accéder à la formation</h2>
+
+<div id="loginBox">
+<input type="text" id="code" placeholder="Entrez votre code d'accès">
+<br>
+<button onclick="checkCode()">Valider</button>
+<p id="error"></p>
+</div>
+
+<div id="content" class="hidden">
+<h2>Bienvenue dans Framework S.O.S 🔥</h2>
+
+<p>Voici ta formation :</p>
+
+<iframe width="90%" height="400"
+src="https://www.youtube.com/embed/Zoz9lYrgRcY"
+frameborder="0" allowfullscreen></iframe>
+
+</div>
+
+<script>
+function checkCode(){
+  let code = document.getElementById("code").value;
+
+  if(code === "AJN2026"){
+    document.getElementById("content").classList.remove("hidden");
+    document.getElementById("loginBox").style.display="none";
+  } else {
+    document.getElementById("error").innerHTML = "❌ Code invalide";
+  }
+}
+</script>
+
+</body>
+</html>
