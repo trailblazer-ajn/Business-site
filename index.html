@@ -10,45 +10,72 @@
 <meta name="keywords" content="Trailblazer AJN, formation digitale, coaching business, freelance, anglais commercial, business automation">
 <meta name="author" content="Joachim GBETCHOEVI">
 
+<!-- Logo / Branding -->
+<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/trailblazer-ajn/Business-site/main/logo.png">
+<link rel="apple-touch-icon" href="https://raw.githubusercontent.com/trailblazer-ajn/Business-site/main/logo.png">
+
+<meta property="og:title" content="Trailblazer AJN">
+<meta property="og:description" content="Formations digitales et coaching pour freelances ambitieux.">
+<meta property="og:image" content="https://raw.githubusercontent.com/trailblazer-ajn/Business-site/main/logo.png">
+<meta property="og:type" content="website">
+
 <!-- Fonts / CSS -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
-/* Styles globaux */
 body { font-family:'Poppins', sans-serif; background:#0d0d0d; color:#fff; margin:0; padding:0; line-height:1.6; }
 a { text-decoration:none; }
+
 header { background:#111; padding:20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; }
-header h1 { color:#d4af37; margin:0; }
+
+.logo { display:flex; align-items:center; gap:10px; }
+.logo img { height:40px; filter: drop-shadow(0 0 5px #d4af37); }
+.logo span { color:#d4af37; font-weight:700; font-size:1.2em; }
+
 nav a { color:#fff; margin:0 15px; font-weight:600; }
 nav a:hover { color:#d4af37; }
+
 section { padding:60px 20px; max-width:1200px; margin:auto; }
+
 .hero { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; background:#0d0d0d; padding:60px 20px; }
+
 .hero-text { flex:1; min-width:280px; color:#fff; }
 .hero-text h1 { font-size:2.5em; color:#d4af37; margin-bottom:20px; }
 .hero-text p { font-size:1.2em; line-height:1.6; margin-bottom:20px; }
+
 .btn { display:inline-block; padding:15px 35px; margin:10px 5px; background:#d4af37; color:#000; font-weight:600; border-radius:5px; transition:0.3s; }
 .btn:hover { background:#fff; }
+
 .hero-photo { flex:1; min-width:250px; text-align:center; margin-top:20px; }
 .hero-photo img { width:100%; max-width:300px; border-radius:15px; box-shadow:0 0 25px 5px #d4af37; transition:0.3s; }
+
 .sommaire { display:flex; justify-content:center; flex-wrap:wrap; margin-top:40px; }
 .sommaire a { margin:15px; padding:15px 25px; background:#222; border-radius:8px; color:#d4af37; font-weight:600; transition:0.3s; }
 .sommaire a:hover { background:#d4af37; color:#000; }
+
 .countdown-section { text-align:center; margin-top:60px; }
 .countdown-text { font-size:1.3em; margin-bottom:20px; color:#d4af37; }
 .countdown { font-size:2em; font-weight:700; margin-bottom:40px; }
+
 footer { background:#111; color:#fff; padding:20px; text-align:center; margin-top:40px; }
 </style>
 </head>
+
 <body>
 
 <!-- Header -->
 <header>
-<h1>Trailblazer AJN</h1>
-<nav>
-  <a href="index.html">Accueil</a>
-  <a href="services.html">Services</a>
-  <a href="formation.html">Formation</a>
-  <a href="contact.html">Contact</a>
-</nav>
+  <div class="logo">
+    <img src="https://raw.githubusercontent.com/trailblazer-ajn/Business-site/main/logo.png" alt="Trailblazer AJN">
+    <span>Trailblazer AJN</span>
+  </div>
+
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="services.html">Services</a>
+    <a href="formation.html">Formation</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 </header>
 
 <!-- Hero Section -->
@@ -65,23 +92,25 @@ footer { background:#111; color:#fff; padding:20px; text-align:center; margin-to
     <a href="formation.html" class="btn">Découvrir la formation</a>
     <a href="services.html" class="btn">Explorer les services</a>
   </div>
+
   <div class="hero-photo">
-    <img src="https://raw.githubusercontent.com/trailblazer-ajn/Business-site/main/Y.png" 
-         alt="Trailblazer AJN">
+    <img src="https://raw.githubusercontent.com/trailblazer-ajn/Business-site/main/Y.png" alt="Trailblazer AJN">
   </div>
 </section>
 
-<!-- Sommaire / Menu rapide -->
+<!-- Sommaire -->
 <section class="sommaire">
   <a href="services.html">Nos Services</a>
   <a href="formation.html">Formation S.O.S</a>
   <a href="contact.html">Contactez-moi</a>
 </section>
 
-<!-- Texte accrocheur avant countdown -->
+<!-- Countdown -->
 <section class="countdown-section">
-  <p class="countdown-text">Le succès n’attend pas. ⏳  
-     Chaque seconde passée sans action est une opportunité perdue. Clique maintenant pour transformer ton business !</p>
+  <p class="countdown-text">
+    Le succès n’attend pas. ⏳  
+    Chaque seconde passée sans action est une opportunité perdue. Clique maintenant pour transformer ton business !
+  </p>
   <div class="countdown" id="countdown">07j 00h 00m 00s</div>
 </section>
 
@@ -91,7 +120,6 @@ footer { background:#111; color:#fff; padding:20px; text-align:center; margin-to
 </footer>
 
 <script>
-// Countdown 7 jours
 let countDownDate = new Date();
 countDownDate.setDate(countDownDate.getDate() + 7);
 
