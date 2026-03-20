@@ -19,24 +19,11 @@ body {
 header {
   background:#111;
   padding:15px 30px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
 }
 
 header h1 {
   color:#d4af37;
   font-size:1.6em;
-}
-
-nav a {
-  color:#fff;
-  margin-left:20px;
-  text-decoration:none;
-}
-
-nav a:hover {
-  color:#d4af37;
 }
 
 section {
@@ -99,7 +86,11 @@ footer {
 
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-auth.js";
+import { 
+  getAuth, 
+  createUserWithEmailAndPassword, 
+  signInWithEmailAndPassword 
+} from "https://www.gstatic.com/firebasejs/12.11.0/firebase-auth.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCtveyVtFUxs6ahNM66hVu3A8vAusYug_4",
@@ -111,33 +102,44 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 // INSCRIPTION
-window.registerUser = function(){
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+window.registerUser = async function(){
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
 
-  createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      sendEmailVerification(userCredential.user);
-      window.location.href = "instructions-paiement.html";
-    })
-    .catch((error) => {
+  if(!email || !password){
+    alert("Veuillez remplir tous les champs.");
+    return;
+  }
+
+  try {
+    await createUserWithEmailAndPassword(auth, email, password);
+    window.location.href = "./instructions-paiement.html";
+  } catch (error) {
+    if(error.code === "auth/email-already-in-use"){
+      alert("Compte déjà existant. Cliquez sur 'Se connecter'.");
+    } else {
       alert(error.message);
-    });
-}
+    }
+  }
+};
 
 // CONNEXION
-window.loginUser = function(){
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+window.loginUser = async function(){
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
 
-  signInWithEmailAndPassword(auth, email, password)
-    .then(() => {
-      window.location.href = "instructions-paiement.html";
-    })
-    .catch((error) => {
-      alert("Erreur : " + error.message);
-    });
-}
+  if(!email || !password){
+    alert("Veuillez remplir tous les champs.");
+    return;
+  }
+
+  try {
+    await signInWithEmailAndPassword(auth, email, password);
+    window.location.href = "./instructions-paiement.html";
+  } catch (error) {
+    alert("Erreur connexion : " + error.message);
+  }
+};
 </script>
 
 </head>
@@ -145,13 +147,10 @@ window.loginUser = function(){
 <body>
 
 <header>
-  <h1><img src="logo.png" style="height:35px;"> Trailblazer AJN</h1>
-  <nav>
-    <a href="#">Accueil</a>
-    <a href="#">Services</a>
-    <a href="#">Formation</a>
-    <a href="#">Contact</a>
-  </nav>
+  <h1>
+    <img src="logo.png" style="height:35px; vertical-align:middle;">
+    Trailblazer AJN
+  </h1>
 </header>
 
 <section>
@@ -162,12 +161,16 @@ window.loginUser = function(){
 
   <h2>Créer votre compte</h2>
 
-  <input type="email" id="email" placeholder="Email" required>
-  <input type="password" id="password" placeholder="Mot de passe" required>
+  <input type="email" id="email" placeholder="Email">
+  <input type="password" id="password" placeholder="Mot de passe">
 
-  <button class="btn" onclick="registerUser()">S'inscrire</button>
+  <button class="btn" onclick="registerUser()">
+    S'inscrire
+  </button>
 
-  <button class="btn login-btn" onclick="loginUser()">Se connecter</button>
+  <button class="btn login-btn" onclick="loginUser()">
+    Se connecter
+  </button>
 
 </section>
 
