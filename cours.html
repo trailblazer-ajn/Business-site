@@ -3,118 +3,161 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Formation Premium - Trailblazer AJN</title>
+
+<title>Formation Framework SOS - Trailblazer AJN</title>
+
+<!-- SEO -->
+<meta name="description" content="Formation Framework SOS : Structurer, Optimiser et Scaler son business en ligne avec Trailblazer AJN">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-body {
+
+body{
   margin:0;
   font-family:'Poppins', sans-serif;
   background:#0d0d0d;
   color:#fff;
 }
 
-header {
-  background:#111;
-  padding:15px;
-  text-align:center;
+/* HEADER */
+header{
+  background:linear-gradient(90deg,#000,#111);
+  padding:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:2px solid #d4af37;
+}
+
+header h1{
   color:#d4af37;
 }
 
-.container {
+header span{
+  color:#fff;
+}
+
+/* LAYOUT */
+.container{
   display:flex;
 }
 
 /* SIDEBAR */
-.sidebar {
+.sidebar{
   width:300px;
   background:#111;
   height:100vh;
   overflow-y:auto;
   padding:20px;
+  border-right:1px solid #222;
 }
 
-.chapter {
-  margin-bottom:10px;
-}
-
-.chapter-title {
+.chapter-title{
+  background:#1a1a1a;
+  padding:12px;
+  margin-bottom:5px;
   cursor:pointer;
-  padding:10px;
-  background:#222;
-  border-radius:5px;
+  border-left:4px solid #d4af37;
 }
 
-.chapter-content {
+.chapter-content{
   display:none;
-  padding-left:10px;
 }
 
-.video-item {
-  padding:8px;
-  cursor:pointer;
+.video-item{
+  padding:10px;
   font-size:0.9em;
+  cursor:pointer;
+  border-left:2px solid transparent;
 }
 
-.video-item:hover {
-  background:#333;
+.video-item:hover{
+  background:#222;
+  border-left:2px solid red;
 }
 
 /* CONTENT */
-.content {
+.content{
   flex:1;
   padding:30px;
 }
 
-iframe {
+iframe{
   width:100%;
-  height:400px;
-  border:none;
+  height:420px;
   border-radius:10px;
 }
 
-button {
+/* TITLES */
+h2{
+  margin-top:20px;
+  color:#d4af37;
+}
+
+/* BUTTONS */
+button{
   margin-top:15px;
   padding:12px 25px;
-  background:#d4af37;
+  background:red;
   border:none;
+  color:#fff;
   border-radius:5px;
   cursor:pointer;
 }
 
-button:hover {
-  background:#fff;
+button:hover{
+  background:#ff4d4d;
 }
 
-.pdf-btn {
+.pdf-btn{
   display:inline-block;
-  margin-top:20px;
-  background:#25D366;
+  margin-top:15px;
+  background:#d4af37;
   color:#000;
   padding:12px 25px;
   border-radius:5px;
   text-decoration:none;
 }
 
-.section {
-  margin-top:50px;
-  text-align:center;
+/* FRAMEWORK */
+.framework{
+  margin-top:40px;
+  background:#111;
+  padding:25px;
+  border-radius:10px;
 }
 
-input {
+.step{
+  margin:15px 0;
+  padding:15px;
+  border-left:4px solid red;
+}
+
+/* FOOTER */
+footer{
+  margin-top:50px;
+  background:#000;
+  padding:20px;
+  text-align:center;
+  color:#aaa;
+}
+
+/* INPUT */
+input{
   padding:12px;
-  width:250px;
   border:none;
   border-radius:5px;
 }
+
 </style>
 </head>
 
 <body>
 
 <header>
-  <h1>Formation Trailblazer AJN</h1>
+  <h1>Trailblazer <span>AJN</span></h1>
+  <div>Formation Framework SOS</div>
 </header>
 
 <div class="container">
@@ -123,41 +166,41 @@ input {
 <div class="sidebar">
 
 <div class="chapter">
-  <div class="chapter-title" onclick="toggleChapter(1)">Chapitre 1</div>
-  <div class="chapter-content" id="chap1">
-    <div class="video-item" onclick="loadVideo('lien1','Chapitre 1 - Vidéo 1')">Vidéo 1</div>
-    <div class="video-item" onclick="loadVideo('lien2','Chapitre 1 - Vidéo 2')">Vidéo 2</div>
-    <div class="video-item" onclick="loadVideo('lien3','Chapitre 1 - Vidéo 3')">Vidéo 3</div>
-  </div>
+<div class="chapter-title" onclick="toggleChapter(1)">Chapitre 1 — Foundations</div>
+<div class="chapter-content" id="chap1">
+<div class="video-item" onclick="loadVideo('lien1','Comprendre le business digital')">Comprendre le business digital</div>
+<div class="video-item" onclick="loadVideo('lien2','Les erreurs des débutants')">Les erreurs des débutants</div>
+<div class="video-item" onclick="loadVideo('lien3','Installer les bases solides')">Installer les bases solides</div>
+</div>
 </div>
 
 <div class="chapter">
-  <div class="chapter-title" onclick="toggleChapter(2)">Chapitre 2</div>
-  <div class="chapter-content" id="chap2">
-    <div class="video-item" onclick="loadVideo('lien4','Chapitre 2 - Vidéo 1')">Vidéo 1</div>
-    <div class="video-item" onclick="loadVideo('lien5','Chapitre 2 - Vidéo 2')">Vidéo 2</div>
-    <div class="video-item" onclick="loadVideo('lien6','Chapitre 2 - Vidéo 3')">Vidéo 3</div>
-  </div>
+<div class="chapter-title" onclick="toggleChapter(2)">Chapitre 2 — Structuration</div>
+<div class="chapter-content" id="chap2">
+<div class="video-item" onclick="loadVideo('lien4','Créer une offre claire')">Créer une offre claire</div>
+<div class="video-item" onclick="loadVideo('lien5','Construire son système')">Construire son système</div>
+<div class="video-item" onclick="loadVideo('lien6','Automatiser les bases')">Automatiser les bases</div>
+</div>
 </div>
 
 <div class="chapter">
-  <div class="chapter-title" onclick="toggleChapter(3)">Chapitre 3</div>
-  <div class="chapter-content" id="chap3">
-    <div class="video-item" onclick="loadVideo('lien7','Chapitre 3 - Vidéo 1')">Vidéo 1</div>
-    <div class="video-item" onclick="loadVideo('lien8','Chapitre 3 - Vidéo 2')">Vidéo 2</div>
-    <div class="video-item" onclick="loadVideo('lien9','Chapitre 3 - Vidéo 3')">Vidéo 3</div>
-    <div class="video-item" onclick="loadVideo('lien10','Chapitre 3 - Vidéo 4')">Vidéo 4</div>
-  </div>
+<div class="chapter-title" onclick="toggleChapter(3)">Chapitre 3 — Optimisation</div>
+<div class="chapter-content" id="chap3">
+<div class="video-item" onclick="loadVideo('lien7','Optimiser ses conversions')">Optimiser ses conversions</div>
+<div class="video-item" onclick="loadVideo('lien8','Améliorer son tunnel')">Améliorer son tunnel</div>
+<div class="video-item" onclick="loadVideo('lien9','Créer une audience fidèle')">Créer une audience fidèle</div>
+<div class="video-item" onclick="loadVideo('lien10','Stratégies avancées')">Stratégies avancées</div>
+</div>
 </div>
 
 <div class="chapter">
-  <div class="chapter-title" onclick="toggleChapter(4)">Chapitre 4</div>
-  <div class="chapter-content" id="chap4">
-    <div class="video-item" onclick="loadVideo('lien11','Chapitre 4 - Vidéo 1')">Vidéo 1</div>
-    <div class="video-item" onclick="loadVideo('lien12','Chapitre 4 - Vidéo 2')">Vidéo 2</div>
-    <div class="video-item" onclick="loadVideo('lien13','Chapitre 4 - Vidéo 3')">Vidéo 3</div>
-    <div class="video-item" onclick="loadVideo('lien14','Chapitre 4 - Vidéo 4')">Vidéo 4</div>
-  </div>
+<div class="chapter-title" onclick="toggleChapter(4)">Chapitre 4 — Scaling</div>
+<div class="chapter-content" id="chap4">
+<div class="video-item" onclick="loadVideo('lien11','Passer à l’échelle')">Passer à l’échelle</div>
+<div class="video-item" onclick="loadVideo('lien12','Multiplier ses revenus')">Multiplier ses revenus</div>
+<div class="video-item" onclick="loadVideo('lien13','Construire une marque')">Construire une marque</div>
+<div class="video-item" onclick="loadVideo('lien14','Vision long terme')">Vision long terme</div>
+</div>
 </div>
 
 </div>
@@ -165,40 +208,60 @@ input {
 <!-- CONTENT -->
 <div class="content">
 
-<iframe id="player" src=""></iframe>
+<iframe id="player"></iframe>
 
-<h2 id="title">Choisissez un cours</h2>
+<h2 id="title">Framework S.O.S — Structurer. Optimiser. Scaler.</h2>
 
 <button onclick="markComplete()">Cours terminé ✔</button>
 
 <a href="ton-lien-pdf.pdf" class="pdf-btn" target="_blank">
-Télécharger le bonus PDF
+Télécharger les templates (Bonus)
 </a>
 
-<div class="section">
-  <h2>🚀 SEO Optimization</h2>
-  <p style="color:#ccc;">
-    Optimisez votre visibilité, votre trafic et vos conversions grâce à des stratégies SEO puissantes.
-  </p>
+<!-- FRAMEWORK -->
+<div class="framework">
+
+<h2>Le Framework S.O.S</h2>
+
+<div class="step">
+<strong>1. Structurer</strong><br>
+Construire une base solide : offre, audience et système.
 </div>
 
-<div class="section">
-  <h2>🎓 Certification</h2>
+<div class="step">
+<strong>2. Optimiser</strong><br>
+Améliorer chaque étape pour maximiser les résultats.
+</div>
 
-  <input type="text" id="username" placeholder="Votre nom complet">
-
-  <br><br>
-
-  <button onclick="generateCertificate()">Générer mon certificat</button>
+<div class="step">
+<strong>3. Scaler</strong><br>
+Passer à l’échelle et multiplier les revenus intelligemment.
 </div>
 
 </div>
 
+<!-- CERTIFICAT -->
+<div style="margin-top:40px;">
+<h2>Certification</h2>
+
+<input type="text" id="username" placeholder="Votre nom complet">
+
+<br><br>
+
+<button onclick="generateCertificate()">Générer mon certificat</button>
 </div>
+
+</div>
+</div>
+
+<footer>
+© 2026 Trailblazer AJN — Tous droits réservés
+</footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 <script>
+
 function toggleChapter(num){
   let el = document.getElementById("chap"+num);
   el.style.display = el.style.display === "block" ? "none" : "block";
@@ -210,10 +273,12 @@ function loadVideo(link, title){
 }
 
 function markComplete(){
-  alert("Cours marqué comme terminé ✔");
+  alert("Cours terminé ✔");
 }
 
+<script>
 function generateCertificate(){
+
   const name = document.getElementById("username").value.trim();
 
   if(!name){
@@ -222,27 +287,62 @@ function generateCertificate(){
   }
 
   const { jsPDF } = window.jspdf;
-  const doc = new jsPDF();
+  const doc = new jsPDF('landscape');
 
-  doc.setFontSize(22);
-  doc.text("CERTIFICAT DE RÉUSSITE", 105, 40, null, null, "center");
+  // BACKGROUND BLANC
+  doc.setFillColor(255,255,255);
+  doc.rect(0,0,297,210,'F');
 
+  // BORDURE OR
+  doc.setDrawColor(212,175,55);
+  doc.setLineWidth(3);
+  doc.rect(10,10,277,190);
+
+  // TITRE
+  doc.setFont("helvetica","bold");
+  doc.setFontSize(30);
+  doc.setTextColor(0,0,0);
+  doc.text("CERTIFICAT DE RÉUSSITE", 148, 50, null, null, "center");
+
+  // LIGNE
+  doc.setDrawColor(212,175,55);
+  doc.setLineWidth(1);
+  doc.line(60,55,240,55);
+
+  // TEXTE
   doc.setFontSize(14);
-  doc.text("Décerné à :", 105, 70, null, null, "center");
+  doc.setFont("helvetica","normal");
+  doc.text("Ce certificat est décerné à", 148, 80, null, null, "center");
 
-  doc.setFontSize(18);
-  doc.text(name, 105, 90, null, null, "center");
+  // NOM
+  doc.setFontSize(24);
+  doc.setFont("helvetica","bold");
+  doc.setTextColor(212,175,55);
+  doc.text(name.toUpperCase(), 148, 100, null, null, "center");
 
-  doc.setFontSize(12);
-  doc.text("Pour avoir complété la formation", 105, 110, null, null, "center");
+  // DESCRIPTION
+  doc.setFontSize(13);
+  doc.setTextColor(0,0,0);
+  doc.text("Pour avoir complété avec succès la formation", 148, 120, null, null, "center");
 
-  doc.text("Trailblazer AJN", 105, 125, null, null, "center");
+  doc.setFont("helvetica","bold");
+  doc.text("FRAMEWORK S.O.S - Trailblazer AJN", 148, 135, null, null, "center");
 
-  doc.text("Date : " + new Date().toLocaleDateString(), 105, 150, null, null, "center");
+  // DATE
+  doc.setFont("helvetica","normal");
+  doc.setFontSize(11);
+  doc.text("Date : " + new Date().toLocaleDateString(), 148, 160, null, null, "center");
 
-  doc.save("certificat.pdf");
+  // SIGNATURE (style)
+  doc.setFont("times","italic");
+  doc.text("Joachim GBETCHOEVI", 230, 180);
+
+  doc.setFontSize(10);
+  doc.text("Fondateur - Trailblazer AJN", 230, 190);
+
+  // SAUVEGARDE
+  doc.save("Certificat_Trailblazer_AJN.pdf");
 }
 </script>
-
 </body>
-</html>
+  </html>
