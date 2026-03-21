@@ -18,12 +18,11 @@ body {
 
 header {
   background:#111;
-  padding:15px 30px;
+  padding:15px;
 }
 
 header h1 {
   color:#d4af37;
-  font-size:1.6em;
 }
 
 section {
@@ -32,7 +31,7 @@ section {
   background:#111;
   padding:40px;
   border-radius:10px;
-  box-shadow:0 0 20px rgba(212,175,55,0.3);
+  box-shadow:0 0 25px rgba(212,175,55,0.3);
 }
 
 input {
@@ -43,20 +42,19 @@ input {
   border-radius:5px;
 }
 
-.btn {
-  display:block;
+button {
   width:95%;
   padding:15px;
-  margin:10px auto;
-  background:#d4af37;
+  margin:10px 0;
   border:none;
   border-radius:5px;
   font-weight:600;
   cursor:pointer;
+  background:#d4af37;
   transition:0.3s;
 }
 
-.btn:hover {
+button:hover {
   background:#fff;
   transform:scale(1.03);
 }
@@ -70,10 +68,10 @@ input {
   background:#555;
 }
 
-.citation {
+.quote {
   color:#d4af37;
   font-style:italic;
-  margin-bottom:25px;
+  margin-bottom:20px;
 }
 
 footer {
@@ -89,7 +87,8 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/12.11.0/fireba
 import { 
   getAuth, 
   createUserWithEmailAndPassword, 
-  signInWithEmailAndPassword 
+  signInWithEmailAndPassword,
+  onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-auth.js";
 
 const firebaseConfig = {
@@ -101,43 +100,56 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
+let loading = false;
+
+// Redirection automatique si connecté
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    window.location.replace("./acces-formation.html");
+  }
+});
+
 // INSCRIPTION
 window.registerUser = async function(){
+  if (loading) return;
+  loading = true;
+
   const email = document.getElementById("email").value.trim();
   const password = document.getElementById("password").value.trim();
 
   if(!email || !password){
     alert("Veuillez remplir tous les champs.");
+    loading = false;
     return;
   }
 
   try {
     await createUserWithEmailAndPassword(auth, email, password);
-    window.location.href = "./instructions-paiement.html";
   } catch (error) {
-    if(error.code === "auth/email-already-in-use"){
-      alert("Compte déjà existant. Cliquez sur 'Se connecter'.");
-    } else {
-      alert(error.message);
-    }
+    alert(error.message);
+    loading = false;
   }
 };
 
 // CONNEXION
 window.loginUser = async function(){
+  if (loading) return;
+  loading = true;
+
   const email = document.getElementById("email").value.trim();
   const password = document.getElementById("password").value.trim();
 
   if(!email || !password){
     alert("Veuillez remplir tous les champs.");
+    loading = false;
     return;
   }
 
   try {
     await signInWithEmailAndPassword(auth, email, password);
-    window.location.href = "./instructions-paiement.html";
   } catch (error) {
-    alert("Erreur connexion : " + error.message);
+    alert("Erreur : " + error.message);
+    loading = false;
   }
 };
 </script>
@@ -147,15 +159,12 @@ window.loginUser = async function(){
 <body>
 
 <header>
-  <h1>
-    <img src="logo.png" style="height:35px; vertical-align:middle;">
-    Trailblazer AJN
-  </h1>
+  <h1>Trailblazer AJN</h1>
 </header>
 
 <section>
 
-  <div class="citation">
+  <div class="quote">
   "Live as if you were to die tomorrow. Learn as if you were to live forever." – Einstein
   </div>
 
@@ -164,13 +173,9 @@ window.loginUser = async function(){
   <input type="email" id="email" placeholder="Email">
   <input type="password" id="password" placeholder="Mot de passe">
 
-  <button class="btn" onclick="registerUser()">
-    S'inscrire
-  </button>
+  <button onclick="registerUser()">S'inscrire</button>
 
-  <button class="btn login-btn" onclick="loginUser()">
-    Se connecter
-  </button>
+  <button class="login-btn" onclick="loginUser()">Se connecter</button>
 
 </section>
 
