@@ -15,6 +15,7 @@
 
 <!-- Fonts / CSS -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
 /* Styles globaux */
 body { font-family:'Poppins', sans-serif; background:#0d0d0d; color:#fff; margin:0; padding:0; line-height:1.6; }
@@ -23,26 +24,33 @@ header { background:#111; padding:20px; display:flex; justify-content:space-betw
 header h1 { color:#d4af37; margin:0; font-size:1.8em; }
 nav a { color:#fff; margin:0 15px; font-weight:600; }
 nav a:hover { color:#d4af37; }
+
 section { padding:60px 20px; max-width:1200px; margin:auto; text-align:center; }
+
 .hero { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; background:#0d0d0d; padding:60px 20px; }
 .hero-text { flex:1; min-width:280px; color:#fff; text-align:center; }
 .hero-text h1 { font-size:2.5em; color:#d4af37; margin-bottom:20px; }
 .hero-text p { font-size:1.2em; line-height:1.6; margin-bottom:20px; }
+
 .btn { display:inline-block; padding:15px 35px; margin:10px 5px; background:#d4af37; color:#000; font-weight:600; border-radius:5px; transition:0.3s; }
 .btn:hover { background:#fff; }
+
 .hero-photo { flex:1; min-width:250px; text-align:center; margin-top:20px; }
-.hero-photo img { width:100%; max-width:300px; border-radius:15px; box-shadow:0 0 25px 5px #d4af37; transition:0.3s; }
+.hero-photo img { width:100%; max-width:300px; border-radius:15px; box-shadow:0 0 25px 5px #d4af37; }
+
 .sommaire { display:flex; justify-content:center; flex-wrap:wrap; margin-top:40px; }
 .sommaire a { margin:15px; padding:15px 25px; background:#222; border-radius:8px; color:#d4af37; font-weight:600; transition:0.3s; }
 .sommaire a:hover { background:#d4af37; color:#000; }
+
 .countdown-section { text-align:center; margin-top:60px; }
 .countdown-text { font-size:1.3em; margin-bottom:20px; color:#d4af37; }
 .countdown { font-size:2em; font-weight:700; margin-bottom:40px; }
-footer { background:#111; color:#fff; padding:20px; text-align:center; margin-top:40px; }
 
-/* Countdown & Animation */
+footer { background:#111; color:#fff; padding:20px; text-align:center; margin-top:40px; }
 </style>
+
 </head>
+
 <body>
 
 <!-- Header -->
@@ -61,16 +69,56 @@ footer { background:#111; color:#fff; padding:20px; text-align:center; margin-to
   </nav>
 </header>
 
+<!-- 🔥 CONFERENCE EN COURS (AJOUTÉ ICI) -->
+<section style="
+  background: linear-gradient(135deg, #1a1a1a, #2c1f00);
+  border: 2px solid #d4af37;
+  padding: 50px 20px;
+  margin: 20px auto;
+  max-width: 1100px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(212,175,55,0.3);
+">
+
+  <h2 style="color:#d4af37; font-size:2em; margin-bottom:15px;">
+    🔥 Conférence en cours
+  </h2>
+
+  <p style="font-size:1.1em; color:#fff; max-width:800px; margin:0 auto 20px;">
+    Apprends à créer un business en ligne sans montrer ton visage, même en partant de zéro.  
+    Une session gratuite pour comprendre les systèmes utilisés par les entrepreneurs discrets mais efficaces.
+  </p>
+
+  <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d" 
+       alt="Conférence business en ligne"
+       style="width:100%; max-width:500px; border-radius:12px; margin:20px 0; box-shadow:0 0 20px rgba(0,0,0,0.5);">
+
+  <br>
+
+  <a href="https://docs.google.com/forms" 
+     target="_blank"
+     style="
+       display:inline-block;
+       padding:15px 35px;
+       background:#d4af37;
+       color:#000;
+       font-weight:700;
+       border-radius:8px;
+       text-decoration:none;
+     ">
+     🚀 Réserver ma place gratuite
+  </a>
+
+</section>
+
 <!-- Hero Section -->
 <section class="hero">
   <div class="hero-text">
     <h1>Deviens un Trailblazer AJN</h1>
     <p>
       À seulement 24 ans, je suis déjà père de deux enfants, et j’ai compris que la vie ne t’attend pas.  
-      Je me suis levé un matin avec une seule conviction : <strong>prendre ma vie en main, devenir responsable et créer un futur que je pourrais fièrement transmettre à mes enfants</strong>.  
-      Ce parcours m’a poussé à me former, expérimenter et bâtir un business solide, loin des dépendances et des incertitudes.  
-      Aujourd’hui, je partage mon expérience avec les freelances et entrepreneurs ambitieux, pour leur montrer qu’avec la bonne stratégie et un mindset de Trailblazer, ils peuvent transformer leurs rêves en résultats concrets.  
-      Chaque formation, chaque coaching que je propose ici est conçu pour te donner <strong>le plan, les outils et la discipline</strong> pour passer à l’action immédiatement et encaisser très vite.
+      Je me suis levé un matin avec une seule conviction : prendre ma vie en main.
     </p>
     <a href="formation.html" class="btn">Découvrir la formation</a>
     <a href="services.html" class="btn">Explorer les services</a>
@@ -80,17 +128,18 @@ footer { background:#111; color:#fff; padding:20px; text-align:center; margin-to
   </div>
 </section>
 
-<!-- Sommaire / Menu rapide -->
+<!-- Sommaire -->
 <section class="sommaire">
   <a href="services.html">Nos Services</a>
   <a href="formation.html">Formation S.O.S</a>
   <a href="contact.html">Contactez-moi</a>
 </section>
 
-<!-- Texte accrocheur avant countdown -->
+<!-- Countdown -->
 <section class="countdown-section">
-  <p class="countdown-text">Le succès n’attend pas. ⏳  
-     Chaque seconde passée sans action est une opportunité perdue. Clique maintenant pour transformer ton business !</p>
+  <p class="countdown-text">
+    Le succès n’attend pas. ⏳ Chaque seconde compte.
+  </p>
   <div class="countdown" id="countdown">07j 00h 00m 00s</div>
 </section>
 
@@ -113,8 +162,8 @@ function updateCountdown() {
     let minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
     let seconds = Math.floor((distance % (1000*60)) / 1000);
 
-    document.getElementById("countdown").innerHTML = days + "j " + hours + "h " 
-    + minutes + "m " + seconds + "s";
+    document.getElementById("countdown").innerHTML =
+      days + "j " + hours + "h " + minutes + "m " + seconds + "s";
 
     if(distance < 0) {
         document.getElementById("countdown").innerHTML = "Le temps est écoulé !";
