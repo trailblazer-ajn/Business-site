@@ -5,116 +5,732 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- SEO -->
-<title>Trailblazer AJN - Formation</title>
-<meta name="description" content="Formation Framework S.O.S par Trailblazer AJN : structurer, automatiser et stabiliser ton business en 90 jours. Apprends avec des modules pratiques et un suivi personnalisé.">
-<meta name="keywords" content="Trailblazer AJN, formation, S.O.S, freelance, business, automatisation, modules, apprentissage">
+<title>Formation Framework S.O.S — Trailblazer AJN</title>
+<meta name="description" content="Le Framework S.O.S : structurer, optimiser et stabiliser ton business de freelance. Modules pratiques, templates prêts à l'emploi, suivi personnalisé.">
+<meta name="keywords" content="Trailblazer AJN, formation SOS, freelance, business, automatisation, Joachim GBETCHOEVI">
 <meta name="author" content="Joachim GBETCHOEVI">
+<meta property="og:title" content="Formation Framework S.O.S — Trailblazer AJN">
+<meta property="og:description" content="La méthode pour passer d'un business chaotique à un workflow qui génère des revenus prévisibles.">
+<meta property="og:image" content="https://raw.githubusercontent.com/trailblazer-ajn/Business-site/main/logo.png">
+<meta property="og:type" content="website">
 
-<!-- Fonts / CSS -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<!-- Favicon -->
+<link rel="icon" href="https://raw.githubusercontent.com/trailblazer-ajn/Business-site/main/logo.png" type="image/png">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 <style>
-body { font-family:'Poppins', sans-serif; background:#0d0d0d; color:#fff; margin:0; padding:0; text-align:center; }
-header { background:#111; padding:20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; }
-header h1 { color:#d4af37; margin:0; display:flex; align-items:center; font-size:1.8em; }
-header h1 img { height:40px; margin-right:15px; }
-nav a { color:#fff; margin:0 10px; text-decoration:none; font-weight:600; }
-nav a:hover { color:#d4af37; }
-section { padding:60px 20px; }
-.video-container { max-width:800px; margin:40px auto; }
-.modules { max-width:800px; margin:40px auto; text-align:left; }
-.modules h3 { color:#d4af37; margin-bottom:10px; }
-.modules ul { line-height:1.8; padding-left:20px; }
-.price-section { margin:30px 0; }
-.price-old { text-decoration: line-through; color:#ff4d4d; font-size:1.5em; margin-right:10px; }
-.price-new { color:#d4af37; font-size:2.2em; font-weight:700; }
-.countdown-section { text-align:center; margin-top:30px; }
-.countdown-text { font-size:1.2em; margin-bottom:10px; color:#fff; }
-.countdown { font-size:2em; font-weight:700; margin-bottom:20px; padding:15px; border-radius:8px; display:inline-block; background: linear-gradient(45deg, #00f5ff, #ff0044); color:#fff; box-shadow:0 0 20px rgba(0,255,255,0.5),0 0 20px rgba(255,0,68,0.5); }
-.btn { display:inline-block; padding:15px 35px; margin:10px; background:#d4af37; color:#000; font-weight:600; border-radius:5px; text-decoration:none; transition:0.3s; }
-.btn:hover { background:#fff; }
-footer { background:#111; color:#fff; padding:20px; text-align:center; margin-top:40px; }
+  :root {
+    --gold: #d4af37;
+    --gold-light: #e8cc6a;
+    --gold-dim: rgba(212,175,55,0.15);
+    --dark: #0a0a0a;
+    --dark-2: #111111;
+    --dark-3: #1a1a1a;
+    --dark-4: #222222;
+    --white: #ffffff;
+    --gray: #aaaaaa;
+    --radius: 12px;
+    --transition: 0.3s ease;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--dark);
+    color: var(--white);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+  a { text-decoration: none; color: inherit; }
+  img { display: block; max-width: 100%; }
+
+  /* ── Header ── */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10,10,10,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(212,175,55,0.2);
+    padding: 16px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .logo-wrap { display: flex; align-items: center; gap: 12px; }
+  .logo-wrap img { width: 48px; border-radius: 8px; }
+  .logo-wrap span {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4em;
+    color: var(--gold);
+  }
+  nav { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  nav a {
+    color: var(--gray);
+    font-size: 0.9em;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: var(--transition);
+  }
+  nav a:hover, nav a.active { color: var(--gold); background: var(--gold-dim); }
+  nav a.nav-cta { background: var(--gold); color: #000; font-weight: 600; padding: 8px 20px; }
+  nav a.nav-cta:hover { background: var(--gold-light); }
+
+  /* ── Page Hero ── */
+  .page-hero {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 90px 40px 60px;
+    text-align: center;
+  }
+  .label {
+    display: inline-block;
+    background: var(--gold-dim);
+    border: 1px solid rgba(212,175,55,0.3);
+    color: var(--gold);
+    font-size: 0.75em;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 4px;
+    margin-bottom: 24px;
+  }
+  .page-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2em, 5vw, 3.2em);
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+  .page-hero h1 em { color: var(--gold); font-style: normal; }
+  .page-hero p {
+    font-size: 1.05em;
+    color: var(--gray);
+    max-width: 640px;
+    margin: 0 auto;
+    line-height: 1.8;
+  }
+
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212,175,55,0.3), transparent);
+    margin: 0 40px;
+  }
+
+  /* ── Layout ── */
+  .content-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 40px;
+  }
+
+  /* ── Video ── */
+  .video-section { margin-bottom: 80px; }
+  .video-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6em;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+  .video-section .sub {
+    text-align: center;
+    color: var(--gray);
+    font-size: 0.95em;
+    margin-bottom: 32px;
+  }
+  .video-frame {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(212,175,55,0.2);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+  .video-frame iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: none;
+  }
+
+  /* ── Two-column layout ── */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 60px;
+    align-items: start;
+    margin-bottom: 80px;
+  }
+
+  /* ── Modules ── */
+  .section-label {
+    font-size: 0.75em;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6em, 3vw, 2em);
+    line-height: 1.2;
+    margin-bottom: 28px;
+  }
+  .modules-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .module-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: var(--dark-3);
+    border: 1px solid rgba(212,175,55,0.1);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    transition: var(--transition);
+  }
+  .module-item:hover {
+    border-color: rgba(212,175,55,0.35);
+    transform: translateX(4px);
+  }
+  .module-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--gold-dim);
+    border: 1px solid rgba(212,175,55,0.3);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+    flex-shrink: 0;
+  }
+  .module-text h4 {
+    font-size: 0.95em;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+  .module-text p {
+    font-size: 0.82em;
+    color: var(--gray);
+    line-height: 1.6;
+  }
+
+  /* ── Pricing Card ── */
+  .pricing-card {
+    background: var(--dark-3);
+    border: 1px solid rgba(212,175,55,0.25);
+    border-radius: 20px;
+    padding: 40px 36px;
+    position: sticky;
+    top: 100px;
+  }
+  .pricing-badge {
+    display: inline-block;
+    background: var(--gold);
+    color: #000;
+    font-size: 0.75em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 100px;
+    margin-bottom: 24px;
+  }
+  .pricing-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5em;
+    margin-bottom: 8px;
+  }
+  .pricing-card .tagline {
+    color: var(--gray);
+    font-size: 0.88em;
+    margin-bottom: 28px;
+    line-height: 1.6;
+  }
+  .price-block { margin-bottom: 28px; }
+  .price-old {
+    font-size: 1em;
+    color: #888;
+    text-decoration: line-through;
+    margin-bottom: 4px;
+  }
+  .price-new {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8em;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .price-note {
+    font-size: 0.8em;
+    color: var(--gray);
+    margin-top: 6px;
+  }
+  .price-includes {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+  .price-includes li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.88em;
+    color: var(--gray);
+  }
+  .price-includes li::before {
+    content: "✓";
+    color: var(--gold);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .spots-bar {
+    background: var(--dark-4);
+    border-radius: 100px;
+    height: 8px;
+    margin-bottom: 8px;
+    overflow: hidden;
+  }
+  .spots-fill {
+    height: 100%;
+    width: 72%;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    border-radius: 100px;
+  }
+  .spots-text {
+    font-size: 0.8em;
+    color: var(--gray);
+    margin-bottom: 24px;
+  }
+  .spots-text strong { color: var(--gold); }
+
+  .btn {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: var(--radius);
+    font-weight: 600;
+    font-size: 0.95em;
+    transition: var(--transition);
+    cursor: pointer;
+    text-align: center;
+  }
+  .btn-primary { background: var(--gold); color: #000; width: 100%; }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .btn-secondary {
+    border: 1.5px solid rgba(212,175,55,0.4);
+    color: var(--gold);
+    background: transparent;
+    width: 100%;
+    margin-top: 12px;
+  }
+  .btn-secondary:hover { background: var(--gold-dim); }
+  .guarantee {
+    text-align: center;
+    font-size: 0.78em;
+    color: var(--gray);
+    margin-top: 16px;
+  }
+
+  /* ── Testimonials placeholder ── */
+  .testimonials-section { margin-bottom: 80px; }
+  .section-subtitle { color: var(--gray); font-size: 0.95em; margin-bottom: 36px; max-width: 560px; }
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+  .testimonial-card {
+    background: var(--dark-3);
+    border: 1px solid rgba(212,175,55,0.1);
+    border-radius: var(--radius);
+    padding: 28px;
+  }
+  .testimonial-card .stars { color: var(--gold); font-size: 0.9em; margin-bottom: 12px; letter-spacing: 2px; }
+  .testimonial-card p { font-size: 0.9em; color: var(--gray); font-style: italic; line-height: 1.7; margin-bottom: 16px; }
+  .testimonial-author { font-size: 0.82em; font-weight: 600; color: var(--white); }
+  .testimonial-role { font-size: 0.78em; color: var(--gray); }
+  .placeholder-notice {
+    background: var(--dark-3);
+    border: 1px dashed rgba(212,175,55,0.3);
+    border-radius: var(--radius);
+    padding: 28px;
+    text-align: center;
+    color: var(--gray);
+    font-size: 0.88em;
+    line-height: 1.7;
+  }
+  .placeholder-notice strong { color: var(--gold); }
+
+  /* ── FAQ ── */
+  .faq-section { margin-bottom: 60px; }
+  .faq-list { display: flex; flex-direction: column; gap: 12px; max-width: 760px; }
+  .faq-item {
+    background: var(--dark-3);
+    border: 1px solid rgba(212,175,55,0.1);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95em;
+    font-weight: 500;
+    padding: 20px 24px;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    transition: var(--transition);
+  }
+  .faq-question:hover { color: var(--gold); }
+  .faq-arrow { color: var(--gold); font-size: 1.1em; transition: transform 0.3s ease; flex-shrink: 0; }
+  .faq-question.open .faq-arrow { transform: rotate(180deg); }
+  .faq-answer {
+    display: none;
+    padding: 0 24px 20px;
+    font-size: 0.88em;
+    color: var(--gray);
+    line-height: 1.8;
+    border-top: 1px solid rgba(212,175,55,0.08);
+  }
+  .faq-answer.open { display: block; }
+
+  /* ── CTA Band ── */
+  .cta-band {
+    background: linear-gradient(135deg, #1a1200, #2c1f00);
+    border: 1px solid rgba(212,175,55,0.25);
+    border-radius: 20px;
+    padding: 60px 40px;
+    text-align: center;
+    margin-bottom: 80px;
+  }
+  .cta-band h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6em, 3vw, 2.2em);
+    margin-bottom: 16px;
+  }
+  .cta-band p { color: var(--gray); max-width: 500px; margin: 0 auto 32px; }
+  .cta-band .btn { width: auto; display: inline-block; }
+
+  /* ── Footer ── */
+  footer {
+    background: var(--dark-2);
+    border-top: 1px solid rgba(212,175,55,0.15);
+    padding: 48px 40px 24px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 48px;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+  }
+  .footer-brand p { color: var(--gray); font-size: 0.9em; margin-top: 12px; line-height: 1.7; max-width: 300px; }
+  .footer-col h4 { font-size: 0.85em; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--white); margin-bottom: 16px; }
+  .footer-col a { display: block; color: var(--gray); font-size: 0.88em; margin-bottom: 10px; transition: var(--transition); }
+  .footer-col a:hover { color: var(--gold); }
+  .social-links { display: flex; gap: 12px; margin-top: 16px; }
+  .social-links a {
+    width: 38px; height: 38px; background: var(--dark-4);
+    border: 1px solid rgba(255,255,255,0.08); border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.85em; color: var(--gray); transition: var(--transition);
+  }
+  .social-links a:hover { border-color: var(--gold); color: var(--gold); }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding-top: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .footer-bottom p { font-size: 0.8em; color: var(--gray); }
+  .footer-bottom a { color: var(--gray); font-size: 0.8em; transition: var(--transition); }
+  .footer-bottom a:hover { color: var(--gold); }
+
+  /* ── Responsive ── */
+  @media (max-width: 860px) {
+    header { padding: 14px 20px; }
+    .page-hero { padding: 70px 20px 50px; }
+    .content-wrap { padding: 50px 20px; }
+    .two-col { grid-template-columns: 1fr; }
+    .pricing-card { position: static; }
+    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    .cta-band { padding: 40px 24px; }
+    footer { padding: 40px 20px 20px; }
+    .divider { margin: 0 20px; }
+  }
 </style>
 </head>
 <body>
 
-<!-- Header -->
+<!-- ── Header ── -->
 <header>
-<h1>
-  <img src="https://raw.githubusercontent.com/trailblazer-ajn/Business-site/main/logo.png" alt="Trailblazer AJN Logo">
-  Trailblazer AJN
-</h1>
-<nav>
-  <a href="index.html">Accueil</a>
-  <a href="services.html">Services</a>
-  <a href="formation.html">Formation</a>
-  <a href="contact.html">Contact</a>
-</nav>
+  <div class="logo-wrap">
+    <img src="https://raw.githubusercontent.com/trailblazer-ajn/Business-site/main/logo.png" alt="Logo Trailblazer AJN">
+    <span>Trailblazer AJN</span>
+  </div>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="about.html">À propos</a>
+    <a href="services.html">Services</a>
+    <a href="formation.html" class="active">Formation</a>
+    <a href="contact.html" class="nav-cta">Me contacter</a>
+  </nav>
 </header>
 
-<!-- Hero Section: Video -->
-<section>
-  <h2>Formation Framework S.O.S</h2>
-  <div class="video-container">
-    <iframe width="100%" height="450" src="https://www.youtube.com/embed/Zoz9lYrgRcY" frameborder="0" allowfullscreen></iframe>
+<!-- ── Page Hero ── -->
+<div class="page-hero">
+  <span class="label">Formation Phare</span>
+  <h1>Le Framework <em>S.O.S</em></h1>
+  <p>La méthode en 3 phases pour passer d'un business chaotique à un système qui génère des revenus prévisibles — avec des templates concrets et un suivi personnalisé.</p>
+</div>
+
+<div class="divider"></div>
+
+<div class="content-wrap">
+
+  <!-- ── Video ── -->
+  <div class="video-section">
+    <h2>Regarde avant de décider</h2>
+    <p class="sub">Une présentation complète de ce que tu vas construire avec cette formation.</p>
+    <div class="video-frame">
+      <iframe src="https://www.youtube.com/embed/Zoz9lYrgRcY" title="Formation Framework S.O.S — Trailblazer AJN" allowfullscreen></iframe>
+    </div>
   </div>
-</section>
 
-<!-- Modules -->
-<section class="modules">
-<h3>Ce que tu vas apprendre :</h3>
-<ul>
-<li>Structurer ton business intelligemment</li>
-<li>Automatiser tes tâches répétitives</li>
-<li>Stabiliser tes revenus</li>
-<li>Mettre en place ton système productif</li>
-<li>Exemples concrets et templates prêts à l’emploi</li>
-<li>Suivi personnalisé pour implémenter chaque module</li>
-</ul>
-</section>
+  <!-- ── Two Col : Modules + Pricing ── -->
+  <div class="two-col">
 
-<!-- Price -->
-<section class="price-section">
-<span class="price-old">89 500 F CFA</span>
-<span class="price-new">4 990 F CFA</span>
-<p>Places limitées : 17 restantes</p>
-</section>
+    <!-- Modules -->
+    <div>
+      <p class="section-label">Programme</p>
+      <h2 class="section-title">Ce que tu vas<br>construire concrètement</h2>
 
-<!-- Countdown -->
-<section class="countdown-section">
-<p class="countdown-text">Le succès n’attend pas ⏳ Clique maintenant pour transformer ton business !</p>
-<div class="countdown" id="countdown">07j 00h 00m 00s</div>
-</section>
+      <div class="modules-list">
+        <div class="module-item">
+          <div class="module-icon">🏗️</div>
+          <div class="module-text">
+            <h4>Structurer ton business intelligemment</h4>
+            <p>Poser les fondations claires de ton activité — offre, cible, positionnement — pour arrêter de courir dans tous les sens.</p>
+          </div>
+        </div>
+        <div class="module-item">
+          <div class="module-icon">⚙️</div>
+          <div class="module-text">
+            <h4>Automatiser tes tâches répétitives</h4>
+            <p>Identifier ce qui te vole du temps et le déléguer à des outils — pour que tu travailles sur ton business, pas dedans.</p>
+          </div>
+        </div>
+        <div class="module-item">
+          <div class="module-icon">📈</div>
+          <div class="module-text">
+            <h4>Stabiliser tes revenus</h4>
+            <p>Mettre en place des mécanismes concrets pour sortir du cycle "bon mois / mauvais mois" et générer de la prévisibilité.</p>
+          </div>
+        </div>
+        <div class="module-item">
+          <div class="module-icon">🧩</div>
+          <div class="module-text">
+            <h4>Mettre en place ton système productif</h4>
+            <p>Construire un workflow hebdomadaire qui tient même quand la vie est compliquée — sans perfection, avec discipline.</p>
+          </div>
+        </div>
+        <div class="module-item">
+          <div class="module-icon">📋</div>
+          <div class="module-text">
+            <h4>Templates & exemples concrets</h4>
+            <p>Des modèles prêts à l'emploi que tu adaptes à ta situation — pas besoin de tout créer from scratch.</p>
+          </div>
+        </div>
+        <div class="module-item">
+          <div class="module-icon">🤝</div>
+          <div class="module-text">
+            <h4>Suivi personnalisé module par module</h4>
+            <p>Tu ne traverses pas ça seul. Chaque module inclut un point de suivi pour s'assurer que tu implémentes vraiment.</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<!-- Suivre la formation -->
-<a href="inscription.html" class="btn">Suivre la formation</a>
+    <!-- Pricing Card -->
+    <div>
+      <div class="pricing-card">
+        <span class="pricing-badge">🔥 Offre de lancement</span>
+        <h3>Framework S.O.S</h3>
+        <p class="tagline">Accès complet à la formation + templates + suivi personnalisé.</p>
 
-<!-- Footer -->
+        <div class="price-block">
+          <p class="price-old">89 500 F CFA</p>
+          <div class="price-new">4 990 <span style="font-size:0.5em; color:var(--gray);">F CFA</span></div>
+          <p class="price-note">Prix de lancement — tarif définitif non encore fixé</p>
+        </div>
+
+        <ul class="price-includes">
+          <li>Accès à tous les modules de la formation</li>
+          <li>Templates et modèles prêts à l'emploi</li>
+          <li>Suivi personnalisé pendant l'implémentation</li>
+          <li>Accès aux mises à jour futures</li>
+          <li>Support par WhatsApp</li>
+        </ul>
+
+        <div class="spots-bar">
+          <div class="spots-fill"></div>
+        </div>
+        <p class="spots-text"><strong>Places limitées</strong> — tarif de lancement en cours</p>
+
+        <a href="inscription.html" class="btn btn-primary">Rejoindre la formation →</a>
+        <a href="https://wa.me/22953004443?text=Bonjour%2C%20j%27ai%20une%20question%20sur%20la%20formation%20SOS" target="_blank" class="btn btn-secondary">Poser une question d'abord</a>
+
+        <p class="guarantee">🔒 Paiement sécurisé · Accès immédiat après inscription</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── Testimonials ── -->
+  <div class="testimonials-section">
+    <p class="section-label">Ils l'ont suivi</p>
+    <h2 class="section-title">Ce qu'en disent<br>les participants</h2>
+    <p class="section-subtitle">Les premiers retours des apprenants qui ont implémenté le Framework S.O.S.</p>
+
+    <div class="placeholder-notice">
+      <strong>📣 Cette section est réservée aux témoignages de tes premiers clients.</strong><br><br>
+      Dès que tu as des retours — même courts, même informels — ajoute-les ici. Un témoignage honnête vaut mieux que dix promesses. Même un screenshot WhatsApp reformulé avec permission suffit pour commencer.
+    </div>
+  </div>
+
+  <!-- ── FAQ ── -->
+  <div class="faq-section">
+    <p class="section-label">Questions fréquentes</p>
+    <h2 class="section-title" style="margin-bottom:32px;">Tu te poses peut-être<br>ces questions</h2>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Pour qui est cette formation ?
+          <span class="faq-arrow">▾</span>
+        </button>
+        <div class="faq-answer">
+          Le Framework S.O.S est conçu pour les freelances et solopreneurs qui ont déjà une activité mais qui manquent de structure, de stabilité dans leurs revenus, ou de clarté sur leurs priorités. Si tu démarres de zéro, commence plutôt par une session de coaching pour définir ta direction.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Est-ce que je reçois un accès immédiat après paiement ?
+          <span class="faq-arrow">▾</span>
+        </button>
+        <div class="faq-answer">
+          Oui. Dès que ton inscription est validée, tu reçois un accès complet à tous les modules, les templates et le canal de suivi. Si tu as un doute, contacte-moi directement sur WhatsApp avant de t'inscrire.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Pourquoi le prix est-il aussi bas pour l'instant ?
+          <span class="faq-arrow">▾</span>
+        </button>
+        <div class="faq-answer">
+          C'est un tarif de lancement. La formation est en phase initiale et je cherche des premiers apprenants sérieux qui implémenteront vraiment le système. En échange de ce tarif préférentiel, je compte sur ton engagement et tes retours pour améliorer la formation. Le prix augmentera avec les prochaines versions.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Et si j'ai des questions pendant la formation ?
+          <span class="faq-arrow">▾</span>
+        </button>
+        <div class="faq-answer">
+          Tu as accès à un suivi direct par WhatsApp pendant toute la durée de l'implémentation. Tu ne seras pas seul face aux modules — je réponds aux questions concrètes liées à ta situation spécifique.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CTA Band ── -->
+  <div class="cta-band">
+    <h2>Prêt à passer de chaotique<br>à <em style="color:var(--gold); font-style:normal;">structuré</em> ?</h2>
+    <p>Rejoins la formation et construis un business qui tourne avec des systèmes — pas avec de la volonté seule.</p>
+    <a href="inscription.html" class="btn btn-primary">Rejoindre le Framework S.O.S →</a>
+  </div>
+
+</div>
+
+<!-- ── Footer ── -->
 <footer>
-<p>© 2026 Trailblazer AJN — Tous droits réservés</p>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo-wrap">
+        <img src="https://raw.githubusercontent.com/trailblazer-ajn/Business-site/main/logo.png" alt="Logo Trailblazer AJN">
+        <span>Trailblazer AJN</span>
+      </div>
+      <p>Stratégie, systèmes et IA pour les freelances et solopreneurs qui veulent opérer à un niveau supérieur.</p>
+      <div class="social-links">
+        <a href="#" title="Facebook">f</a>
+        <a href="#" title="LinkedIn">in</a>
+        <a href="https://wa.me/22953004443" title="WhatsApp" target="_blank">W</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <a href="index.html">Accueil</a>
+      <a href="about.html">À propos</a>
+      <a href="services.html">Services</a>
+      <a href="formation.html">Formation</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact direct</h4>
+      <a href="https://wa.me/22953004443" target="_blank">WhatsApp →</a>
+      <a href="https://calendly.com/joachimtalksbusiness/30min" target="_blank">Réserver un appel →</a>
+      <a href="https://forms.gle/Px8VXJ62LAsqD1FU7" target="_blank">Conférence gratuite →</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Trailblazer AJN — Tous droits réservés</p>
+    <div style="display:flex; gap:20px;">
+      <a href="#">Mentions légales</a>
+      <a href="#">Politique de confidentialité</a>
+    </div>
+  </div>
 </footer>
 
 <script>
-// Countdown 7 jours
-let countDownDate = new Date();
-countDownDate.setDate(countDownDate.getDate() + 7);
+  // FAQ toggle
+  function toggleFaq(btn) {
+    const answer = btn.nextElementSibling;
+    const isOpen = answer.classList.contains('open');
+    
+    // Close all
+    document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+    document.querySelectorAll('.faq-question').forEach(b => b.classList.remove('open'));
 
-function updateCountdown() {
-    let now = new Date().getTime();
-    let distance = countDownDate - now;
-
-    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000*60*60));
-    let minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
-    let seconds = Math.floor((distance % (1000*60)) / 1000);
-
-    document.getElementById("countdown").innerHTML = days + "j " + hours + "h " 
-    + minutes + "m " + seconds + "s";
-
-    if(distance < 0) {
-        document.getElementById("countdown").innerHTML = "Le temps est écoulé !";
+    // Open clicked if it was closed
+    if (!isOpen) {
+      answer.classList.add('open');
+      btn.classList.add('open');
     }
-}
-setInterval(updateCountdown, 1000);
+  }
 </script>
 
 </body>
