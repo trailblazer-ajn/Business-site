@@ -4,186 +4,596 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Trailblazer AJN - Accélère ton business freelance</title>
-
-<meta name="description" content="Stratégies, formations et systèmes pour freelances ambitieux. Apprends à générer des revenus en ligne avec une approche structurée et scalable.">
+<!-- SEO -->
+<title>Trailblazer AJN — Stratégie, Systèmes & IA pour Freelances</title>
+<meta name="description" content="Joachim GBETCHOEVI aide les freelances et solopreneurs à structurer leur business, stabiliser leurs revenus et travailler avec l'IA. Formations, coaching et systèmes actionnables.">
+<meta name="keywords" content="Trailblazer AJN, Joachim GBETCHOEVI, formation freelance, coaching business, stratégie digitale, IA productivité, solopreneur Afrique">
 <meta name="author" content="Joachim GBETCHOEVI">
 
-<link rel="icon" href="https://raw.githubusercontent.com/trailblazer-ajn/Business-site/main/logo.png">
+<!-- Open Graph -->
+<meta property="og:title" content="Trailblazer AJN — Stratégie, Systèmes & IA pour Freelances">
+<meta property="og:description" content="Des systèmes concrets pour stabiliser ton revenu, clarifier ton positionnement et travailler plus intelligemment.">
+<meta property="og:image" content="https://raw.githubusercontent.com/trailblazer-ajn/Business-site/main/logo.png">
+<meta property="og:type" content="website">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<!-- Favicon -->
+<link rel="icon" href="https://raw.githubusercontent.com/trailblazer-ajn/Business-site/main/logo.png" type="image/png">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-body { font-family:'Poppins', sans-serif; background:#0d0d0d; color:#fff; margin:0; }
+  /* ── Variables ── */
+  :root {
+    --gold: #d4af37;
+    --gold-light: #e8cc6a;
+    --gold-dim: rgba(212,175,55,0.15);
+    --dark: #0a0a0a;
+    --dark-2: #111111;
+    --dark-3: #1a1a1a;
+    --dark-4: #222222;
+    --white: #ffffff;
+    --gray: #aaaaaa;
+    --radius: 12px;
+    --transition: 0.3s ease;
+  }
 
-header {
-  background:#111;
-  padding:20px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
+  /* ── Reset & Base ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--dark);
+    color: var(--white);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+  a { text-decoration: none; color: inherit; }
+  img { display: block; max-width: 100%; }
 
-nav a {
-  color:#fff;
-  margin:0 15px;
-  font-weight:600;
-}
+  /* ── Header ── */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10,10,10,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(212,175,55,0.2);
+    padding: 16px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .logo-wrap img { width: 48px; border-radius: 8px; }
+  .logo-wrap span {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4em;
+    color: var(--gold);
+    letter-spacing: 0.5px;
+  }
+  nav { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  nav a {
+    color: var(--gray);
+    font-size: 0.9em;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: var(--transition);
+  }
+  nav a:hover { color: var(--gold); background: var(--gold-dim); }
+  nav a.nav-cta {
+    background: var(--gold);
+    color: #000;
+    font-weight: 600;
+    padding: 8px 20px;
+  }
+  nav a.nav-cta:hover { background: var(--gold-light); }
 
-nav a:hover { color:#d4af37; }
+  /* ── Conference Banner ── */
+  .conf-banner {
+    background: linear-gradient(135deg, #1a1200, #2c1f00);
+    border-top: 2px solid var(--gold);
+    border-bottom: 2px solid var(--gold);
+    padding: 14px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  .conf-banner span { font-size: 0.95em; color: var(--white); }
+  .conf-banner strong { color: var(--gold); }
+  .conf-banner a {
+    background: var(--gold);
+    color: #000;
+    font-weight: 700;
+    font-size: 0.85em;
+    padding: 8px 20px;
+    border-radius: 6px;
+    white-space: nowrap;
+    transition: var(--transition);
+  }
+  .conf-banner a:hover { background: var(--gold-light); }
 
-section { padding:70px 20px; max-width:1100px; margin:auto; }
+  /* ── Hero ── */
+  .hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    padding: 80px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 60px;
+    flex-wrap: wrap;
+  }
+  .hero-text { flex: 1; min-width: 280px; }
+  .hero-eyebrow {
+    display: inline-block;
+    background: var(--gold-dim);
+    border: 1px solid rgba(212,175,55,0.3);
+    color: var(--gold);
+    font-size: 0.78em;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 4px;
+    margin-bottom: 24px;
+  }
+  .hero-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2em, 5vw, 3.4em);
+    line-height: 1.15;
+    color: var(--white);
+    margin-bottom: 24px;
+  }
+  .hero-text h1 em { color: var(--gold); font-style: normal; }
+  .hero-text p {
+    font-size: 1.05em;
+    color: var(--gray);
+    max-width: 520px;
+    margin-bottom: 36px;
+    line-height: 1.8;
+  }
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: var(--radius);
+    font-weight: 600;
+    font-size: 0.95em;
+    transition: var(--transition);
+    cursor: pointer;
+  }
+  .btn-primary { background: var(--gold); color: #000; }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .btn-secondary {
+    border: 1.5px solid rgba(212,175,55,0.4);
+    color: var(--gold);
+    background: transparent;
+  }
+  .btn-secondary:hover { background: var(--gold-dim); transform: translateY(-2px); }
 
-.hero {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  flex-wrap:wrap;
-}
+  .hero-photo { flex: 1; min-width: 260px; max-width: 380px; text-align: center; }
+  .hero-photo img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 0 60px rgba(212,175,55,0.25), 0 0 120px rgba(212,175,55,0.08);
+  }
+  .hero-stats { display: flex; gap: 32px; margin-top: 40px; flex-wrap: wrap; }
+  .stat { text-align: left; }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8em;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .stat-label { font-size: 0.78em; color: var(--gray); margin-top: 4px; }
 
-.hero h1 {
-  color:#d4af37;
-  font-size:2.8em;
-}
+  /* ── Section wrapper ── */
+  .section { padding: 80px 40px; max-width: 1200px; margin: 0 auto; }
+  .section-label {
+    font-size: 0.75em;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8em, 3.5vw, 2.6em);
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+  .section-subtitle {
+    font-size: 1em;
+    color: var(--gray);
+    max-width: 600px;
+    line-height: 1.8;
+  }
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212,175,55,0.3), transparent);
+    margin: 0 40px;
+  }
 
-.btn {
-  padding:15px 30px;
-  background:#d4af37;
-  color:#000;
-  font-weight:600;
-  border-radius:6px;
-}
+  /* ── About Section ── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-top: 50px;
+  }
+  .about-text p { color: var(--gray); margin-bottom: 20px; line-height: 1.9; }
+  .about-text strong { color: var(--white); }
+  .about-text em { color: var(--gold); font-style: normal; }
+  .about-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+  .tag {
+    background: var(--dark-4);
+    border: 1px solid rgba(212,175,55,0.2);
+    color: var(--gold);
+    font-size: 0.8em;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 100px;
+  }
+  .about-image img {
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(212,175,55,0.15);
+    width: 100%;
+  }
+  .about-quote {
+    background: var(--dark-3);
+    border-left: 3px solid var(--gold);
+    padding: 20px 24px;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    margin-top: 28px;
+    font-size: 1em;
+    color: var(--white);
+    font-style: italic;
+    line-height: 1.7;
+  }
 
-.btn:hover { background:#fff; }
+  /* ── Pillars ── */
+  .pillars-bg {
+    background: var(--dark-2);
+    border-top: 1px solid rgba(212,175,55,0.1);
+    border-bottom: 1px solid rgba(212,175,55,0.1);
+  }
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    margin-top: 48px;
+  }
+  .pillar-card {
+    background: var(--dark-3);
+    border: 1px solid rgba(212,175,55,0.12);
+    border-radius: var(--radius);
+    padding: 32px 28px;
+    transition: var(--transition);
+  }
+  .pillar-card:hover {
+    border-color: rgba(212,175,55,0.4);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(212,175,55,0.08);
+  }
+  .pillar-icon { font-size: 2em; margin-bottom: 16px; }
+  .pillar-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2em;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .pillar-card p { font-size: 0.9em; color: var(--gray); line-height: 1.7; }
 
-.card {
-  background:#1a1a1a;
-  padding:25px;
-  border-radius:10px;
-  margin:15px;
-}
+  /* ── Services Grid ── */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    margin-top: 48px;
+  }
+  .service-card {
+    background: var(--dark-3);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: var(--radius);
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: var(--transition);
+  }
+  .service-card:hover { border-color: rgba(212,175,55,0.3); transform: translateY(-4px); }
+  .service-card h3 { font-weight: 600; font-size: 1.05em; color: var(--white); }
+  .service-card p { font-size: 0.88em; color: var(--gray); line-height: 1.7; flex: 1; }
+  .service-card a {
+    display: inline-block;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: var(--gold);
+    border-bottom: 1px solid rgba(212,175,55,0.3);
+    padding-bottom: 2px;
+    align-self: flex-start;
+    transition: var(--transition);
+  }
+  .service-card a:hover { color: var(--gold-light); border-color: var(--gold-light); }
 
-footer {
-  background:#111;
-  text-align:center;
-  padding:30px;
-}
+  /* ── CTA Band ── */
+  .cta-band {
+    background: linear-gradient(135deg, #1a1200, #2c1f00);
+    border: 1px solid rgba(212,175,55,0.25);
+    border-radius: 20px;
+    padding: 60px 40px;
+    text-align: center;
+    margin: 80px 40px;
+  }
+  .cta-band h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6em, 3vw, 2.2em);
+    margin-bottom: 16px;
+  }
+  .cta-band p { color: var(--gray); max-width: 500px; margin: 0 auto 32px; font-size: 1em; }
+
+  /* ── Footer ── */
+  footer {
+    background: var(--dark-2);
+    border-top: 1px solid rgba(212,175,55,0.15);
+    padding: 48px 40px 24px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 48px;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+  }
+  .footer-brand p {
+    color: var(--gray);
+    font-size: 0.9em;
+    margin-top: 12px;
+    line-height: 1.7;
+    max-width: 300px;
+  }
+  .footer-brand .logo-wrap { margin-bottom: 8px; }
+  .footer-col h4 {
+    font-size: 0.85em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 16px;
+  }
+  .footer-col a {
+    display: block;
+    color: var(--gray);
+    font-size: 0.88em;
+    margin-bottom: 10px;
+    transition: var(--transition);
+  }
+  .footer-col a:hover { color: var(--gold); }
+  .social-links { display: flex; gap: 12px; margin-top: 16px; }
+  .social-links a {
+    width: 38px; height: 38px;
+    background: var(--dark-4);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.85em;
+    color: var(--gray);
+    transition: var(--transition);
+    text-decoration: none;
+  }
+  .social-links a:hover { border-color: var(--gold); color: var(--gold); }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding-top: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .footer-bottom p { font-size: 0.8em; color: var(--gray); }
+  .footer-bottom a { color: var(--gray); font-size: 0.8em; transition: var(--transition); }
+  .footer-bottom a:hover { color: var(--gold); }
+
+  /* ── Animations ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .fade-up  { animation: fadeUp 0.7s ease forwards; }
+  .fade-up-2 { animation: fadeUp 0.7s 0.15s ease both; }
+  .fade-up-3 { animation: fadeUp 0.7s 0.3s ease both; }
+  .fade-up-4 { animation: fadeUp 0.7s 0.45s ease both; }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    header { padding: 14px 20px; }
+    .hero { padding: 50px 20px; gap: 40px; min-height: auto; }
+    .section { padding: 60px 20px; }
+    .about-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .cta-band { margin: 60px 20px; padding: 40px 24px; }
+    footer { padding: 40px 20px 20px; }
+    .conf-banner { padding: 12px 20px; }
+    .divider { margin: 0 20px; }
+  }
 </style>
-
 </head>
-
 <body>
 
+<!-- ── Header ── -->
 <header>
-  <h2 style="color:#d4af37;">Trailblazer AJN</h2>
+  <div class="logo-wrap">
+    <img src="https://raw.githubusercontent.com/trailblazer-ajn/Business-site/main/logo.png" alt="Logo Trailblazer AJN">
+    <span>Trailblazer AJN</span>
+  </div>
   <nav>
-    <a href="#hero">Accueil</a>
-    <a href="#about">À propos</a>
+    <a href="index.html">Accueil</a>
+    <a href="about.html">À propos</a>
     <a href="services.html">Services</a>
     <a href="formation.html">Formation</a>
-    <a href="#contact">Contact</a>
+    <a href="contact.html" class="nav-cta">Me contacter</a>
   </nav>
 </header>
 
-<!-- HERO -->
-<section id="hero" class="hero">
-  <div>
-    <h1>Construis un business rentable sans dépendre d’un job</h1>
-    <p>
-      J’aide les freelances et entrepreneurs à transformer leurs compétences en revenus prévisibles grâce à des systèmes digitaux simples, efficaces et automatisés.
+<!-- ── Conference Banner ── -->
+<div class="conf-banner">
+  <span>🔥 <strong>Conférence gratuite :</strong> Créer un business en ligne sans montrer ton visage — même en partant de zéro</span>
+  <a href="https://forms.gle/Px8VXJ62LAsqD1FU7" target="_blank">Réserver ma place →</a>
+</div>
+
+<!-- ── Hero ── -->
+<div class="hero">
+  <div class="hero-text">
+    <span class="hero-eyebrow fade-up">Stratégie · Systèmes · IA</span>
+    <h1 class="fade-up-2">
+      Construis un business freelance<br>
+      <em>qui tourne sans toi.</em>
+    </h1>
+    <p class="fade-up-3">
+      Je suis Joachim GBETCHOEVI. J'aide les freelances et solopreneurs ambitieux à structurer leur activité, stabiliser leurs revenus et intégrer l'IA dans leur workflow — sans bullshit, sans théorie creuse.
     </p>
-    <a href="formation.html" class="btn">Commencer maintenant</a>
+    <div class="hero-actions fade-up-4">
+      <a href="formation.html" class="btn btn-primary">Découvrir la formation</a>
+      <a href="services.html" class="btn btn-secondary">Explorer les services</a>
+    </div>
+    <div class="hero-stats fade-up-4">
+      <div class="stat">
+        <div class="stat-num">4</div>
+        <div class="stat-label">Services actifs</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">S.O.S</div>
+        <div class="stat-label">Framework exclusif</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">🌍</div>
+        <div class="stat-label">Vision globale</div>
+      </div>
+    </div>
   </div>
-
-  <div>
-    <img src="https://raw.githubusercontent.com/trailblazer-ajn/Business-site/main/Y.png" 
-         alt="Fondateur Trailblazer AJN"
-         style="max-width:300px; border-radius:12px;">
+  <div class="hero-photo fade-up-3">
+    <img src="https://raw.githubusercontent.com/trailblazer-ajn/Business-site/main/Y.png" alt="Joachim GBETCHOEVI — Trailblazer AJN">
   </div>
-</section>
+</div>
 
-<!-- CONFERENCE -->
-<section>
-  <h2 style="color:#d4af37;">🔥 Conférence gratuite</h2>
-  <p>
-    Découvre comment générer des revenus en ligne sans montrer ton visage ni ton identité.
-  </p>
+<div class="divider"></div>
 
-  <img src="https://raw.githubusercontent.com/trailblazer-ajn/Business-site/main/ii.png"
-       alt="Conférence business"
-       style="max-width:400px; border-radius:10px;">
+<!-- ── À Propos ── -->
+<div class="section">
+  <p class="section-label">Qui suis-je</p>
+  <h2 class="section-title">Pas un coach de plus.<br>Un opérateur qui partage son système.</h2>
 
-  <br><br>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>
+        À <strong>17 ans</strong>, je suis devenu responsable de 3 personnes. Pas par choix romantique — par nécessité. Ce moment m'a appris une vérité que personne ne te dit : <em>la vie ne s'adapte pas à ton manque de système.</em>
+      </p>
+      <p>
+        Depuis, j'ai construit ma réflexion à l'intersection de plusieurs disciplines : la <strong>linguistique</strong> (comprendre le langage et le sens), la <strong>psychologie humaine</strong> (comprendre ce qui motive vraiment les gens), et la <strong>stratégie digitale</strong> (construire des systèmes qui génèrent des résultats même quand tu n'es pas là).
+      </p>
+      <p>
+        Je suis basé au <em>Bénin</em>, mais ma vision est globale. Mon rôle n'est pas de t'inspirer. Mon rôle est de t'aider à <strong>construire un système qui fonctionne dans ta réalité</strong> — avec tes contraintes, ton marché, tes ressources.
+      </p>
+      <blockquote class="about-quote">
+        "Je ne vends pas des rêves. Je construis des systèmes avec toi — et je te montre comment les faire tourner."
+        <br><br><strong style="color:var(--gold); font-style:normal;">— Joachim GBETCHOEVI</strong>
+      </blockquote>
+      <div class="about-tags">
+        <span class="tag">Linguiste</span>
+        <span class="tag">Stratège Digital</span>
+        <span class="tag">Community Manager</span>
+        <span class="tag">Psychologie Appliquée</span>
+        <span class="tag">IA & Productivité</span>
+        <span class="tag">Bénin 🇧🇯</span>
+      </div>
+    </div>
+    <div class="about-image">
+      <img src="https://raw.githubusercontent.com/trailblazer-ajn/Business-site/main/Y.png" alt="Joachim GBETCHOEVI">
+    </div>
+  </div>
+</div>
 
-  <a href="https://forms.gle/Px8VXJ62LAsqD1FU7" class="btn">Réserver ma place</a>
-</section>
+<div class="divider"></div>
 
-<!-- COUNTDOWN -->
-<section>
-  <h2>⏳ Prochaine session dans :</h2>
-  <div id="countdown" style="font-size:2em;"></div>
-</section>
+<!-- ── 3 Pillars ── -->
+<div class="pillars-bg">
+  <div class="section">
+    <p class="section-label">Ce que je construis avec toi</p>
+    <h2 class="section-title">Trois axes. Un seul objectif :<br>ta liberté opérationnelle.</h2>
+    <p class="section-subtitle">Chaque service, chaque formation, chaque contenu que je produis tourne autour de ces trois piliers.</p>
 
-<!-- ABOUT -->
-<section id="about">
-  <h2 style="color:#d4af37;">À propos</h2>
-  <p>
-    Très tôt, j’ai compris que personne ne viendrait sauver ma situation.
-    J’ai donc décidé de construire une dynastie en prenant le contrôle total de mes revenus.
-    Aujourd’hui, j’accompagne ceux qui veulent sortir de l’instabilité financière.
-  </p>
-</section>
+    <div class="pillars-grid">
+      <div class="pillar-card">
+        <div class="pillar-icon">⚙️</div>
+        <h3>Système</h3>
+        <p>Des workflows clairs, des outils IA bien configurés, et des processus qui tournent même quand tu n'es pas disponible. Fini de tout porter seul.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-icon">🎯</div>
+        <h3>Stratégie</h3>
+        <p>Un positionnement précis, une offre lisible, des décisions basées sur les données. Pas de bruit, pas de dispersion — juste de la clarté et de l'efficacité.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-icon">🧠</div>
+        <h3>Mindset & Identité</h3>
+        <p>La discipline opérationnelle, la consistance sous pression, et l'identité d'un entrepreneur qui sait pourquoi il se lève — même les jours difficiles.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
-<!-- TESTIMONIALS -->
-<section>
-  <h2 style="color:#d4af37;">Résultats clients</h2>
+<div class="divider"></div>
 
-  <div class="card">"J’ai généré mes premiers revenus en 7 jours."</div>
-  <div class="card">"Clairement la meilleure stratégie que j’ai testée."</div>
-  <div class="card">"Simple, direct, efficace."</div>
-</section>
+<!-- ── Services Aperçu ── -->
+<div class="section">
+  <p class="section-label">Ce que je propose</p>
+  <h2 class="section-title">Des solutions concrètes,<br>pas des promesses vagues.</h2>
 
-<!-- EMAIL CAPTURE -->
-<section>
-  <h2 style="color:#d4af37;">Reçois mes stratégies privées</h2>
+  <div class="services-grid">
+    <div class="service-card">
+      <div style="font-size:1.8em">🔍</div>
+      <h3>Audit & Organisation de Business</h3>
+      <p>Analyse complète de ton activité. Identification des blocages. Plan d'action avec suivi personnalisé sur 7 jours.</p>
+      <a href="services.html">Voir ce service →</a>
+    </div>
+    <div class="service-card">
+      <div style="font-size:1.8em">🛠️</div>
+      <h3>Framework S.O.S</h3>
+      <p>Structurer – Optimiser – Stabiliser. Le système pour passer d'un business chaotique à un workflow qui génère des revenus prévisibles.</p>
+      <a href="formation.html">Voir la formation →</a>
+    </div>
+    <div class="service-card">
+      <div style="font-size:1.8em">🌐</div>
+      <h3>Anglais Commercial — 90 jours</h3>
+      <p>Négocier, pitcher, convaincre en contexte business international. Sessions quotidiennes, communauté et suivi inclus.</p>
+      <a href="services.html">Voir ce service →</a>
+    </div>
+    <div class="service-card">
+      <div style="font-size:1.8em">🤝</div>
+      <h3>Coaching Personnalisé</h3>
+      <p>Accompagnement individuel en visioconférence. Plan d'action sur-mesure. On résout tes vrais blocages, pas les symptômes.</p>
+      <a href="https://calendly.com/joachimtalksbusiness/30min" target="_blank">Réserver une session →</a>
+    </div>
+  </div>
+</div>
 
-  <form>
-    <input type="email" placeholder="Ton email" required
-           style="padding:12px; width:250px;">
-    <button class="btn">S'inscrire</button>
-  </form>
-</section>
-
-<!-- FOOTER -->
-<footer id="contact">
-  <p>© 2026 Trailblazer AJN</p>
-
-  <p>
-    <a href="#" style="color:#d4af37;">Instagram</a> |
-    <a href="#" style="color:#d4af37;">Facebook</a> |
-    <a href="#" style="color:#d4af37;">LinkedIn</a>
-  </p>
-</footer>
-
-<script>
-// DATE FIXE (ex: 30 juin 2026)
-const countDownDate = new Date("June 30, 2026 23:59:59").getTime();
-
-setInterval(function() {
-
-  const now = new Date().getTime();
-  const distance = countDownDate - now;
-
-  const days = Math.floor(distance / (1000*60*60*24));
-  const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
-  const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
-  const seconds = Math.floor((distance % (1000*60)) / 1000);
-
-  document.getElementById("countdown").innerHTML =
-    days + "j " + hours + "h " + minutes + "m " + seconds + "s";
-
-}, 1000);
-</script>
-
-</body>
-</html>
+<!-- ── CTA Band ── -->
+<div class="cta-band">
+  <h2>Prêt à arrêter de subir<br>et à commencer à construire ?</h2>
+  <p>Rejoins les freelances qui ont décidé de travailler avec des systèmes, pas contre eux.</
