@@ -1,269 +1,604 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trailblazer AJN - Services</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- SEO -->
+<title>Services — Trailblazer AJN</title>
+<meta name="description" content="Audit business, Framework S.O.S, Anglais Commercial et Coaching Personnalisé. Des services concrets pour structurer, optimiser et stabiliser ton activité de freelance.">
+<meta name="author" content="Joachim GBETCHOEVI">
+<meta property="og:title" content="Services — Trailblazer AJN">
+<meta property="og:description" content="Des solutions concrètes pour les freelances et solopreneurs ambitieux.">
+<meta property="og:image" content="https://raw.githubusercontent.com/trailblazer-ajn/Business-site/main/logo.png">
+
+<!-- Favicon -->
+<link rel="icon" href="https://raw.githubusercontent.com/trailblazer-ajn/Business-site/main/logo.png" type="image/png">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 <style>
-/* ===== RESET ===== */
-* {
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-body {
-  font-family:'Poppins',sans-serif;
-  background:#0d0d0d;
-  color:#fff;
-  line-height:1.6;
-}
-
-/* ===== HEADER ===== */
-header {
-  position:sticky;
-  top:0;
-  background:#111;
-  display:flex;
-  justify-content:flex-start;
-  align-items:center;
-  padding:15px 30px;
-  z-index:1000;
-  gap:15px;
-}
-header img {
-  width:50px;
-  height:auto;
-}
-header h1 {
-  color:#d4af37;
-  font-size:1.8em;
-  margin:0;
-}
-nav {
-  margin-left:auto;
-}
-nav a {
-  margin-left:20px;
-  color:#fff;
-  font-weight:500;
-  transition:0.3s;
-}
-nav a:hover {
-  color:#d4af37;
-}
-
-/* ===== HERO ===== */
-.hero {
-  text-align:center;
-  padding:120px 20px 80px;
-}
-.hero h1 {
-  font-size:2.5em;
-  margin-bottom:20px;
-}
-.hero p {
-  font-size:1.2em;
-  max-width:700px;
-  margin:auto;
-}
-
-/* ===== SECTIONS ===== */
-section {
-  max-width:1100px;
-  margin:auto;
-  padding:60px 20px;
-  text-align:center;
-}
-
-/* ===== SERVICES GRID ===== */
-.services {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:40px;
-}
-
-/* ===== SERVICE CARD ===== */
-.service {
-  background:#1a1a1a;
-  padding:40px;
-  border-radius:12px;
-  transition:0.3s;
-  text-align:center;
-  opacity:0;
-  transform:translateY(20px);
-  animation:fadeInUp 0.8s forwards;
-}
-.service:hover {
-  transform:translateY(-8px);
-  box-shadow:0 10px 30px rgba(0,0,0,0.6);
-  cursor:pointer;
-}
-.service h2 {
-  color:#d4af37;
-  margin-bottom:20px;
-}
-.service p {
-  margin-bottom:20px;
-}
-
-/* ===== IMAGE ===== */
-.hero-photo {
-  display:flex;
-  justify-content:center;
-  margin-bottom:20px;
-}
-.hero-photo img {
-  width:100%;
-  max-width:260px;
-  border-radius:12px;
-  box-shadow:0 0 20px #d4af37;
-}
-
-/* ===== BUTTON ===== */
-.btn {
-  display:inline-block;
-  padding:14px 30px;
-  background:#d4af37;
-  color:#000;
-  font-weight:600;
-  border-radius:6px;
-  transition:0.3s;
-  margin-top:10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-.btn:hover {
-  background:#fff;
-}
-
-/* ===== READ MORE ===== */
-.read-more {
-  color:#d4af37;
-  cursor:pointer;
-  font-weight:600;
-  display:inline-block;
-  margin-top:5px;
-}
-.hidden {
-  display:none;
-}
-
-/* ===== FOOTER ===== */
-footer {
-  text-align:center;
-  padding:40px;
-  background:#000;
-  color:#777;
-  margin-top:60px;
-}
-
-/* ===== ANIMATION ===== */
-.service:nth-child(1){animation-delay:0.1s;}
-.service:nth-child(2){animation-delay:0.3s;}
-.service:nth-child(3){animation-delay:0.5s;}
-.service:nth-child(4){animation-delay:0.7s;}
-
-@keyframes fadeInUp {
-  to {
-    opacity:1;
-    transform:translateY(0);
+  :root {
+    --gold: #d4af37;
+    --gold-light: #e8cc6a;
+    --gold-dim: rgba(212,175,55,0.15);
+    --dark: #0a0a0a;
+    --dark-2: #111111;
+    --dark-3: #1a1a1a;
+    --dark-4: #222222;
+    --white: #ffffff;
+    --gray: #aaaaaa;
+    --radius: 12px;
+    --transition: 0.3s ease;
   }
-}
 
-/* ===== MOBILE ===== */
-@media screen and (max-width:768px){
-  .services {
-    grid-template-columns:1fr;
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--dark);
+    color: var(--white);
+    line-height: 1.7;
+    overflow-x: hidden;
   }
+  a { text-decoration: none; color: inherit; }
+  img { display: block; max-width: 100%; }
+
+  /* ── Header ── */
   header {
-    flex-wrap:wrap;
-    gap:10px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10,10,10,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(212,175,55,0.2);
+    padding: 16px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
   }
-}
+  .logo-wrap { display: flex; align-items: center; gap: 12px; }
+  .logo-wrap img { width: 48px; border-radius: 8px; }
+  .logo-wrap span {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4em;
+    color: var(--gold);
+  }
+  nav { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  nav a {
+    color: var(--gray);
+    font-size: 0.9em;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: var(--transition);
+  }
+  nav a:hover, nav a.active { color: var(--gold); background: var(--gold-dim); }
+  nav a.nav-cta {
+    background: var(--gold);
+    color: #000;
+    font-weight: 600;
+    padding: 8px 20px;
+  }
+  nav a.nav-cta:hover { background: var(--gold-light); }
+
+  /* ── Page Hero ── */
+  .page-hero {
+    text-align: center;
+    padding: 100px 40px 70px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .page-hero .label {
+    display: inline-block;
+    background: var(--gold-dim);
+    border: 1px solid rgba(212,175,55,0.3);
+    color: var(--gold);
+    font-size: 0.75em;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 4px;
+    margin-bottom: 24px;
+  }
+  .page-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2em, 5vw, 3.2em);
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+  .page-hero h1 em { color: var(--gold); font-style: normal; }
+  .page-hero p {
+    font-size: 1.05em;
+    color: var(--gray);
+    line-height: 1.8;
+  }
+
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212,175,55,0.3), transparent);
+    margin: 0 40px;
+  }
+
+  /* ── Services List ── */
+  .services-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  /* ── Service Row ── */
+  .service-row {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 48px;
+    align-items: start;
+    background: var(--dark-3);
+    border: 1px solid rgba(212,175,55,0.1);
+    border-radius: 20px;
+    padding: 48px;
+    transition: var(--transition);
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  .service-row.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease, transform 0.6s ease, border-color 0.3s ease;
+  }
+  .service-row:hover { border-color: rgba(212,175,55,0.3); }
+  .service-row.reverse { grid-template-columns: 1.6fr 1fr; }
+  .service-row.reverse .service-image { order: 2; }
+  .service-row.reverse .service-content { order: 1; }
+
+  .service-image img {
+    width: 100%;
+    border-radius: var(--radius);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+    object-fit: cover;
+    max-height: 280px;
+  }
+
+  .service-content { display: flex; flex-direction: column; gap: 16px; }
+  .service-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 3em;
+    color: rgba(212,175,55,0.15);
+    line-height: 1;
+    margin-bottom: -8px;
+  }
+  .service-tag {
+    display: inline-block;
+    background: var(--gold-dim);
+    color: var(--gold);
+    font-size: 0.72em;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 4px;
+    align-self: flex-start;
+  }
+  .service-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.7em;
+    line-height: 1.2;
+    color: var(--white);
+  }
+  .service-content .desc {
+    color: var(--gray);
+    font-size: 0.95em;
+    line-height: 1.8;
+  }
+
+  /* ── Detail expand ── */
+  .detail-toggle {
+    background: none;
+    border: none;
+    color: var(--gold);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85em;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: var(--transition);
+    align-self: flex-start;
+  }
+  .detail-toggle:hover { color: var(--gold-light); }
+  .detail-toggle .arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    font-style: normal;
+  }
+  .detail-toggle.open .arrow { transform: rotate(180deg); }
+  .detail-body {
+    display: none;
+    background: var(--dark-4);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 16px 20px;
+    font-size: 0.9em;
+    color: var(--gray);
+    line-height: 1.8;
+  }
+  .detail-body.open { display: block; }
+
+  /* ── Includes list ── */
+  .includes {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .includes li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.88em;
+    color: var(--gray);
+  }
+  .includes li::before {
+    content: "✓";
+    color: var(--gold);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* ── CTA buttons ── */
+  .service-cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
+  .btn {
+    display: inline-block;
+    padding: 12px 26px;
+    border-radius: var(--radius);
+    font-weight: 600;
+    font-size: 0.9em;
+    transition: var(--transition);
+    cursor: pointer;
+  }
+  .btn-primary { background: var(--gold); color: #000; }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .btn-secondary {
+    border: 1.5px solid rgba(212,175,55,0.4);
+    color: var(--gold);
+    background: transparent;
+  }
+  .btn-secondary:hover { background: var(--gold-dim); transform: translateY(-2px); }
+
+  /* ── Calendly embed ── */
+  .calendly-wrap {
+    margin-top: 16px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid rgba(212,175,55,0.15);
+  }
+  .calendly-wrap iframe {
+    display: block;
+    width: 100%;
+    min-height: 500px;
+    border: none;
+    background: #fff;
+  }
+
+  /* ── CTA Band ── */
+  .cta-band {
+    background: linear-gradient(135deg, #1a1200, #2c1f00);
+    border: 1px solid rgba(212,175,55,0.25);
+    border-radius: 20px;
+    padding: 60px 40px;
+    text-align: center;
+    margin: 20px 40px 80px;
+  }
+  .cta-band h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6em, 3vw, 2.2em);
+    margin-bottom: 16px;
+  }
+  .cta-band p { color: var(--gray); max-width: 500px; margin: 0 auto 32px; }
+
+  /* ── Footer ── */
+  footer {
+    background: var(--dark-2);
+    border-top: 1px solid rgba(212,175,55,0.15);
+    padding: 48px 40px 24px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 48px;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+  }
+  .footer-brand p { color: var(--gray); font-size: 0.9em; margin-top: 12px; line-height: 1.7; max-width: 300px; }
+  .footer-col h4 {
+    font-size: 0.85em; font-weight: 600; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--white); margin-bottom: 16px;
+  }
+  .footer-col a { display: block; color: var(--gray); font-size: 0.88em; margin-bottom: 10px; transition: var(--transition); }
+  .footer-col a:hover { color: var(--gold); }
+  .social-links { display: flex; gap: 12px; margin-top: 16px; }
+  .social-links a {
+    width: 38px; height: 38px; background: var(--dark-4);
+    border: 1px solid rgba(255,255,255,0.08); border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.85em; color: var(--gray); transition: var(--transition);
+  }
+  .social-links a:hover { border-color: var(--gold); color: var(--gold); }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.06); padding-top: 20px;
+    max-width: 1200px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+  }
+  .footer-bottom p { font-size: 0.8em; color: var(--gray); }
+  .footer-bottom a { color: var(--gray); font-size: 0.8em; transition: var(--transition); }
+  .footer-bottom a:hover { color: var(--gold); }
+
+  /* ── Responsive ── */
+  @media (max-width: 860px) {
+    header { padding: 14px 20px; }
+    .page-hero { padding: 70px 20px 50px; }
+    .services-wrap { padding: 50px 20px; gap: 40px; }
+    .service-row { grid-template-columns: 1fr; padding: 32px 24px; }
+    .service-row.reverse .service-image,
+    .service-row.reverse .service-content { order: unset; }
+    .cta-band { margin: 20px 20px 60px; padding: 40px 24px; }
+    footer { padding: 40px 20px 20px; }
+    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    .divider { margin: 0 20px; }
+  }
 </style>
 </head>
-
 <body>
 
+<!-- ── Header ── -->
 <header>
-<img src="https://raw.githubusercontent.com/trailblazer-ajn/Business-site/main/logo.png" alt="Logo Trailblazer AJN">
-<h1>Trailblazer AJN</h1>
-<nav>
-<a href="index.html">Accueil</a>
-<a href="services.html">Services</a>
-<a href="formation.html">Formation</a>
-<a href="contact.html">Contact</a>
-</nav>
+  <div class="logo-wrap">
+    <img src="https://raw.githubusercontent.com/trailblazer-ajn/Business-site/main/logo.png" alt="Logo Trailblazer AJN">
+    <span>Trailblazer AJN</span>
+  </div>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="about.html">À propos</a>
+    <a href="services.html" class="active">Services</a>
+    <a href="formation.html">Formation</a>
+    <a href="contact.html" class="nav-cta">Me contacter</a>
+  </nav>
 </header>
 
-<section class="hero">
-<h1>Nos Services pour Entrepreneurs Ambitieux</h1>
-<p>Chaque service a été conçu pour t’aider à structurer ton business, briser tes barrières, gagner du temps et booster tes revenus.</p>
-</section>
-
-<section class="services">
-
-<!-- SERVICE 1 -->
-<div class="service">
-<h2>Audit et Organisation de Business</h2>
-<div class="hero-photo">
-<img src="https://raw.githubusercontent.com/trailblazer-ajn/Business-site/main/audit.png" alt="Service1">
-</div>
-<p>Analyse complète de ton activité pour identifier les blocages qui ralentissent ta croissance.</p>
-<p id="detail1" class="hidden">Grâce à cet audit, tu recevras un plan détaillé avec des étapes concrètes pour automatiser tes tâches répétitives, prioriser tes actions et maximiser ton efficacité. Ce service inclut un suivi personnalisé de 7 jours.</p>
-<span class="read-more" onclick="toggleDetails('detail1')">Lire plus...</span><br>
-<a href="https://wa.me/22953004443?text=Bonjour%2C%20je%20veux%20l%27audit%20de%20mon%20business" target="_blank" class="btn">Je veux ce service</a>
+<!-- ── Page Hero ── -->
+<div class="page-hero">
+  <span class="label">Ce que je propose</span>
+  <h1>Des services conçus pour<br><em>ta réalité de freelance.</em></h1>
+  <p>Pas des packages génériques. Chaque service cible un blocage précis — et te donne les outils pour le dépasser durablement.</p>
 </div>
 
-<!-- SERVICE 2 -->
-<div class="service">
-<h2>Framework S.O.S</h2>
-<div class="hero-photo">
-<img src="https://raw.githubusercontent.com/trailblazer-ajn/Business-site/main/sos.png" alt="Service2">
-</div>
-<p>Structurer – Optimiser – Stabiliser ton business.</p>
-<p id="detail2" class="hidden">Cette formation te guide pas à pas sur comment structurer ton workflow, automatiser les tâches répétitives et stabiliser tes revenus grâce à des modèles prêts à l’emploi.</p>
-<span class="read-more" onclick="toggleDetails('detail2')">Lire plus...</span><br>
-<a href="https://wa.me/22953004443?text=Bonjour%2C%20je%20veux%20la%20formation%20S.O.S" target="_blank" class="btn">Je veux cette formation</a>
+<div class="divider"></div>
+
+<!-- ── Services ── -->
+<div class="services-wrap">
+
+  <!-- SERVICE 1 — Audit -->
+  <div class="service-row">
+    <div class="service-image">
+      <img src="https://raw.githubusercontent.com/trailblazer-ajn/Business-site/main/audit.png" alt="Audit et Organisation de Business">
+    </div>
+    <div class="service-content">
+      <div class="service-number">01</div>
+      <span class="service-tag">Diagnostic & Clarté</span>
+      <h2>Audit & Organisation de Business</h2>
+      <p class="desc">Tu travailles beaucoup mais tu n'avances pas assez vite. Les blocages sont réels — mais souvent invisibles de l'intérieur. L'audit permet de les identifier, les nommer, et construire un plan d'action concret.</p>
+
+      <ul class="includes">
+        <li>Analyse complète de ton activité et de tes processus</li>
+        <li>Identification des blocages qui freinent ta croissance</li>
+        <li>Plan détaillé avec étapes concrètes et priorisées</li>
+        <li>Suivi personnalisé de 7 jours après livraison</li>
+      </ul>
+
+      <button class="detail-toggle" onclick="toggleDetail(this, 'detail1')">
+        Voir plus de détails <span class="arrow">▾</span>
+      </button>
+      <div class="detail-body" id="detail1">
+        L'audit couvre ton positionnement, ton offre, tes canaux d'acquisition, ton workflow quotidien et ta gestion du temps. Tu reçois un document structuré avec des recommandations actionnables — pas un rapport vague. Le suivi de 7 jours te permet de poser toutes tes questions pendant l'implémentation.
+      </div>
+
+      <div class="service-cta">
+        <a href="https://wa.me/22953004443?text=Bonjour%2C%20je%20veux%20l%27audit%20de%20mon%20business" target="_blank" class="btn btn-primary">Je veux cet audit</a>
+        <a href="contact.html" class="btn btn-secondary">Poser une question</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICE 2 — SOS -->
+  <div class="service-row reverse">
+    <div class="service-content">
+      <div class="service-number">02</div>
+      <span class="service-tag">Formation Système</span>
+      <h2>Framework S.O.S</h2>
+      <p class="desc"><strong style="color:var(--white)">Structurer – Optimiser – Stabiliser.</strong> La méthode pour passer d'un business chaotique à un workflow clair qui génère des revenus prévisibles — avec des modèles prêts à l'emploi.</p>
+
+      <ul class="includes">
+        <li>Structuration intelligente de ton workflow</li>
+        <li>Automatisation des tâches répétitives</li>
+        <li>Stabilisation de tes revenus avec des systèmes éprouvés</li>
+        <li>Templates et modèles prêts à implémenter</li>
+        <li>Suivi personnalisé module par module</li>
+      </ul>
+
+      <button class="detail-toggle" onclick="toggleDetail(this, 'detail2')">
+        Voir plus de détails <span class="arrow">▾</span>
+      </button>
+      <div class="detail-body" id="detail2">
+        Le Framework S.O.S est une formation structurée en modules progressifs. Tu commences par poser les fondations (structure), puis tu optimises chaque processus, et enfin tu mets en place les mécanismes de stabilisation. Chaque module inclut des exercices pratiques et des templates directement utilisables dans ton business.
+      </div>
+
+      <div class="service-cta">
+        <a href="https://wa.me/22953004443?text=Bonjour%2C%20je%20veux%20la%20formation%20S.O.S" target="_blank" class="btn btn-primary">Je veux cette formation</a>
+        <a href="formation.html" class="btn btn-secondary">Voir la page formation</a>
+      </div>
+    </div>
+    <div class="service-image">
+      <img src="https://raw.githubusercontent.com/trailblazer-ajn/Business-site/main/sos.png" alt="Framework SOS">
+    </div>
+  </div>
+
+  <!-- SERVICE 3 — Anglais -->
+  <div class="service-row">
+    <div class="service-image">
+      <img src="https://raw.githubusercontent.com/trailblazer-ajn/Business-site/main/angc.png" alt="Anglais Commercial 90 jours">
+    </div>
+    <div class="service-content">
+      <div class="service-number">03</div>
+      <span class="service-tag">Compétence Internationale</span>
+      <h2>Anglais Commercial — 90 jours</h2>
+      <p class="desc">Le marché international parle anglais. Si tu ne peux pas négocier, pitcher ou convaincre en anglais, tu laisses de l'argent sur la table. Cette formation te donne les outils pour changer ça en 90 jours.</p>
+
+      <ul class="includes">
+        <li>Sessions d'apprentissage quotidiennes structurées</li>
+        <li>Appels de pratique réguliers</li>
+        <li>Vidéos pédagogiques sur les situations business réelles</li>
+        <li>Communauté WhatsApp d'apprenants actifs</li>
+        <li>Certification à l'issue de la formation</li>
+      </ul>
+
+      <button class="detail-toggle" onclick="toggleDetail(this, 'detail3')">
+        Voir plus de détails <span class="arrow">▾</span>
+      </button>
+      <div class="detail-body" id="detail3">
+        La formation couvre les situations business les plus courantes : emails professionnels, négociations, présentations de services, gestion des objections clients, et communication en équipe internationale. Chaque semaine est thématique et construite pour te donner une maîtrise progressive et mesurable.
+      </div>
+
+      <div class="service-cta">
+        <a href="https://wa.me/22953004443?text=Bonjour%2C%20je%20veux%20rejoindre%20la%20formation%20Anglais%20Commercial" target="_blank" class="btn btn-primary">Réserver ma place</a>
+        <a href="contact.html" class="btn btn-secondary">En savoir plus</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICE 4 — Coaching -->
+  <div class="service-row reverse">
+    <div class="service-content">
+      <div class="service-number">04</div>
+      <span class="service-tag">Accompagnement Individuel</span>
+      <h2>Coaching Personnalisé</h2>
+      <p class="desc">Parfois, ce qu'il faut, c'est quelqu'un qui regarde ta situation en face et te dit exactement quoi faire. Le coaching personnalisé, c'est ça : pas de généralités, pas de templates — ton business, tes blocages, ton plan.</p>
+
+      <ul class="includes">
+        <li>Sessions individuelles en visioconférence</li>
+        <li>Diagnostic approfondi de ta situation</li>
+        <li>Plan d'action personnalisé et priorisé</li>
+        <li>Suivi constant entre les sessions</li>
+        <li>Accès direct par WhatsApp pendant l'accompagnement</li>
+      </ul>
+
+      <button class="detail-toggle" onclick="toggleDetail(this, 'detail4')">
+        Voir plus de détails <span class="arrow">▾</span>
+      </button>
+      <div class="detail-body" id="detail4">
+        Le coaching s'adapte à ton niveau, tes objectifs et tes contraintes réelles. Que tu démarres ou que tu cherches à scaler, on travaille ensemble à partir de ta situation concrète. Chaque session est orientée action — tu repars avec des tâches claires à implémenter avant la prochaine rencontre.
+      </div>
+
+      <p style="font-size:0.9em; color:var(--gray); margin-top: 4px;">Réserve directement un créneau ci-dessous :</p>
+      <div class="calendly-wrap">
+        <iframe src="https://calendly.com/joachimtalksbusiness/30min" title="Réserver une session de coaching"></iframe>
+      </div>
+    </div>
+    <div class="service-image" style="align-self:start;">
+      <img src="https://raw.githubusercontent.com/trailblazer-ajn/Business-site/main/cp.png" alt="Coaching Personnalisé">
+    </div>
+  </div>
+
 </div>
 
-<!-- SERVICE 3 -->
-<div class="service">
-<h2>Anglais Commercial – 90 jours</h2>
-<div class="hero-photo">
-<img src="https://raw.githubusercontent.com/trailblazer-ajn/Business-site/main/angc.png" alt="Service3">
-</div>
-<p>Apprends à négocier et communiquer dans un contexte business international.</p>
-<p id="detail3" class="hidden">Formation certifiée avec sessions quotidiennes, appels de pratique, vidéos pédagogiques et communauté WhatsApp d'apprenants.</p>
-<span class="read-more" onclick="toggleDetails('detail3')">Lire plus...</span><br>
-<a href="https://wa.me/22953004443" target="_blank" class="btn">Réserver ma place</a>
+<!-- ── CTA Band ── -->
+<div class="cta-band">
+  <h2>Tu ne sais pas quel service<br>correspond à ta situation ?</h2>
+  <p>Envoie-moi un message. On en discute ensemble et je t'oriente vers ce qui a du sens pour toi maintenant.</p>
+  <a href="https://wa.me/22953004443?text=Bonjour%2C%20je%20veux%20savoir%20quel%20service%20me%20convient" target="_blank" class="btn btn-primary">Discutons sur WhatsApp</a>
 </div>
 
-<!-- SERVICE 4 -->
-<div class="service">
-<h2>Coaching Personnalisé</h2>
-<div class="hero-photo">
-<img src="https://raw.githubusercontent.com/trailblazer-ajn/Business-site/main/cp.png" alt="Service4">
-</div>
-<p>Accompagnement individuel pour résoudre tes blocages et accélérer tes résultats.</p>
-<p id="detail4" class="hidden">Sessions en visioconférence, plan d’action personnalisé et suivi constant pour t’aider à implémenter les stratégies qui feront réellement progresser ton business.</p>
-<span class="read-more" onclick="toggleDetails('detail4')">Lire plus...</span><br>
-<iframe src="https://calendly.com/joachimtalksbusiness/30min" width="100%" height="700" frameborder="0"></iframe>
-</div>
-
-</section>
-
+<!-- ── Footer ── -->
 <footer>
-<p>© 2026 Trailblazer AJN — Tous droits réservés</p>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo-wrap">
+        <img src="https://raw.githubusercontent.com/trailblazer-ajn/Business-site/main/logo.png" alt="Logo Trailblazer AJN">
+        <span>Trailblazer AJN</span>
+      </div>
+      <p>Stratégie, systèmes et IA pour les freelances et solopreneurs qui veulent opérer à un niveau supérieur.</p>
+      <div class="social-links">
+        <a href="https://facebook.com/ajntalksbusiness" title="Facebook">f</a>
+        <a href="https://facebook.com/ajntalksbusiness" title="LinkedIn">in</a>
+        <a href="https://wa.me/22953004443" title="WhatsApp" target="_blank">W</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <a href="index.html">Accueil</a>
+      <a href="about.html">À propos</a>
+      <a href="services.html">Services</a>
+      <a href="formation.html">Formation</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact direct</h4>
+      <a href="https://wa.me/2295300443" title="WhatsApp" target="_blank">W</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <a href="index.html">Accueil</a>
+      <a href="about.html">À propos</a>
+      <a href="services.html">Services</a>
+      <a href="formation.html">Formation</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact direct</h4>
+      <a href="https://wa.me/22953004443" target="_blank">WhatsApp →</a>
+      <a href="https://calendly.com/joachimtalksbusiness/30min" target="_blank">Réserver un appel →</a>
+      <a href="https://forms.gle/Px8VXJ62LAsqD1FU7" target="_blank">Conférence gratuite →</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Trailblazer AJN — Tous droits réservés</p>
+    <div style="display:flex; gap:20px;">
+      <a href="#">Mentions légales</a>
+      <a href="#">Politique de confidentialité</a>
+    </div>
+  </div>
 </footer>
 
 <script>
-function toggleDetails(id){
-  const element=document.getElementById(id);
-  element.classList.toggle('hidden');
-}
+  // Toggle detail sections
+  function toggleDetail(btn, id) {
+    const body = document.getElementById(id);
+    body.classList.toggle('open');
+    btn.classList.toggle('open');
+  }
+
+  // Scroll-triggered fade-in for service rows
+  const rows = document.querySelectorAll('.service-row');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  rows.forEach(row => observer.observe(row));
 </script>
 
 </body>
-  </html>
+</html>
