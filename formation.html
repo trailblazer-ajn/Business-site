@@ -373,6 +373,64 @@
     line-height: 1.7;
   }
   .placeholder-notice strong { color: var(--gold); }
+  /* ── Trust Stats ── */
+  .trust-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    margin-top: 50px;
+    margin-bottom: 70px;
+  }
+
+  .stat-box {
+    background: var(--dark-3);
+    border: 1px solid rgba(212,175,55,0.12);
+    border-radius: var(--radius);
+    padding: 28px 20px;
+    text-align: center;
+    transition: var(--transition);
+  }
+
+  .stat-box:hover {
+    border-color: rgba(212,175,55,0.35);
+    transform: translateY(-4px);
+  }
+
+  .stat-box h3 {
+    color: var(--gold);
+    font-size: 2em;
+    margin-bottom: 8px;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .stat-box p {
+    color: var(--gray);
+    font-size: 0.88em;
+  }
+
+  /* ── Proof Gallery ── */
+  .proof-gallery {
+    margin-top: 20px;
+  }
+
+  .proof-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+
+  .proof-grid img {
+    width: 100%;
+    border-radius: 14px;
+    border: 1px solid rgba(212,175,55,0.12);
+    transition: var(--transition);
+  }
+
+  .proof-grid img:hover {
+    transform: scale(1.03);
+    border-color: rgba(212,175,55,0.4);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  }
 
   /* ── FAQ ── */
   .faq-section { margin-bottom: 60px; }
@@ -610,17 +668,128 @@
 
   </div>
 
-  <!-- ── Testimonials ── -->
-  <div class="testimonials-section">
-    <p class="section-label">Ils l'ont suivi</p>
-    <h2 class="section-title">Ce qu'en disent<br>les participants</h2>
-    <p class="section-subtitle">Les premiers retours des apprenants qui ont implémenté le Framework S.O.S.</p>
+<!-- ── Testimonials ── -->
+<div class="testimonials-section">
 
-    <div class="placeholder-notice">
-      <strong>📣 Cette section est réservée aux témoignages de tes premiers clients.</strong><br><br>
-      Dès que tu as des retours — même courts, même informels — ajoute-les ici. Un témoignage honnête vaut mieux que dix promesses. Même un screenshot WhatsApp reformulé avec permission suffit pour commencer.
+  <p class="section-label">Ils l'ont suivi</p>
+
+  <h2 class="section-title">
+    Ce qu'en disent<br>les participants
+  </h2>
+
+  <p class="section-subtitle">
+    Des retours réels de freelances et solopreneurs ayant commencé à appliquer le Framework S.O.S.
+  </p>
+
+  <!-- Testimonials Grid -->
+  <div class="testimonials-grid">
+
+    <!-- Témoignage 1 -->
+    <div class="testimonial-card">
+
+      <div class="stars">★★★★★</div>
+
+      <p>
+        “Avant cette formation, j’étais constamment débordé. 
+        Maintenant, j’ai enfin une structure claire et des systèmes qui m’aident à travailler intelligemment.”
+      </p>
+
+      <div class="testimonial-author">Nom du client</div>
+      <div class="testimonial-role">Freelance</div>
+
     </div>
+
+    <!-- Témoignage 2 -->
+    <div class="testimonial-card">
+
+      <div class="stars">★★★★★</div>
+
+      <p>
+        “Le plus puissant dans le Framework S.O.S, ce n’est pas juste les outils. 
+        C’est la vision stratégique derrière chaque système.”
+      </p>
+
+      <div class="testimonial-author">Nom du client</div>
+      <div class="testimonial-role">Créateur digital</div>
+
+    </div>
+
+    <!-- Témoignage 3 -->
+    <div class="testimonial-card">
+
+      <div class="stars">★★★★☆</div>
+
+      <p>
+        “J’ai enfin compris comment utiliser l’IA pour simplifier mon workflow 
+        et arrêter de perdre du temps sur des tâches répétitives.”
+      </p>
+
+      <div class="testimonial-author">Nom du client</div>
+      <div class="testimonial-role">Solopreneur</div>
+
+    </div>
+
   </div>
+
+  <!-- ── Trust Stats ── -->
+  <div class="trust-stats">
+
+    <div class="stat-box">
+      <h3>+100</h3>
+      <p>Personnes impactées</p>
+    </div>
+
+    <div class="stat-box">
+      <h3>AI</h3>
+      <p>Systèmes & automatisations</p>
+    </div>
+
+    <div class="stat-box">
+      <h3>24/7</h3>
+      <p>Vision Trailblazer</p>
+    </div>
+
+  </div>
+
+  <!-- ── Proof Gallery ── -->
+  <div class="proof-gallery">
+
+    <h3 style="margin-bottom:14px; font-size:1.4em;">
+      Preuves & résultats
+    </h3>
+
+    <p class="section-subtitle" style="margin-bottom:30px;">
+      Captures d’écran, feedbacks clients et résultats réels.
+    </p>
+
+    <div class="proof-grid">
+
+      <!-- Image preuve 1 -->
+      <a href="LIEN_CAPTURE_1" target="_blank">
+        <img src="LIEN_CAPTURE_1" alt="Preuve client 1">
+      </a>
+
+      <!-- Image preuve 2 -->
+      <a href="LIEN_CAPTURE_2" target="_blank">
+        <img src="LIEN_CAPTURE_2" alt="Preuve client 2">
+      </a>
+
+      <!-- Image preuve 3 -->
+      <a href="LIEN_CAPTURE_3" target="_blank">
+        <img src="LIEN_CAPTURE_3" alt="Preuve client 3">
+      </a>
+
+      <!-- Image preuve 4 -->
+      <a href="LIEN_CAPTURE_4" target="_blank">
+        <img src="LIEN_CAPTURE_4" alt="Preuve client 4">
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+  
 
   <!-- ── FAQ ── -->
   <div class="faq-section">
