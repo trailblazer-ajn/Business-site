@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Connexion — Framework S.O.S</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #0a0a0a;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 420px;
+  background: #111;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid rgba(212,175,55,0.2);
+}
+
+h1 {
+  text-align: center;
+  color: #d4af37;
+  margin-bottom: 20px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: #d4af37;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+button:hover {
+  background: #e8cc6a;
+}
+
+.msg {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 0.9em;
+  color: #aaa;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>Connexion S.O.S</h1>
+
+  <input type="email" id="email" placeholder="Email">
+  <input type="password" id="password" placeholder="Mot de passe">
+
+  <button onclick="login()">Se connecter</button>
+
+  <div class="msg" id="msg"></div>
+
+</div>
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-app.js";
+
+import {
+  getAuth,
+  signInWithEmailAndPassword
+} from "https://www.gstatic.com/firebasejs/12.13.0/firebase-auth.js";
+
+import {
+  getFirestore,
+  doc,
+  getDoc
+} from "https://www.gstatic.com/firebasejs/12.13.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBspZonF5HtmN1Xf4Dj5xN8ZBomMLh4ndI",
+  authDomain: "trailblazer-sos.firebaseapp.com",
+  projectId: "trailblazer-sos",
+  storageBucket: "trailblazer-sos.firebasestorage.app",
+  messagingSenderId: "524989470668",
+  appId: "1:524989470668:web:5cb83b02f46c74905e6f69"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+window.login = async function () {
+
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  const msg = document.getElementById("msg");
+
+  try {
+
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    const user = userCredential.user;
+
+    // check Firestore profile
+    const userRef = doc(db, "users", user.uid);
+    const userSnap = await getDoc(userRef);
+
+    if (!userSnap.exists()) {
+      msg.innerHTML = "Compte introuvable dans la base.";
+      return;
+    }
+
+    // check email verification
+    if (!user.emailVerified) {
+      msg.innerHTML = "Veuillez vérifier votre email avant d'accéder à la formation.";
+      return;
+    }
+
+    msg.innerHTML = "Connexion réussie. Redirection...";
+
+    // intelligent redirect
+    setTimeout(() => {
+      window.location.href = "dashboard.html";
+    }, 1500);
+
+  } catch (error) {
+
+    // security-friendly error handling
+    if (error.code === "auth/user-not-found") {
+      msg.innerHTML = "Aucun compte trouvé avec cet email.";
+    } 
+    else if (error.code === "auth/wrong-password") {
+      msg.innerHTML = "Mot de passe incorrect.";
+    } 
+    else {
+      msg.innerHTML = "Erreur de connexion. Réessayez.";
+    }
+
+  }
+
+};
+
+</script>
+
+</body>
+</html>
