@@ -10,97 +10,284 @@
 
 <style>
 
-body {
-  font-family: 'Poppins', sans-serif;
-  background: #0a0a0a;
-  color: white;
-  margin: 0;
-  padding: 0;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-header {
-  background: #111;
-  padding: 20px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid rgba(212,175,55,0.2);
+body{
+  font-family:'Poppins',sans-serif;
+  background:#0a0a0a;
+  color:white;
 }
 
-.logo {
-  color: #d4af37;
-  font-weight: 700;
-  font-size: 1.2em;
+header{
+  background:#111;
+  padding:20px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid rgba(212,175,55,0.2);
 }
 
-button {
-  background: #d4af37;
-  border: none;
-  padding: 10px 18px;
-  cursor: pointer;
-  font-weight: bold;
-  border-radius: 6px;
+.logo{
+  color:#d4af37;
+  font-size:1.2em;
+  font-weight:700;
 }
 
-button:hover {
-  background: #e8cc6a;
+.logout-btn{
+  background:#d4af37;
+  border:none;
+  padding:10px 18px;
+  border-radius:6px;
+  cursor:pointer;
+  font-weight:bold;
 }
 
-.container {
-  max-width: 1000px;
-  margin: auto;
-  padding: 40px 20px;
+.logout-btn:hover{
+  background:#e8cc6a;
 }
 
-h1 {
-  color: #d4af37;
-  margin-bottom: 10px;
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:50px 20px;
 }
 
-.subtitle {
-  color: #aaa;
-  margin-bottom: 40px;
+.hero{
+  margin-bottom:50px;
 }
 
-.modules {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
+.hero h1{
+  color:#d4af37;
+  margin-bottom:10px;
+  font-size:2em;
 }
 
-.card {
-  background: #111;
-  border: 1px solid rgba(212,175,55,0.15);
-  padding: 20px;
-  border-radius: 10px;
-  transition: 0.3s;
+.hero p{
+  color:#aaa;
+  line-height:1.7;
 }
 
-.card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(212,175,55,0.4);
+.modules{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
 }
 
-.card h3 {
-  color: #d4af37;
-  margin-bottom: 10px;
+.card{
+  background:#111;
+  border:1px solid rgba(212,175,55,0.15);
+  border-radius:12px;
+  padding:25px;
+  transition:0.3s;
 }
 
-.card p {
-  color: #aaa;
-  font-size: 0.9em;
-  line-height: 1.6;
+.card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(212,175,55,0.4);
 }
 
-.lock {
-  color: #ff4d4d;
-  font-size: 0.85em;
-  margin-top: 10px;
+.card h3{
+  color:#d4af37;
+  margin-bottom:12px;
+}
+
+.card p{
+  color:#aaa;
+  font-size:0.92em;
+  line-height:1.7;
+}
+
+.loader{
+  position:fixed;
+  inset:0;
+  background:#0a0a0a;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:999;
+  font-size:1.1em;
+  color:#d4af37;
+}
+
+.hidden{
+  display:none;
+}
+
+.error-box{
+  background:#2a0000;
+  border:1px solid rgba(255,0,0,0.3);
+  color:#ffb3b3;
+  padding:16px;
+  border-radius:8px;
+  margin-top:20px;
 }
 
 </style>
-
 </head>
 
 <body>
-  
+
+<div class="loader" id="loader">
+Chargement de ton espace S.O.S...
+</div>
+
+<header>
+  <div class="logo">Trailblazer S.O.S</div>
+  <button class="logout-btn" onclick="logout()">
+    Déconnexion
+  </button>
+</header>
+
+<div class="container">
+
+  <div class="hero">
+    <h1 id="welcomeTitle">Bienvenue</h1>
+    <p id="userInfo">
+      Vérification de ton accès...
+    </p>
+
+    <div id="errorBox" class="error-box hidden"></div>
+  </div>
+
+  <div class="modules">
+
+    <div class="card">
+      <h3>Module 1 — Structure</h3>
+      <p>
+        Construire des fondations solides pour ton business.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Module 2 — Automatisation</h3>
+      <p>
+        Créer un workflow intelligent avec l’IA et les systèmes.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Module 3 — Stabilisation</h3>
+      <p>
+        Sortir du chaos financier et créer de la prévisibilité.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Templates & Ressources</h3>
+      <p>
+        Modèles prêts à l’emploi pour accélérer ton exécution.
+      </p>
+    </div>
+
+  </div>
+
+</div>
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-app.js";
+
+import {
+  getAuth,
+  onAuthStateChanged,
+  signOut
+} from "https://www.gstatic.com/firebasejs/12.13.0/firebase-auth.js";
+
+import {
+  getFirestore,
+  doc,
+  getDoc
+} from "https://www.gstatic.com/firebasejs/12.13.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBspZonF5HtmN1Xf4Dj5xN8ZBomMLh4ndI",
+  authDomain: "trailblazer-sos.firebaseapp.com",
+  projectId: "trailblazer-sos",
+  storageBucket: "trailblazer-sos.firebasestorage.app",
+  messagingSenderId: "524989470668",
+  appId: "1:524989470668:web:5cb83b02f46c74905e6f69"
+};
+
+const app = initializeApp(firebaseConfig);
+
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+const loader = document.getElementById("loader");
+const userInfo = document.getElementById("userInfo");
+const welcomeTitle = document.getElementById("welcomeTitle");
+const errorBox = document.getElementById("errorBox");
+
+function showError(message){
+  errorBox.classList.remove("hidden");
+  errorBox.innerHTML = message;
+}
+
+onAuthStateChanged(auth, async (user) => {
+
+  try{
+
+    if(!user){
+      window.location.href = "login.html";
+      return;
+    }
+
+    await user.reload();
+
+    if(!user.emailVerified){
+      showError("Tu dois vérifier ton email avant d'accéder à la formation.");
+      loader.classList.add("hidden");
+      return;
+    }
+
+    const userRef = doc(db,"users",user.uid);
+    const userSnap = await getDoc(userRef);
+
+    if(!userSnap.exists()){
+      showError("Profil utilisateur introuvable.");
+      loader.classList.add("hidden");
+      return;
+    }
+
+    const data = userSnap.data();
+
+    welcomeTitle.innerHTML =
+      `Bienvenue ${data.name}`;
+
+    userInfo.innerHTML =
+      "Ton accès est validé. Tu peux maintenant commencer la formation.";
+
+    loader.classList.add("hidden");
+
+  }
+
+  catch(error){
+
+    console.error(error);
+
+    loader.classList.add("hidden");
+
+    showError(
+      "Une erreur est survenue lors du chargement du dashboard."
+    );
+
+  }
+
+});
+
+window.logout = async function(){
+
+  await signOut(auth);
+
+  window.location.href = "login.html";
+
+}
+
+</script>
+
+</body>
+</html>
