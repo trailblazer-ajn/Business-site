@@ -9,6 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+
 body {
   font-family: 'Poppins', sans-serif;
   background: #0a0a0a;
@@ -17,6 +18,8 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  margin: 0;
+  padding: 20px;
 }
 
 .container {
@@ -24,65 +27,100 @@ body {
   max-width: 420px;
   background: #111;
   padding: 30px;
-  border-radius: 12px;
+  border-radius: 16px;
   border: 1px solid rgba(212,175,55,0.2);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
 }
 
 h1 {
   color: #d4af37;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  font-size: 2em;
 }
 
 input {
   width: 100%;
-  padding: 12px;
-  margin-bottom: 12px;
+  padding: 14px;
+  margin-bottom: 14px;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   outline: none;
+  font-size: 1em;
+  box-sizing: border-box;
 }
 
 button {
   width: 100%;
-  padding: 12px;
+  padding: 14px;
   background: #d4af37;
   border: none;
-  font-weight: bold;
+  font-weight: 600;
   cursor: pointer;
-  border-radius: 6px;
+  border-radius: 8px;
+  font-size: 1em;
+  transition: 0.3s ease;
 }
 
 button:hover {
   background: #e8cc6a;
+  transform: translateY(-2px);
 }
 
 .msg {
-  margin-top: 15px;
+  margin-top: 18px;
   text-align: center;
+  font-size: 0.92em;
+  color: #cccccc;
+  line-height: 1.6;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 20px;
   font-size: 0.9em;
 }
+
+.login-link a {
+  color: #d4af37;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
 </style>
 </head>
 
 <body>
 
 <div class="container">
-  <h1>Créer ton accès S.O.S</h1>
+
+  <h1>Create your SOS access</h1>
 
   <input type="text" id="name" placeholder="Nom complet">
+
   <input type="email" id="email" placeholder="Email">
+
   <input type="password" id="password" placeholder="Mot de passe">
 
-  <button onclick="signup()">Créer mon compte</button>
+  <button onclick="signup()">Create my account</button>
 
   <div class="msg" id="msg"></div>
+
+  <div class="login-link">
+    Déjà inscrit ?
+    <a href="login.html">Se connecter</a>
+  </div>
+
 </div>
 
 <script type="module">
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-app.js";
-import { 
+
+import {
   getAuth,
   createUserWithEmailAndPassword,
   sendEmailVerification
@@ -95,35 +133,57 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBspZonF5HtmN1Xf4Dj5xN8ZBomMLh4ndI",
+  apiKey: "AIzaSyBspZonf5HtmN1Xf4Dj5xN8ZBomMLh4ndI",
   authDomain: "trailblazer-sos.firebaseapp.com",
   projectId: "trailblazer-sos",
   storageBucket: "trailblazer-sos.firebasestorage.app",
   messagingSenderId: "524989470668",
-  appId: "1:524989470668:web:5cb83b02f46c74905e6f69"
+  appId: "1:524989470668:web:5cb83b02f46c74905e6f69",
+  measurementId: "G-CRP0KKFT6R"
 };
 
 const app = initializeApp(firebaseConfig);
+
 const auth = getAuth(app);
+
 const db = getFirestore(app);
 
 window.signup = async function () {
 
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
+  const name = document.getElementById("name").value.trim();
+
+  const email = document.getElementById("email").value.trim();
+
   const password = document.getElementById("password").value;
 
   const msg = document.getElementById("msg");
 
+  // validation simple
+  if (!name || !email || !password) {
+    msg.innerHTML = "Veuillez remplir tous les champs.";
+    return;
+  }
+
+  if (password.length < 6) {
+    msg.innerHTML = "Le mot de passe doit contenir au moins 6 caractères.";
+    return;
+  }
+
   try {
 
-    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+    // création du compte
+    const userCredential = await createUserWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
+
     const user = userCredential.user;
 
-    // email verification
+    // email de vérification
     await sendEmailVerification(user);
 
-    // save user in Firestore
+    // sauvegarde Firestore
     await setDoc(doc(db, "users", user.uid), {
       name: name,
       email: email,
@@ -131,14 +191,36 @@ window.signup = async function () {
       verified: false
     });
 
-    msg.innerHTML = "Compte créé. Vérifie ton email avant de continuer.";
+    msg.innerHTML =
+      "Compte créé avec succès. Vérifie ton email avant de te connecter.";
 
+    // redirection intelligente
     setTimeout(() => {
       window.location.href = "login.html";
-    }, 3000);
+    }, 4000);
 
   } catch (error) {
-    msg.innerHTML = error.message;
+
+    console.error(error);
+
+    if (error.code === "auth/email-already-in-use") {
+
+      msg.innerHTML = "Cet email possède déjà un compte.";
+
+    } else if (error.code === "auth/invalid-email") {
+
+      msg.innerHTML = "Adresse email invalide.";
+
+    } else if (error.code === "auth/weak-password") {
+
+      msg.innerHTML = "Mot de passe trop faible.";
+
+    } else {
+
+      msg.innerHTML = "Erreur : " + error.message;
+
+    }
+
   }
 
 };
@@ -146,4 +228,4 @@ window.signup = async function () {
 </script>
 
 </body>
-  </html>
+</html>
