@@ -18,6 +18,8 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  margin: 0;
+  padding: 20px;
 }
 
 .container {
@@ -25,44 +27,67 @@ body {
   max-width: 420px;
   background: #111;
   padding: 30px;
-  border-radius: 12px;
+  border-radius: 16px;
   border: 1px solid rgba(212,175,55,0.2);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
 }
 
 h1 {
   text-align: center;
   color: #d4af37;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  font-size: 2em;
 }
 
 input {
   width: 100%;
-  padding: 12px;
-  margin-bottom: 12px;
-  border-radius: 6px;
+  padding: 14px;
+  margin-bottom: 14px;
+  border-radius: 8px;
   border: none;
   outline: none;
+  font-size: 1em;
+  box-sizing: border-box;
 }
 
 button {
   width: 100%;
-  padding: 12px;
+  padding: 14px;
   background: #d4af37;
   border: none;
-  font-weight: bold;
+  font-weight: 600;
   cursor: pointer;
-  border-radius: 6px;
+  border-radius: 8px;
+  font-size: 1em;
+  transition: 0.3s ease;
 }
 
 button:hover {
   background: #e8cc6a;
+  transform: translateY(-2px);
 }
 
 .msg {
-  margin-top: 15px;
+  margin-top: 18px;
   text-align: center;
+  font-size: 0.92em;
+  color: #cccccc;
+  line-height: 1.6;
+}
+
+.signup-link {
+  text-align: center;
+  margin-top: 20px;
   font-size: 0.9em;
-  color: #aaa;
+}
+
+.signup-link a {
+  color: #d4af37;
+  text-decoration: none;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
 }
 
 </style>
@@ -75,11 +100,17 @@ button:hover {
   <h1>Connexion S.O.S</h1>
 
   <input type="email" id="email" placeholder="Email">
+
   <input type="password" id="password" placeholder="Mot de passe">
 
   <button onclick="login()">Se connecter</button>
 
   <div class="msg" id="msg"></div>
+
+  <div class="signup-link">
+    Pas encore de compte ?
+    <a href="signup.html">Créer un accès</a>
+  </div>
 
 </div>
 
@@ -99,62 +130,105 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBspZonF5HtmN1Xf4Dj5xN8ZBomMLh4ndI",
+  apiKey: "AIzaSyBspZonf5HtmN1Xf4Dj5xN8ZBomMLh4ndI",
   authDomain: "trailblazer-sos.firebaseapp.com",
   projectId: "trailblazer-sos",
   storageBucket: "trailblazer-sos.firebasestorage.app",
   messagingSenderId: "524989470668",
-  appId: "1:524989470668:web:5cb83b02f46c74905e6f69"
+  appId: "1:524989470668:web:5cb83b02f46c74905e6f69",
+  measurementId: "G-CRP0KKFT6R"
 };
 
 const app = initializeApp(firebaseConfig);
+
 const auth = getAuth(app);
+
 const db = getFirestore(app);
 
 window.login = async function () {
 
-  const email = document.getElementById("email").value;
+  const email = document.getElementById("email").value.trim();
+
   const password = document.getElementById("password").value;
+
   const msg = document.getElementById("msg");
+
+  // validation simple
+  if (!email || !password) {
+    msg.innerHTML = "Veuillez remplir tous les champs.";
+    return;
+  }
 
   try {
 
-    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    // connexion utilisateur
+    const userCredential = await signInWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
+
     const user = userCredential.user;
 
-    // check Firestore profile
+    // récupération Firestore
     const userRef = doc(db, "users", user.uid);
+
     const userSnap = await getDoc(userRef);
 
+    // vérifie si profil existe
     if (!userSnap.exists()) {
+
       msg.innerHTML = "Compte introuvable dans la base.";
+
       return;
     }
 
-    // check email verification
+    // vérification email
     if (!user.emailVerified) {
-      msg.innerHTML = "Veuillez vérifier votre email avant d'accéder à la formation.";
+
+      msg.innerHTML =
+        "Veuillez vérifier votre email avant d'accéder à la formation.";
+
       return;
     }
 
     msg.innerHTML = "Connexion réussie. Redirection...";
 
-    // intelligent redirect
+    // redirection dashboard
     setTimeout(() => {
+
       window.location.href = "dashboard.html";
+
     }, 1500);
 
   } catch (error) {
 
-    // security-friendly error handling
-    if (error.code === "auth/user-not-found") {
-      msg.innerHTML = "Aucun compte trouvé avec cet email.";
-    } 
-    else if (error.code === "auth/wrong-password") {
+    console.error(error);
+
+    // gestion erreurs sécurisée
+    if (
+      error.code === "auth/invalid-credential" ||
+      error.code === "auth/user-not-found"
+    ) {
+
+      msg.innerHTML = "Email ou mot de passe incorrect.";
+
+    } else if (
+      error.code === "auth/wrong-password"
+    ) {
+
       msg.innerHTML = "Mot de passe incorrect.";
-    } 
-    else {
+
+    } else if (
+      error.code === "auth/invalid-email"
+    ) {
+
+      msg.innerHTML = "Adresse email invalide.";
+
+    } else {
+
       msg.innerHTML = "Erreur de connexion. Réessayez.";
+
     }
 
   }
