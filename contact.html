@@ -36,20 +36,71 @@ nav a{margin-left:20px; color:#fff; font-weight:500; transition:0.3s;}
 nav a:hover{color:#d4af37;}
 
 /* ===== Hero ===== */
-.hero{text-align:center; padding:120px 20px;}
+.hero{text-align:center; padding:120px 20px 60px;}
 .hero h1{font-size:2.5em; margin-bottom:20px;}
 .hero p{font-size:1.2em; max-width:700px; margin:0 auto 40px;}
-.btn{display:inline-block; padding:15px 35px; background:#d4af37; color:#000; font-weight:600; border-radius:5px; transition:0.3s; margin:5px;}
+.btn{display:inline-block; padding:15px 35px; background:#d4af37; color:#000; font-weight:600; border-radius:5px; transition:0.3s; margin:5px; cursor:pointer; border:none; font-family:'Poppins',sans-serif; font-size:1em;}
 .btn:hover{background:#fff;}
 
 /* ===== Sections ===== */
-section{padding:80px 20px; max-width:800px; margin:auto;}
-form{display:flex; flex-direction:column; gap:20px;}
-input, textarea{padding:15px; border-radius:5px; border:none; font-size:1em;}
-input:focus, textarea:focus{outline:none;}
+section{padding:60px 20px; max-width:800px; margin:auto;}
+
+/* ===== Formulaire ===== */
+form{display:flex; flex-direction:column; gap:16px;}
+input[type="text"],
+input[type="email"],
+textarea{
+  padding:15px;
+  border-radius:6px;
+  border:1px solid #333;
+  background:#1a1a1a;
+  color:#fff;
+  font-size:1em;
+  font-family:'Poppins',sans-serif;
+  transition:border 0.3s;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus{
+  outline:none;
+  border-color:#d4af37;
+}
+textarea{resize:vertical;}
+
+/* Message de succès */
+.form-success{
+  display:none;
+  background:#1a2e1a;
+  border:1px solid #2e7d32;
+  color:#81c784;
+  padding:16px 20px;
+  border-radius:6px;
+  text-align:center;
+  font-weight:600;
+}
+
+/* ===== Section Calendly ===== */
+.section-calendly h2{margin-bottom:30px;}
+.calendly-wrapper{
+  border-radius:10px;
+  overflow:hidden;
+  border:1px solid #222;
+}
 
 /* ===== Footer ===== */
-footer{text-align:center; padding:50px 20px; background:#000; font-size:14px; color:#777;}
+footer{background:#000; padding:60px 40px 30px; color:#777; font-size:14px;}
+.footer-grid{display:flex; justify-content:space-between; flex-wrap:wrap; gap:40px; margin-bottom:40px;}
+.footer-brand img{height:40px; filter:drop-shadow(0 0 5px #d4af37); margin-bottom:10px;}
+.footer-brand p{max-width:260px; color:#555; font-size:13px;}
+.footer-socials{display:flex; gap:10px; margin-top:16px;}
+.footer-socials a{display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:50%; background:#1a1a1a; color:#d4af37; font-weight:700; font-size:13px; transition:0.3s;}
+.footer-socials a:hover{background:#d4af37; color:#000;}
+.footer-col h4{color:#d4af37; margin-bottom:16px; font-size:13px; text-transform:uppercase; letter-spacing:1px;}
+.footer-col a{display:block; color:#777; margin-bottom:8px; font-size:13px; transition:0.3s;}
+.footer-col a:hover{color:#d4af37;}
+.footer-bottom{border-top:1px solid #1a1a1a; padding-top:20px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;}
+.footer-bottom a{color:#555; font-size:12px; transition:0.3s;}
+.footer-bottom a:hover{color:#d4af37;}
 </style>
 
 </head>
@@ -63,44 +114,110 @@ footer{text-align:center; padding:50px 20px; background:#000; font-size:14px; co
   </div>
   <nav>
     <a href="index.html">Accueil</a>
+    <a href="about.html">À propos</a>
     <a href="services.html">Services</a>
     <a href="formation.html">Formation</a>
-    <a href="contact.html">Contact</a>
+    <a href="contact.html">Me contacter</a>
   </nav>
 </header>
 
 <!-- Hero Section -->
 <section class="hero">
   <h1>Contacte-moi</h1>
-  <p>Tu as une question sur mes services ou ma formation ? Remplis ce formulaire ou contacte-moi directement via WhatsApp.</p>
-  <a href="https://wa.me/22953004443?text=Bonjour%2C%20je%20veux%20prendre%20contact%20avec%20AJN%20FlowGold" target="_blank" class="btn">WhatsApp</a>
+  <p>Tu as une question sur mes services ou ma formation ? Remplis le formulaire ci-dessous ou contacte-moi directement via WhatsApp.</p>
+  <a href="https://wa.me/22953004443?text=Bonjour%2C%20je%20veux%20prendre%20contact%20avec%20Trailblazer%20AJN" target="_blank" class="btn">💬 WhatsApp</a>
 </section>
 
 <!-- Formulaire de contact -->
 <section id="contact-form">
-<form action="mailto:uk.joachimmentorship@gmail.com" method="post" enctype="text/plain">
-  <input type="text" name="Nom" placeholder="Ton nom" required>
-  <input type="email" name="Email" placeholder="Ton email" required>
-  <textarea name="Message" rows="6" placeholder="Ton message" required></textarea>
-  <input type="submit" value="Envoyer" class="btn">
-</form>
+  <h2>Envoie-moi un message</h2>
+
+  <!-- ✅ Remplace YOUR_FORM_ID par ton ID Formspree après inscription sur formspree.io -->
+  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="contactForm">
+    <input type="text" name="nom" placeholder="Ton nom" required>
+    <input type="email" name="email" placeholder="Ton email" required>
+    <textarea name="message" rows="6" placeholder="Ton message..." required></textarea>
+    <input type="submit" value="Envoyer le message" class="btn">
+  </form>
+
+  <!-- Message affiché après envoi réussi -->
+  <div class="form-success" id="formSuccess">
+    ✅ Message envoyé ! Je te réponds dans les 24h.
+  </div>
 </section>
 
 <!-- Réservation Calendly -->
-<section>
+<section class="section-calendly">
   <h2>Réserver une session avec moi</h2>
-  <iframe 
-    src="https://calendly.com/joachimtalksbusiness/30min"
-    width="100%" 
-    height="700" 
-    frameborder="0">
-  </iframe>
+  <div class="calendly-wrapper">
+    <iframe
+      src="https://calendly.com/joachimtalksbusiness/30min"
+      width="100%"
+      height="700"
+      frameborder="0">
+    </iframe>
+  </div>
 </section>
 
 <!-- Footer -->
 <footer>
-<p>© 2026 Trailblazer AJN — Tous droits réservés</p>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="https://raw.githubusercontent.com/trailblazer-ajn/Business-site/main/logo.png" alt="Trailblazer AJN">
+      <p>Stratégie, systèmes et IA pour les freelances et solopreneurs qui veulent opérer à un niveau supérieur.</p>
+      <div class="footer-socials">
+        <a href="https://facebook.com/ajntalksbusiness" target="_blank" title="Facebook">f</a>
+        <a href="https://www.linkedin.com/in/joachim-ajn-gbetchoevi" target="_blank" title="LinkedIn">in</a>
+        <a href="https://wa.me/22953004443" target="_blank" title="WhatsApp">W</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <a href="index.html">Accueil</a>
+      <a href="about.html">À propos</a>
+      <a href="services.html">Services</a>
+      <a href="formation.html">Formation</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact direct</h4>
+      <a href="https://wa.me/22953004443" target="_blank">WhatsApp →</a>
+      <a href="https://calendly.com/joachimtalksbusiness/30min" target="_blank">Réserver un appel →</a>
+      <a href="https://forms.gle/Px8VXJ62LAsqD1FU7" target="_blank">Conférence gratuite →</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Trailblazer AJN — Tous droits réservés</span>
+    <div>
+      <a href="mentions-legales.html">Mentions légales</a> &nbsp;·&nbsp;
+      <a href="confidentialite.html">Politique de confidentialité</a>
+    </div>
+  </div>
 </footer>
 
+<!-- Script : affiche le message de succès après soumission Formspree -->
+<script>
+  const form = document.getElementById('contactForm');
+  const successMsg = document.getElementById('formSuccess');
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const data = new FormData(form);
+
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      form.style.display = 'none';
+      successMsg.style.display = 'block';
+    } else {
+      alert('Une erreur est survenue. Contacte-moi directement sur WhatsApp.');
+    }
+  });
+</script>
+
 </body>
-</html>
+</html
